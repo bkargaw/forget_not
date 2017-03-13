@@ -3,11 +3,11 @@
 
 ## Minimum Viable Product
 ForgetNot is a web application inspired by Remember The Milk built using Ruby on Rails and React/Redux. It should allow the user to create tasks to complete, assign various properties
-to each task, add tags to tasks (to create associations)
+to each task, add list types to tasks (to create associations)
 
  * production README
- * New account creation, login, and guest/demo login
  * Hosting on Heroku
+ * New account creation, login, and guest/demo login
  * Tasks
  * Lists
  * List summary (time, num tasks, num completed)
@@ -35,26 +35,35 @@ to each task, add tags to tasks (to create associations)
  Objective: Tasks can be created, read, edited and destroyed through the API.
             allow task types and filter
 
-### Phase 3: Notes (2 1/2 days)
+### Phase 3: LISTS (2 1/2 days)
 
- Objective: Notes belong to Tasks that can be created, read, edited and destroyed through the API.
+ Objective: Tasks have types and user can add new List types and
+    associate any task with any of the lists
+
+
+### Phase 4: List summary (time, num tasks, num completed)(1 day)
+
+Objective: Sorting of Tasks can be done under all list types
 
 ### Phase 5: Search Tasks By name (1 day)
 
  Objective: Sorting of Tasks can be done under all list types
 
-### Phase 6: Sort Tasks By Properties (1 day)
+### Phase 6: Sort Tasks By Properties (if i get to it)
 
  Objective: Sorting of Tasks can be done under all list types
 
+### Phase 7: Notes (if i get to it)
 
-### Phase 7: Add contacts and allow assignment of task (if i get to it)
+ Objective: Notes belong to Tasks that can be created, read, edited and destroyed through the API.
+
+
+### Phase 8: Add contacts and allow assignment of task (if i get to it)
 
  Objective: people can add others to their contacts and assign tasks to each other
 
 
 ### Bonus Features (TBD)
-  * sort tasks by properties
   * add contacts and allow assignment of task to other people in contact
   * Autocomplete SmartAdd of task properties
   * Subtasks

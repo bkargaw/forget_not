@@ -22,7 +22,16 @@
 | repeats               | string         | not null                  |
 | list                  | string         | not null                  |
 
-# Notes
+# Lists (default is index)
+| column name           | data type      | details                   |    
+| :---------------------| :------------- | :------                   |
+| id                    | integer        | not null, primary key     |
+| task_id               | integer        | not null, foreign key     |
+| title                 | string         | not null                  |
+
+
+
+# Notes (if i get to it)
 | column name           | data type      | details                   |    
 | :---------------------| :------------- | :------                   |
 | id                    | integer        | not null, primary key     |
