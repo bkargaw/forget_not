@@ -54,7 +54,7 @@
 
 ## components with state and dispatch props
 
-<forget_not/>
+`<forget_not/>
   <App />
     <Auth Form Container>
       <sing up>
@@ -118,4 +118,4 @@
                                       task: (select based on id) }
                         dispatch_props= {fetchTasks:
                                         delete/edit Task:}
-          <editTask> (functional)
+          <editTask> (functional)`
