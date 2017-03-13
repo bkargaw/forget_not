@@ -53,7 +53,7 @@ to each task, add tags to tasks (to create associations)
  Objective: people can add others to their contacts and assign tasks to each other
 
 
-# Bonus Features (TBD)
+### Bonus Features (TBD)
   * sort tasks by properties
   * add contacts and allow assignment of task to other people in contact
   * Autocomplete SmartAdd of task properties
