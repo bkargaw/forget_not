@@ -40,7 +40,6 @@ to each task, add list types to tasks (to create associations)
  Objective: Tasks have types and user can add new List types and
     associate any task with any of the lists
 
-
 ### Phase 4: List summary (time, num tasks, num completed)(1 day)
 
 Objective: Sorting of Tasks can be done under all list types
