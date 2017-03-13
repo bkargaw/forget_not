@@ -54,8 +54,8 @@
 
 ## components with state and dispatch props
 
-<forget_not/>  -entry file
-  <App />  - Configures store
+<forget_not/>
+  <App />
     <Auth Form Container>
       <sing up>
       <sing in>
