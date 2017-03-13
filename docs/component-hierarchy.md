@@ -5,7 +5,7 @@ Map out your React Routes with their respective components and paths.
 See the sample project proposal for an example of this.
 
 # Component Hierarchy
-<forget_not/>  -entry file
+<forget_not/> 
   <App />  
     <Auth Form Container>
       <sing up>
