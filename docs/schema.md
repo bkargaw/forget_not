@@ -32,7 +32,7 @@
 
 
 
-## Notes (if i get to it)
+### Notes (if i get to it)
 | column name           | data type      | details                   |    
 | :---------------------| :------------- | :------                   |
 | id                    | integer        | not null, primary key     |

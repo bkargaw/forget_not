@@ -7,7 +7,7 @@
       * sing up
       * sing in
     * main-logged-out
-    * List container
+    * List container (main logged in / default index)
       * ShowTask container
         * showTask
           * notes (bonus)
