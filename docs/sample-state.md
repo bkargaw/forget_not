@@ -5,6 +5,7 @@
     id: 1,
     username: "app-academy"
   }
+
   Tasks{
     1: {
       id: 1,
@@ -20,6 +21,22 @@
           task_id: 1,
           body: text
         }
+        .
+        .
+        .
       }
+    .
+    .
+    .
+    }
+
+  Lists{
+    1: {
+      id: 1
+      name: index
+      }
+    .
+    .
+    .  
     }
   }`

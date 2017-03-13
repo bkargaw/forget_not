@@ -26,14 +26,13 @@ to each task, add list types to tasks (to create associations)
 
 ## Implementation Timeline
 
-### Phase 1: Backend setup and Front End User Authentication (2 days)
+### Phase 1: Backend setup and Front End User Authentication (1 1/2 days)
 
  Objective: Functioning rails project with front-end Authentication
 
-### Phase 2: Task Model, API, and components (3 1/2 days)
+### Phase 2: Task Model, API, and components (3 days)
 
  Objective: Tasks can be created, read, edited and destroyed through the API.
-            allow task types and filter
 
 ### Phase 3: LISTS (2 1/2 days)
 
@@ -42,7 +41,7 @@ to each task, add list types to tasks (to create associations)
 
 ### Phase 4: List summary (time, num tasks, num completed)(1 day)
 
-Objective: Sorting of Tasks can be done under all list types
+Objective: add list summer on the right hand side of page
 
 ### Phase 5: Search Tasks By name (1 day)
 
