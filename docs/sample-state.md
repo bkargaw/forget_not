@@ -13,7 +13,7 @@
       estimate: 2 hr
       completed: false,
       repeats: noRepeat,
-      list: index,
+      list_id 1,
       notes {
         1:{
           id: 1
