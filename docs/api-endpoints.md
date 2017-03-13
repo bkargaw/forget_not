@@ -22,7 +22,6 @@ GET / - loads static page
 
   * GET /api/tasks  (defaults to index list type)
     accepts filter (option hash with optional keys [type:, range:,searchName:])
-
   * POST /api/tasks
   * GET /api/tasks/:id
   * PATCH /api/tasks/:id
