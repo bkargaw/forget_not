@@ -12,7 +12,7 @@ to each task, add list types to tasks (to create associations)
 
 ### Task Rendering and Editing Tasks
 ##### page when logged  out
-![alt tag]()
+![alt tag](https://github.com/bkargaw/forget_not/blob/master/docs/wireframes/main%20logged%20out%20.png)
 
 #### database
   There will be three tables that hold the user, tasks, and lists. when the user
