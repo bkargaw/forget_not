@@ -17,8 +17,11 @@ to each task, add tags to tasks (to create associations)
 
  [View Wireframes](https://github.com/bkargaw/forget_not/tree/master/docs/wireframes)
  [React Components](https://github.com/bkargaw/forget_not/blob/master/docs/component-hierarchy.md)
+
  [API endpoints](https://github.com/bkargaw/forget_not/blob/master/docs/api-endpoints.md)
+
  [DB schema](https://github.com/bkargaw/forget_not/blob/master/docs/schema.md)
+
  [Sample State](https://github.com/bkargaw/forget_not/blob/master/docs/sample-state.md)
 
 ## Implementation Timeline
