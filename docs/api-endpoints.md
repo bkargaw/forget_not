@@ -27,6 +27,6 @@ GET / - loads static page
   * PATCH /api/tasks/:id
   * DELETE /api/tasks/:id
 
-### notes
+### notes (bonus)
   * POST /api/tasks/:id/notes
   * DELETE /api/tasks/:id/notes

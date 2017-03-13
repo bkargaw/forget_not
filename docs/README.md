@@ -24,14 +24,14 @@ to each task, add list types to tasks (to create associations)
   ajax request to come in with different list-type.
 
 #### front-end
-  we Will take filtered tasks from the store and pass them the <List container> and will
+  will take filtered tasks from the store and pass them the <List container> and will
   render them to (center of the page). it will show the title of each task and make the a link to edit. when they are clicked it will render <ShowTask container> to the right hand side.
   the UI will then be the same to Remember the Milk.
 
-  we will also allow the user to create new list types and click on them to show all the Tasks
+  will also allow the user to create new list types and click on them to show all the Tasks
   associated with  the list-type.
 
-  we will also allow the users to click on tabs today, tomorrow, this-week in order to render
+  will also allow the users to click on tabs today, tomorrow, this-week in order to render
   all the task that are due in that date rage regardless of list-type.
 
 ![alt tag](https://github.com/bkargaw/forget_not/blob/master/docs/wireframes/main_page%20with%20show%20task.png)
@@ -40,4 +40,4 @@ to each task, add list types to tasks (to create associations)
 ### Search
 Searching tasks is a standard feature of Remember The Milk. I plan to utilize the Fuse.js library to create a fuzzy search of Task. This search will look go through note taskTitles.
 but before going through all the task when a search is initiated i will get all the users task
-to insure the all the task are in the store... (note this is because filters like Today would have shortend the task list )
+to insure the all the task are in the store... (note this is because filters like Today would have shortened the task list )
