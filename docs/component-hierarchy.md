@@ -6,34 +6,35 @@
     * Auth Form Container
       * sing up
       * sing in
+    * main-logged-out
     * List container
       * ShowTask container
         * showTask
-          * notes
+          * notes (bonus)
         * editTask
     * Today container
       * show index
       * ShowTask container
         * showTask
-          * notes
+          * notes (bonus)
         * editTask
     * Tomorrow container
       * show index
       * ShowTask container
         * showTask
-          * notes
+          * notes (bonus)
         * editTask
     * Week container
       * show index
       * ShowTask container
         * showTask
-          * notes
+          * notes (bonus)
         * editTask
     * search container
       * show index
       * ShowTask container
           * showTask
-            * notes
+            * notes (bonus)
           * editTask
 
 ## Routes
@@ -42,6 +43,7 @@
   * App   route ='/'
     * AuthFormContainer route = 'signup'
     * AuthFormContainer route = 'signin'
+    * main-logged-out
     * List container route ='/(default index)'
       * ShowTask container route ='/(default index)/:id'
     * Today container route ='/today'
@@ -59,6 +61,7 @@
     * Auth Form Container
       * sing up
       * sing in
+    * main-logged-out
     * List container state_props ={ session: username:, email:, id:,
                                     tasks: filtered by (type - default index)}
                    dispatch_props= null

@@ -5,21 +5,25 @@ to each task, add list types to tasks (to create associations)
 
 
 ## Features & Implementation
-### login and create
+### login and signup
 
-  The user will be abel to signup/login through a dialog crated using VEX
+  The user will be abel to signup/login through a modal dialog created using VEX
 ![alt tag](https://github.com/bkargaw/forget_not/blob/master/docs/wireframes/sign_in:up_page.jpg)
 
 ### Task Rendering and Editing Tasks
+##### page when logged  out
+![alt tag]()
+
 #### database
   There will be three tables that hold the user, tasks, and lists. when the user
   first login the user table and the task table are used to grab all the tasks
   associated with the current user list-type of. will allow ajax request to come
-  in to edit and delete a task. default list-type will be index.
+  in to edit and delete a task. default list-type will be index. will also allow
+  ajax request to come in with different list-type.
 
 #### front-end
   will take filtered tasks from the sore and pass them the <List container> and will
-  render them to(center of the page). it will show the title of each task and make the a link to edit. when they are clicked it will render <ShowTask container> to the right hand side.
+  render them to (center of the page). it will show the title of each task and make the a link to edit. when they are clicked it will render <ShowTask container> to the right hand side.
   the UI will then be the same to Remember the Milk.
 
   we will also allow the user to create new list types and click on them to show all the Tasks
