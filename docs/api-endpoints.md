@@ -18,7 +18,7 @@ GET / - loads static page
   * POST /api/session
   * DELETE /api/session
 
-  ### Tasks
+### Tasks
 
   * GET /api/tasks  (defaults to index list type)
   accepts filter (option hash with optional keys [type:, range:,searchName:])
@@ -29,9 +29,9 @@ GET / - loads static page
 
 ### Lists
 
-  * GET /api/List/:id
-  * POST /api/List/:id
-  * DELETE /api/tasks/:id
+  * GET /api/Lists/:id
+  * POST /api/Lists/:id
+  * DELETE /api/Lists/:id
 
 
 ### notes (bonus)
