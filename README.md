@@ -16,6 +16,7 @@ to each task, add list types to tasks (to create associations)
 ## Design Docs
 
  [View Wireframes](https://github.com/bkargaw/forget_not/tree/master/docs/wireframes)
+
  [React Components](https://github.com/bkargaw/forget_not/blob/master/docs/component-hierarchy.md)
 
  [API endpoints](https://github.com/bkargaw/forget_not/blob/master/docs/api-endpoints.md)
