@@ -11,7 +11,7 @@ to each task, add list types to tasks (to create associations)
 
 ### login and signup
 
-  The user will be abel to signup/login through a modal dialog created using VEX
+  The user will be abel to signup/login through a modal dialog
 ![alt tag](https://github.com/bkargaw/forget_not/blob/master/docs/wireframes/sign_in:up_page.jpg)
 
 ### Task Rendering and Editing Tasks

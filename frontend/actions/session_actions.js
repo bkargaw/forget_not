@@ -17,7 +17,7 @@ export const login = (user) => dispatch =>(
 
 export const logout = () => dispatch =>(
   SessionUtil.logout()
-  .then((res) => dispatch(receiveCurrentUser(res)),
+  .then(() => dispatch(receiveCurrentUser(null)),
   (err) => dispatch(receiveErrors(err)))
 );
 
