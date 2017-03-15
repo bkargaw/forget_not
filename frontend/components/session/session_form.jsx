@@ -1,5 +1,6 @@
 import React from 'react';
 import { hashHistory, Link } from 'react-router';
+import {modal} from 'react-redux-modal';
 
 class SessionForm extends React.Component{
   constructor(props) {
@@ -12,13 +13,19 @@ class SessionForm extends React.Component{
     this.renderErrors = this.renderErrors.bind(this);
   }
 
+  removeThisModal() {
+    this.props.removeModal();
+  }
+
   componentWillReceiveProps(newProps){
-    if (this.props.formType !== newProps.formType) this.props.removeErrors();
+    this.props.removeErrors();
   }
 
   handleSubmit(e){
     e.preventDefault();
-    this.props.processForm(this.state).then(()=> hashHistory.push('/') );
+    this.props.processForm(this.state)
+    .then(()=> hashHistory.push('/'))
+    .then(()=> this.removeThisModal());
   }
 
   update(field){
@@ -40,34 +47,32 @@ class SessionForm extends React.Component{
   );
   }
   render(){
-    const header = this.props.formType === '/login' ? 'Log In' : 'Sign Up';
-
-
+    const header = this.props.formType === 'Login' ? 'Log In' : 'Sign Up';
 
   return (
     <div>
-      <h3>{ header }</h3>
       <form onSubmit={ this.handleSubmit }>
         { this.renderErrors() }
-        <label className="input-wrapper"><span>Username</span>
+        <label className="input-wrapper">
+          <span>Username</span>
           <input
               type='text'
               onChange={this.update('username')}
               value={ this.state.username } />
         </label>
 
-        <p><strong> or </strong></p>
-
-        <label className="input-wrapper"><span>Email</span>
+        <label className="input-wrapper">
+          <span> or Email</span>
           <input
               type='email'
               onChange={ this.update('email') }
               value={ this.state.email } />
         </label>
 
-        <br/>
 
-        <label className="input-wrapper"><span>Password</span>
+
+        <label className="input-wrapper">
+          <span>Password</span>
           <input
               type='password'
               onChange={ this.update('password') }
@@ -75,7 +80,7 @@ class SessionForm extends React.Component{
         </label>
 
         <input type='submit' value={header}/>
-        <br />
+
 
       </form>
    </div>

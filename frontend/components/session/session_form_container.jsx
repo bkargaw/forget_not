@@ -7,12 +7,12 @@ const mapStateToProps = (state,ownProps) => {
 return({
   loggedIn: state.session.currentUser !== null,
   errors: state.session.errors,
-  formType: ownProps.location.pathname
-});
+  formType: ownProps.title
+  });
 };
 
 const mapDispatchToProps = (dispatch,ownProps) => {
-  const processForm = ownProps.location.pathname === '/login' ? login : signup;
+  const processForm = ownProps.title === 'Login' ? login : signup;
 return ({
     processForm: (user) => dispatch(processForm(user)),
     removeErrors: () => dispatch(removeErrors())

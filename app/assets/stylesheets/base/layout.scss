@@ -112,8 +112,10 @@ hr {
 .input-wrapper {
 	display: flex;
 	margin: 5px 0;
-	justify-content: space-around;
-	width: 300px
+	justify-content: center;
+	width: 210px;
+	padding: 5px 0px;
+	align-items: center;
 }
 .input-wrapper span{
 	flex: 1;
