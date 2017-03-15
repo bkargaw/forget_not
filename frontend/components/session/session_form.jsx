@@ -12,6 +12,10 @@ class SessionForm extends React.Component{
     this.renderErrors = this.renderErrors.bind(this);
   }
 
+  componentWillReceiveProps(newProps){
+    if (this.props.formType !== newProps.formType) this.props.removeErrors();
+  }
+
   handleSubmit(e){
     e.preventDefault();
     this.props.processForm(this.state).then(()=> hashHistory.push('/') );
@@ -37,8 +41,7 @@ class SessionForm extends React.Component{
   }
   render(){
     const header = this.props.formType === '/login' ? 'Log In' : 'Sign Up';
-    const linkpath = this.props.formType === '/login' ? 'signup' : 'login';
-    const linkName = this.props.formType === '/login' ? 'Sign Up' : 'Log In';
+
 
 
   return (
@@ -46,7 +49,7 @@ class SessionForm extends React.Component{
       <h3>{ header }</h3>
       <form onSubmit={ this.handleSubmit }>
         { this.renderErrors() }
-        <label className="input-wrapper">Username
+        <label className="input-wrapper"><span>Username</span>
           <input
               type='text'
               onChange={this.update('username')}
@@ -55,7 +58,7 @@ class SessionForm extends React.Component{
 
         <p><strong> or </strong></p>
 
-        <label className="input-wrapper">Email
+        <label className="input-wrapper"><span>Email</span>
           <input
               type='email'
               onChange={ this.update('email') }
@@ -64,7 +67,7 @@ class SessionForm extends React.Component{
 
         <br/>
 
-        <label className="input-wrapper">Password
+        <label className="input-wrapper"><span>Password</span>
           <input
               type='password'
               onChange={ this.update('password') }
@@ -73,7 +76,7 @@ class SessionForm extends React.Component{
 
         <input type='submit' value={header}/>
         <br />
-        <Link to={ linkpath } className='.input-wrapper'><button>{ linkName }</button></Link>
+
       </form>
    </div>
  );
