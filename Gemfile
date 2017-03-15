@@ -8,7 +8,7 @@ end
 
 # gem for heroku deployment
 gem 'rails_12factor'
-
+ruby '2.3.1'
 # gem for auth
 gem 'bcrypt'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

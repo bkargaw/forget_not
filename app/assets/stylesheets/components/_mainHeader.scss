@@ -9,3 +9,8 @@
   display: flex;
   padding-left: 5px;
 }
+
+.errors{
+  color: $red;
+  list-style-type: circle;
+}
