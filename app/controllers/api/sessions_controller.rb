@@ -6,7 +6,7 @@ class Api::SessionsController < ApplicationController
       render 'api/users/show'
     else
       render(
-        json: ["Invalid username/password combination"],
+        json: ["Invalid credential/password combination"],
         status: 401
       )
     end
@@ -28,7 +28,7 @@ class Api::SessionsController < ApplicationController
   private
 
   def user_option
-    if params[:user][:username]
+    if params[:user][:username] != ""
       return { username: params[:user][:username],
                password: params[:user][:password] }
     end
