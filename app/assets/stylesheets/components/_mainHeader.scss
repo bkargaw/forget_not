@@ -1,0 +1,11 @@
+.mainHeader{
+  display: flex;
+  border-bottom: 2px solid $light-blue;
+  background-color: $lightest-blue;
+  justify-content: space-between;
+}
+
+.getIn{
+  display: flex;
+  padding-left: 5px;
+}

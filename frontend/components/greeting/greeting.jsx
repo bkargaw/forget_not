@@ -37,7 +37,7 @@ class Greeting extends React.Component {
   }
 
   return (
-    <div>
+    <div className='getIn'>
         <button onClick={this.addModal('Signup')}>
              Sign Up
           </button>
