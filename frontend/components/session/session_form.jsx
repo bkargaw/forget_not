@@ -17,7 +17,10 @@ class SessionForm extends React.Component{
     this.props.removeModal();
   }
 
-  componentWillReceiveProps(newProps){
+  // componentWillReceiveProps(newProps){
+  //   if (this.props.errors.length !== 0 ) this.props.removeErrors();
+  // }
+  componentDidMount(newProps){
     this.props.removeErrors();
   }
 
@@ -37,7 +40,7 @@ class SessionForm extends React.Component{
 
   renderErrors(){
     return(
-      <ul>
+      <ul className='errors'>
   		{this.props.errors.map((error, i) => (
   			<li key={`error-${i}`}>
   				{error}
@@ -48,6 +51,7 @@ class SessionForm extends React.Component{
   }
   render(){
     const header = this.props.formType === 'Login' ? 'Log In' : 'Sign Up';
+    const or = this.props.formType === 'Login' ? 'or' : '';
 
   return (
     <div>
@@ -62,7 +66,7 @@ class SessionForm extends React.Component{
         </label>
 
         <label className="input-wrapper">
-          <span> or Email</span>
+          <span> {or} Email</span>
           <input
               type='email'
               onChange={ this.update('email') }
