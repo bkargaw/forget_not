@@ -46,7 +46,7 @@ class SessionForm extends React.Component{
       <h3>{ header }</h3>
       <form onSubmit={ this.handleSubmit }>
         { this.renderErrors() }
-        <label>Username
+        <label className="input-wrapper">Username
           <input
               type='text'
               onChange={this.update('username')}
@@ -55,16 +55,16 @@ class SessionForm extends React.Component{
 
         <p><strong> or </strong></p>
 
-        <label>Email
+        <label className="input-wrapper">Email
           <input
-              type='text'
+              type='email'
               onChange={ this.update('email') }
               value={ this.state.email } />
         </label>
 
         <br/>
 
-        <label>Password
+        <label className="input-wrapper">Password
           <input
               type='password'
               onChange={ this.update('password') }
@@ -73,7 +73,7 @@ class SessionForm extends React.Component{
 
         <input type='submit' value={header}/>
         <br />
-        <Link to={ linkpath }>{ linkName }</Link>
+        <Link to={ linkpath } className='.input-wrapper'><button>{ linkName }</button></Link>
       </form>
    </div>
  );

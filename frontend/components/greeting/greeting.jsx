@@ -13,9 +13,9 @@ const Greeting = ({currentUser, logout})=>{
 
   return (
     <div>
-      <Link to='/signup'>Sign Up</Link>
+      <Link to='/signup'><button> Sign Up </button></Link>
       <br />
-      <Link to='/login'> Log In</Link>
+      <Link to='/login'><button> Log In </button></Link>
     </div>
   );
 };
