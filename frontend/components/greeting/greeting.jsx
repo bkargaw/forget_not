@@ -42,9 +42,12 @@ class Greeting extends React.Component {
              Sign Up
           </button>
 
-      <br />
         <button onClick={this.addModal('Login')}>
           Log In
+        </button>
+
+        <button onClick={this.props.loginWithDemo}>
+          Demo User
         </button>
     </div>
   );

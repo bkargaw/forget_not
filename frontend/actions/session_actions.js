@@ -16,6 +16,12 @@ export const login = (user) => dispatch =>(
   (err) => dispatch(receiveErrors(err)))
 );
 
+export const loginWithDemo = () => dispatch =>(
+  SessionUtil.loginWithDemo()
+  .then((res) => dispatch(receiveCurrentUser(res)),
+  (err) => dispatch(receiveErrors(err)))
+);
+
 export const logout = () => dispatch =>(
   SessionUtil.logout()
   .then(() => dispatch(receiveCurrentUser(null)),

@@ -8,6 +8,7 @@ body {
 	margin: 0 auto;
 	font-family: $serif;
 	font-size: 12px;
+	background-color: $lightest-gray
 }
 
 button, input[type="submit"] {
@@ -126,9 +127,10 @@ hr {
 .input-wrapper input {
 	flex: 2;
 	font-family: $sans-serif;
-	padding: 0 10px;
 	border: 1px solid $gray;
 	float: right;
+	border: 2px solid $light-gray;
+	padding-left: 2px;
 }
 
 .input-wrapper button {

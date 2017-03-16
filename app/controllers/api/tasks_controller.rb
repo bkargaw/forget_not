@@ -5,6 +5,11 @@ class Api::TasksController < ApplicationController
     render :index
   end
 
+  def show
+    @task
+
+  end
+
   def create
     @task = Task.new(tasks_params)
     @task.user = current_user

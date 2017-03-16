@@ -61,6 +61,7 @@ class SessionForm extends React.Component{
           <span>Username</span>
           <input
               type='text'
+              placeholder= ' username'
               onChange={this.update('username')}
               value={ this.state.username } />
         </label>
@@ -69,16 +70,16 @@ class SessionForm extends React.Component{
           <span> {or} Email</span>
           <input
               type='email'
+              placeholder= ' email'
               onChange={ this.update('email') }
               value={ this.state.email } />
         </label>
-
-
 
         <label className="input-wrapper">
           <span>Password</span>
           <input
               type='password'
+              placeholder= ' password'
               onChange={ this.update('password') }
               value={ this.state.password } />
         </label>

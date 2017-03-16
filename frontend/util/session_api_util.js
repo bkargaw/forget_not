@@ -16,6 +16,14 @@ export const login = (user) =>(
   })
 );
 
+export const loginWithDemo = (user) =>(
+  $.ajax({
+    method: 'POST',
+    url: 'api/session',
+    data: {user: {username: 'bob',  password: 'thisisbob'}}
+  })
+);
+
 export const logout = () =>(
   $.ajax({
     method: 'DELETE',
