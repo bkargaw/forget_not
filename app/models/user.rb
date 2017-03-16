@@ -20,6 +20,8 @@ class User < ApplicationRecord
 
   attr_reader :password
 
+  has_many :tasks
+
   def self.find_by_credential(option)
     if option[:username]
       user = User.find_by_username(option[:username])
