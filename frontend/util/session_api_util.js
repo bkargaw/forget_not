@@ -20,9 +20,10 @@ export const loginWithDemo = (user) =>(
   $.ajax({
     method: 'POST',
     url: 'api/session',
-    data: {user: {username: 'bob',  password: 'thisisbob'}}
+    data: {user: {username: 'Mike Epps',  password: 'thisismike'}}
   })
 );
+
 
 export const logout = () =>(
   $.ajax({

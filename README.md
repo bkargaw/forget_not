@@ -1,5 +1,6 @@
-#forget--not
-  https://forget--not.herokuapp.com/
+#ForgetNot
+
+https://forget--not.herokuapp.com/
 
 ## Minimum Viable Product
 ForgetNot is a web application inspired by Remember The Milk built using Ruby on Rails and React/Redux. It should allow the user to create tasks to complete, assign various properties
