@@ -9,7 +9,6 @@
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #  password_digest :string           not null
-#
 
 class User < ApplicationRecord
   validates :username, :email, :password_digest, presence: true
@@ -21,6 +20,7 @@ class User < ApplicationRecord
   attr_reader :password
 
   has_many :tasks
+  has_many :lists
 
   def self.find_by_credential(option)
     if option[:username]
@@ -53,6 +53,4 @@ class User < ApplicationRecord
   def ensure_session_token
     self.session_token ||= SecureRandom.urlsafe_base64
   end
-
-
 end

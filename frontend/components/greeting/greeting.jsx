@@ -2,6 +2,7 @@ import React from 'react';
 import {Link} from 'react-router';
 import {modal} from 'react-redux-modal';
 import sessionFormContainer from '../session/session_form_container';
+import {hashHistory} from 'react-router';
 
 class Greeting extends React.Component {
   constructor(props){
@@ -30,7 +31,11 @@ class Greeting extends React.Component {
   if (!!this.props.currentUser){
     return (
       <div>
-        <button onClick={this.props.logout}>Logout</button>
+        <button
+          onClick={this.props.logout}>
+            Logout
+        </button>
+
         <h3>{`Welcome, ${this.props.currentUser.username}`}</h3>
       </div>
     );
@@ -46,7 +51,9 @@ class Greeting extends React.Component {
           Log In
         </button>
 
-        <button onClick={this.props.loginWithDemo}>
+        <button
+          className='DemoUser'
+          onClick={this.props.loginWithDemo}>
           Demo User
         </button>
     </div>

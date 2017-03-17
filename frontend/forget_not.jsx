@@ -3,6 +3,11 @@ import ReactDOM from 'react-dom';
 import Root from './components/root';
 import configureStore from './store/store';
 
+// test the ajax requests for the task api
+import  * as TasksUtil from './util/tasks_api_util';
+
+window.TasksUtil = TasksUtil;
+
 document.addEventListener('DOMContentLoaded', () => {
   let store;
   if(window.currentUser){

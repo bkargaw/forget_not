@@ -8,11 +8,11 @@
 #  repeats    :boolean          not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  startDate  :datetime         not null
-#  endDate    :datetime         not null
-#  estimate   :datetime         not null
 #  user_id    :integer          not null
 #  list_id    :integer
+#  estimate   :string
+#  startDate  :float
+#  endDate    :float
 #
 
 require 'test_helper'

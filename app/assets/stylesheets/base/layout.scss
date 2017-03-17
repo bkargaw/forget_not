@@ -4,16 +4,15 @@ html {
 }
 
 body {
-	width: 80%;
+	width: 100%;
 	margin: 0 auto;
 	font-family: $serif;
 	font-size: 12px;
-	background-color: $lightest-gray
 }
 
 button, input[type="submit"] {
-	background-color: $light-blue;
 	border-color: $dark-blue;
+	background-color: $light-blue;
 	color: white;
 	font-weight: bold;
 	padding: 7px 9px;
@@ -23,7 +22,6 @@ button, input[type="submit"] {
 	text-transform: uppercase;
 	font-size: 11px;
 	text-align: center;
-	margin: 2px;
 }
 
 button:hover {

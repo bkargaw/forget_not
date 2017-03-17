@@ -6,13 +6,13 @@ class Api::TasksController < ApplicationController
   end
 
   def show
-    @task
-
+    @task = Task.find_by_id(params[:id])
   end
 
   def create
-    @task = Task.new(tasks_params)
+    @task = Task.new(task_params)
     @task.user = current_user
+    forma_js_date_to_datetime(@task)
     if @task.save
       render :show
     else
@@ -21,8 +21,8 @@ class Api::TasksController < ApplicationController
   end
 
   def update
-    @task = Task.find_by_id(params.id)
-    if @task.update(tasks_params)
+    @task = Task.find_by_id(params[:id])
+    if @task.update(task_params)
       render :show
     else
       render json: @task.errors.full_messages, status: 422
@@ -30,7 +30,7 @@ class Api::TasksController < ApplicationController
   end
 
   def destroy
-    @task = Task.find_by_id(params.id)
+    @task = Task.find_by_id(params[:id])
     if @task
       @task.destroy
       render :show
@@ -44,30 +44,29 @@ class Api::TasksController < ApplicationController
 
   private
 
-  def tasks_params
-    params.require(:task).perimt(:title, :completed, :repeats,
-                                 :startDate, :endDate, :estimates, :list)
+  def task_params
+    params.require(:task).permit(:title, :startDate, :endDate, :user_id,
+                                 :estimates, :list)
   end
 
   def filter_for_index
-    all_user_task = current_users_tasks
-    case params.filterOn
-    when 'type'
-      filter_by_type(all_user_task)
+
+    case params[:filterOn]
     when 'range'
-      filter_by_range(all_user_task)
+      filter_by_range
     else
-      all_user_task
+      current_users_tasks
     end
   end
 
-  def filter_by_type(tasks)
-    tasks.where('list_id = ?', tasks_params.list_id)
-  end
+  # def filter_by_type(tasks)
+  #   tasks.where('list_id = ?', task_params.list_id)
+  # end
 
-  def filter_by_range(tasks)
-    date = get_date
-    tasks.where('endDate < ?', date)
+  def filter_by_range
+    date, now = get_date
+    Task.where('user_id = ? And "endDate" < ? And "endDate" > ?',
+               current_user.id, date, now)
   end
 
   def current_users_tasks
@@ -75,17 +74,33 @@ class Api::TasksController < ApplicationController
   end
 
   def get_date
-    now = DateTime.now
-    case params.range
+    now = Time.now
+    case params[:range]
     when 'today'
       # middnight is the dead line
-      DateTime.new(now.year, now.month, now.day, 23, 59, 59)
+      next_day = Time.new(now.year, now.month, now.day, 23, 59, 59).to_f
     when 'tomorrow'
       # middnight is the dead line
-      DateTime.new(now.year, now.month, now.day + 1, 23, 59, 59)
+      next_day = Time.new(now.year, now.month, now.day + 1, 23, 59, 59).to_f
+    when 'week'
+      next_day = Time.new(now.year, now.month, now.day + 6, 23, 59, 59).to_f
     else
-      DateTime.new(now.year, now.month, now.day + 6, 23, 59, 59)
+      next_day = now.to_f
     end
+    [next_day, now.to_f]
+  end
+
+  def forma_js_date_to_datetime(task)
+    if !task[:startDate].nil?
+      task[:startDate] =
+        Time.at(task[:startDate] / 1000.0).to_datetime
+    end
+
+    if !task[:endDate].nil?
+      task[:endDate] =
+        Time.at(task[:endDate] / 1000.0).to_datetime
+    end
+
   end
 
 end

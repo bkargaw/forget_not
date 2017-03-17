@@ -1,3 +1,11 @@
+
+// ---all---
+export const fetchAllTasks = ()=>(
+  $.ajax({
+    url: `api/tasks`
+  })
+);
+
 //  --- basic ---
 export const fetchTask =(id)=>(
   $.ajax({
@@ -12,6 +20,7 @@ export const createTask =(task)=>(
     data: {task}
   })
 );
+
 export const updatTask =(task)=>(
   $.ajax({
     url: `api/tasks/${task.id}`,
@@ -27,23 +36,8 @@ export const deleteTask =(id)=>(
   })
 );
 
-// ---all---
-export const fetchAllTasks = ()=>(
-  $.ajax({
-    url: `api/tasks`
-  })
-);
+// ---range---
 
-/*
-** fetch methods
----range---
-fetchTodayTasks
-fetchTomorrowTasks
-fetchWeekTasks
-fetchAllTasks
----type----
-  fetchAllListsTasks
-*/
 export const fetchTodayTasks = ()=>(
   $.ajax({
     url: `api/tasks`,
@@ -52,10 +46,30 @@ export const fetchTodayTasks = ()=>(
   })
 );
 
-export const fetchTomorrowTasks = ()=>(
+export const fetchTomorrowsTasks = ()=>(
   $.ajax({
     url: `api/tasks`,
     data: {filterOn: 'range',
            range: 'tomorrow'}
   })
 );
+
+export const fetchWeekTasks = ()=>(
+  $.ajax({
+    url: `api/tasks`,
+    data: {filterOn: 'range',
+           range: 'week'}
+  })
+);
+
+
+// ---type----
+//   fetchAllListsTypeTasks
+//
+// export const fetchAllListsTypeTasks = listId =>(
+//   $.ajax({
+//     url: `api/tasks`,
+//     data: {filterOn: 'type',
+//           listId}
+//   })
+// );
