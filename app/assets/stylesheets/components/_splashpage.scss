@@ -1,3 +1,21 @@
-.mainSplashPageImage{
-  
+.splashPageMain{
+  background: url(http://res.cloudinary.com/dwuzkffrk/image/upload/c_scale,q_100,r_0,w_822/v1489761837/happybackground_zdvlf9.jpg);
+  background-size: cover;
+  min-height: 500px;
+}
+
+.splashPageMain h1 {
+  font-size: 30px;
+  position: absolute;
+  top: auto;
+  left: 16%;
+  right: 16%;
+  top: 35%;
+  color: $light-blue;
+}
+
+.splashPageMain button {
+  position: absolute;
+  left: 35%;
+  bottom: 45%;
 }

@@ -1,14 +1,20 @@
 import React from 'react';
-import GreetingContainer from './greeting/greeting_container';
+import { hashHistory } from 'react-router';
 
-const App = ({children}) =>(
-  <div>
+import GreetingContainer from './greeting/greeting_container';
+import MainHeaderIcon from './greeting/header_icon';
+
+window.MainHeaderIcon = MainHeaderIcon;
+const App = ({children}) =>{
+  return(
+    <div className='app'>
     <header className='mainHeader'>
-  <h1 className='logo'>Forger--Not</h1>
-    <GreetingContainer />
+      <MainHeaderIcon />
+      <GreetingContainer />
     </header>
     {children}
   </div>
 );
+};
 
 export default App;

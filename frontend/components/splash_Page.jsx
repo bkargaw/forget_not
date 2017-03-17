@@ -1,11 +1,10 @@
 import React from 'react';
 
 const spalshPage=  () =>(
-  <div>
-    <img
-      src='http://res.cloudinary.com/dwuzkffrk/image/upload/g_face,q_100,r_0,x_696,y_407/v1489761831/busybackground_henq1f.jpg'
-      className='mainSplashPageImage'></img>
-  </div>
+  <section className='splashPageMain'>
+    <h1 className='splashPageMainHeader'>The smart to-do app for busy people.</h1>
+    <button>GET STARTED</button>
+  </section>
 );
 
 export default spalshPage;

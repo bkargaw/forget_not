@@ -2,10 +2,31 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
-  height: 40px;
+  height: 50px;
   background-color: $blueRTM;
+  align-items: center;
 }
 
+.iconAndTitle{
+  display: flex;
+}
+
+.headerIcon{
+  height: inherit;
+  background-color: white;
+  border-radius: 1000px;
+  height: 46px;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+  border: 2px solid black;
+}
+
+.headerTitle{
+  color: white;
+  font-size: 15px;
+  margin-left: 10px;
+}
 
 .mainHeader button{
   margin-right: 10px;
