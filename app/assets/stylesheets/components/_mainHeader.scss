@@ -2,17 +2,20 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
-  height: 40px
+  height: 40px;
+  background-color: $blueRTM;
 }
 
-.logo{
-  margin-top: 5px;
-  margin-left: 10px;
-}
+
 .mainHeader button{
   margin-right: 10px;
   margin-top: 5px;
   height: 10px;
+  background-color: inherit;
+}
+.mainHeader button:hover{
+  background-color: $light-blue;
+  border-color: $darkest-blue;
 }
 
 .getIn{
