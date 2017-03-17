@@ -1,21 +1,23 @@
 import React from 'react';
-import mainSideBar from './main_side_bar';
-import mainBody from './main_body';
-import mainShowSection from './main_show_section';
+import MainSideBar from './main_side_bar';
+import MainBody from './main_body';
+import MainShowSection from './main_show_section';
 
-export const task = () => {
-  debugger;
-  return(<div>
+const Tasks = () => {
+  return(
+  <div>
     <aside>
-      {mainSideBar}
+      < MainSideBar />
     </aside>
 
     <section>
-      {mainBody}
+      < MainBody />
     </section>
 
     <section>
-      {mainShowSection}
+      < MainShowSection />
     </section>
   </div>);
 };
+
+export default Tasks;

@@ -5,8 +5,9 @@ import ReduxModal from 'react-redux-modal';
 
 import SessionFormContainer from './session/session_form_container';
 import App from './app';
-import rangeContainer from './task/range_container';
-import task from './task/task';
+import RangeContainer from './task/range_container';
+import ListContainer from './task/list_container';
+import Tasks from './task/task';
 import splashPage from './splash_Page';
 
 const Root = ({ store }) => {
@@ -27,11 +28,12 @@ const Root = ({ store }) => {
       <Router history={ hashHistory }>
         <Route path='/' component={ App }>
           <IndexRoute component={splashPage}/>
-          <Route path='/tasks' component={ task } onEnter={_ensureLogin}>
-            <Route path='/tasks/all' component={ rangeContainer }/>
-            <Route path='/tasks/today' component={ rangeContainer }/>
-            <Route path='/tasks/tomorrow' component={ rangeContainer }/>
-            <Route path='/tasks/week' component={ rangeContainer }/>
+          <Route path='/tasks' component={ Tasks } onEnter={_ensureLogin}>
+            <Route path='/tasks/all' component={ RangeContainer }/>
+            <Route path='/tasks/today' component={ RangeContainer }/>
+            <Route path='/tasks/tomorrow' component={ RangeContainer }/>
+            <Route path='/tasks/week' component={ RangeContainer }/>
+            <Route path='/tasks/:listId' component={ ListContainer }/>
           </Route>
         </Route>
       </Router>

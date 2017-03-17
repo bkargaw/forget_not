@@ -2,13 +2,15 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
-  height: 50px;
+  height: 55px;
   background-color: $blueRTM;
   align-items: center;
 }
 
 .iconAndTitle{
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .headerIcon{
@@ -24,7 +26,8 @@
 
 .headerTitle{
   color: white;
-  font-size: 15px;
+  font-size: 2.5vw;
+  padding: 0;
   margin-left: 10px;
 }
 
@@ -32,10 +35,11 @@
   margin-right: 10px;
   margin-top: 5px;
   height: 10px;
+  font-size: 1.3vmin;
   background-color: inherit;
 }
 .mainHeader button:hover{
-  background-color: $light-blue;
+  color: $light-blue;
   border-color: $darkest-blue;
 }
 

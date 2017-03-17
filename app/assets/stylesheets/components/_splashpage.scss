@@ -1,21 +1,79 @@
+.splashPage{
+  display: block;
+}
+
 .splashPageMain{
-  background: url(http://res.cloudinary.com/dwuzkffrk/image/upload/c_scale,q_100,r_0,w_822/v1489761837/happybackground_zdvlf9.jpg);
+  flex: 1 100%;
+  // background-image: url('http://res.cloudinary.com/dwuzkffrk/image/upload/c_scale,q_100,r_0,w_822/v1489761837/happybackground_zdvlf9.jpg');
+  width: 100vw;
+  height: 80vh;
+  background-repeat: no-repeat;
   background-size: cover;
-  min-height: 500px;
+}
+
+.splashPageMainImage{
+  flex: 1 100%;
+  opacity: 1.5;
+  width: 100%;
+  height: inherit;
+  position: absolute;
+  top: 50;
+  left: 0;
 }
 
 .splashPageMain h1 {
-  font-size: 30px;
+  font-size: 2.5vw;
   position: absolute;
   top: auto;
-  left: 16%;
+  left: 13%;
   right: 16%;
   top: 35%;
-  color: $light-blue;
+  color: $blue;
+}
+.splashPageMain p {
+  font-size: 1.3vw;
+  font-style: italic;
+  position: absolute;
+  top: auto;
+  left: 30%;
+  bottom: 50%;
+  color: $lightest-blue;
 }
 
 .splashPageMain button {
+  font-size: 1.3vw;
   position: absolute;
-  left: 35%;
-  bottom: 45%;
+  left: 32%;
+  bottom: 25%;
+}
+
+.splashPageFooter{
+  display: flex;
+}
+
+.splashPageFooter img{
+  height: 59;
+  width: 71;
+}
+.splashPageFooter img{
+  height: 59;
+  width: 71;
+}
+.Source {
+  display: flex;
+  flex: 1;
+  background-color: $blueRTM;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+Source img{
+  flex: 1
+}
+.Creator{
+  display: flex;
+  flex: 2;
+  justify-content: center;
+  align-items: center;
+  height: 10vw;
 }
