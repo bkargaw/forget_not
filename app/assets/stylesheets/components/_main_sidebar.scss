@@ -1,0 +1,68 @@
+.mainSideBarRange{
+  display: block;
+  border-bottom: 1px solid $light-blue;
+  padding-bottom: 5px;
+}
+.mainSideBarRange h4, i, a{
+  font-size: 1vw;
+}
+
+.mainSideBarRange h4{
+  margin-bottom: 10px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  font-size: 1vw;
+}
+
+.mainSideBarRangeToggle{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 5px;
+}
+.indexRap a:hover{
+  background-color: $lightest-blue;
+  text-decoration: none;
+}
+.indexRap a{
+  padding: 5px;
+}
+
+.mainSideBarRangeToggle i{
+  margin-left: 30%;
+  margin-right: 5px;
+  width: 15px;
+}
+.mainSideBarRangeToggle div{
+  flex-grow: 1;
+}
+.mainSideBarRangeToggle i:hover{
+  background-color: $lightest-blue;
+}
+.sidebarRanges{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.sidebarRanges a{
+  display: block;
+  margin: 10px, 10px;
+  flex-grow: 1;
+  width: 50%;
+  text-align: center;
+  padding: 5px;
+  margin: 2px;
+}
+.sidebarRanges a:hover{
+  background-color: $lightest-blue;
+  text-decoration: none;
+
+}
+
+.sidebarRanges:nth-child(4){
+  margin-bottom: 100px;
+
+}

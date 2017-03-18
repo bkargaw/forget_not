@@ -65,8 +65,7 @@ class Api::TasksController < ApplicationController
 
   def filter_by_range
     date, now = get_date
-    Task.where('user_id = ? And "endDate" < ? And "endDate" > ?',
-               current_user.id, date, now)
+    Task.where('user_id = ? And "endDate" < ?', current_user.id, date)
   end
 
   def current_users_tasks
@@ -78,16 +77,16 @@ class Api::TasksController < ApplicationController
     case params[:range]
     when 'today'
       # middnight is the dead line
-      next_day = Time.new(now.year, now.month, now.day, 23, 59, 59).to_f
+      Time.new(now.year, now.month, now.day, 23, 59, 59).to_f
     when 'tomorrow'
       # middnight is the dead line
-      next_day = Time.new(now.year, now.month, now.day + 1, 23, 59, 59).to_f
+      Time.new(now.year, now.month, now.day + 1, 23, 59, 59).to_f
     when 'week'
-      next_day = Time.new(now.year, now.month, now.day + 6, 23, 59, 59).to_f
+      Time.new(now.year, now.month, now.day + 6, 23, 59, 59).to_f
     else
-      next_day = now.to_f
+      now.to_f
     end
-    [next_day, now.to_f]
+
   end
 
   def forma_js_date_to_datetime(task)

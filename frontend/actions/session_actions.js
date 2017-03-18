@@ -30,7 +30,9 @@ export const logout = () => dispatch =>(
     dispatch(receiveCurrentUser(null));
     hashHistory.push('/');
   },
-  (err) => dispatch(receiveErrors(err)))
+  (err) => {
+    dispatch(receiveErrors(err));
+  })
 
 );
 

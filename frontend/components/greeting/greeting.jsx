@@ -9,6 +9,7 @@ class Greeting extends React.Component {
     super(props);
   }
   addModal(title) {
+    let oppsitButton = title == 'Signup' ? 'Login' : 'Signup';
     return () =>(
     modal.add(sessionFormContainer, {
       title: title,
@@ -21,6 +22,10 @@ class Greeting extends React.Component {
       // wanna show the top right close button
       //.. all what you put in here you will get access in
       // the modal props ;)
+      changeform: () => {
+
+                    this.addModal(oppsitButton);
+                  }
     })
   );
   }
@@ -35,8 +40,6 @@ class Greeting extends React.Component {
           onClick={this.props.logout}>
             Logout
         </button>
-
-        <h3>{`Welcome, ${this.props.currentUser.username}`}</h3>
       </div>
     );
   }

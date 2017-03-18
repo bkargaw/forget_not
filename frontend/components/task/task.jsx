@@ -1,20 +1,20 @@
 import React from 'react';
-import MainSideBar from './main_side_bar';
+import MainSideBarContainer from './main_side_bar_container';
 import MainBody from './main_body';
 import MainShowSection from './main_show_section';
 
 const Tasks = () => {
   return(
-  <div>
-    <aside>
-      < MainSideBar />
+  <div className= 'mainLayout'>
+    <aside className= 'mainSideBar'>
+      < MainSideBarContainer />
     </aside>
 
-    <section>
+    <section  className= 'mainBody'>
       < MainBody />
     </section>
 
-    <section>
+    <section  className= 'mainShowSection'>
       < MainShowSection />
     </section>
   </div>);

@@ -1,0 +1,18 @@
+.mainLayout{
+ display: flex;
+}
+
+.mainSideBar{
+  flex: 1;
+  background-color: $lightblueRTM;
+}
+
+.mainBody{
+  flex: 3;
+  background-color: white;
+}
+
+.mainShowSection{
+  flex: 3;
+  background-color: $lightblueRTM;
+}

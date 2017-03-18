@@ -7,6 +7,8 @@ mike = User.create(username: 'Mike Epps',
                    password: 'thisismike')
 
 index = List.create(name: 'index')
+index = List.create(name: 'personal')
+index = List.create(name: 'work')
 
 #  title      :string           not null
 #  user_id    :integer          not null
@@ -35,7 +37,7 @@ now = DateTime.now
               user_id: mike.id,
               endDate: DateTime.new(now.year, now.month, now.day +
               rand(6), rand(23), rand(59), rand(59)))
-              
+
   Task.create(title: "setup a meet and greet with #{Faker::Book.author}",
               user_id: mike.id,
               endDate: DateTime.new(now.year, now.month, now.day +

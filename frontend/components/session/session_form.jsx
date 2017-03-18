@@ -51,6 +51,8 @@ class SessionForm extends React.Component{
   }
   render(){
     const header = this.props.formType === 'Login' ? 'Log In' : 'Sign Up';
+    const oppsitButton = this.props.formType === 'Login' ? 'Sign Up' : 'Log In';
+    const pathOppsitButton= this.props.formType === 'Login' ? '/signup' : '/login';
     const or = this.props.formType === 'Login' ? 'or' : '';
 
   return (
@@ -86,6 +88,12 @@ class SessionForm extends React.Component{
 
         <input type='submit' value={header}/>
 
+        <button onClick={() => {this.props.loginWithDemo();
+                                this.removeThisModal();
+                              }
+                            }>
+          Demo User
+        </button>
 
       </form>
    </div>
