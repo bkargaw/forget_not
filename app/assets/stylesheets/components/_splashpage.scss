@@ -49,31 +49,40 @@
 
 .splashPageFooter{
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.splashPageFooter img{
-  height: 59;
-  width: 71;
-}
-.splashPageFooter img{
-  height: 59;
-  width: 71;
-}
 .Source {
   display: flex;
   flex: 1;
-  background-color: $blueRTM;
-  justify-content: center;
+  background-color: white;
+  justify-content: flex-start;
   align-items: center;
   margin: 0;
 }
-Source img{
-  flex: 1
+.Source img{
+  width: 10px;
+  height: 10px;
+}
+.Source a{
+  flex: 6;
+  width: 20px;
 }
 .Creator{
   display: flex;
-  flex: 2;
-  justify-content: center;
-  align-items: center;
+  flex: 1.5;
+  justify-content:  flex-start;
+  align-items:  center;
   height: 10vw;
+}
+.Creator img{
+  width: 10px;
+  height: 10px;
+}
+.Creator a{
+  flex: 10;
+  width: 20px;
+  justify-content:  flex-start;
+  align-items:  center;
 }
