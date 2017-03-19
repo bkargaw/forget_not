@@ -20,7 +20,6 @@ class mainSideBar extends React.Component {
 
   render (){
     let username;
-    debugger;
     if (this.props.currentUser){
        username =this.props.currentUser.username;
     }

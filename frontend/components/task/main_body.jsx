@@ -1,11 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-const mainBody =() =>(
-  <div>
+class mainBody extends React.Component{
+  constructor(props) {
+    super(props);
+  }
 
-  </div>
-);
+  render(){
+    return(
+    <div>
+    </div>
+  );
+  }
+}
 
 
 export default mainBody;

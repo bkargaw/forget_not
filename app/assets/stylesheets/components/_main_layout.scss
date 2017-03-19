@@ -1,5 +1,9 @@
-.mainLayout{
+.mainLayout {
  display: flex;
+}
+
+.blueSpace {
+  height: 10px;
 }
 
 .mainSideBar{
@@ -10,9 +14,14 @@
 .mainBody{
   flex: 3;
   background-color: white;
+  border-radius: 10px;
+  height: 100vh;
 }
 
 .mainShowSection{
   flex: 3;
-  background-color: $lightblueRTM;
+  background-color: $showlightblueRTM;
+  border-radius: 10px;
+  height: 100vh;
+
 }

@@ -6,7 +6,7 @@ import ReduxModal from 'react-redux-modal';
 import SessionFormContainer from './session/session_form_container';
 import App from './app';
 import RangeContainer from './task/range_container';
-import ListContainer from './task/list_container';
+import ListContainer from './lists/list_container';
 import Tasks from './task/task';
 import splashPage from './splash_Page';
 

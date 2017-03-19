@@ -1,22 +1,27 @@
 import React from 'react';
 import MainSideBarContainer from './main_side_bar_container';
-import MainBody from './main_body';
+import MainBodyContainer from './main_body_container';
 import MainShowSection from './main_show_section';
 
 const Tasks = () => {
   return(
-  <div className= 'mainLayout'>
-    <aside className= 'mainSideBar'>
-      < MainSideBarContainer />
-    </aside>
+  <div>
+    <div className='blueSpace'>
+    </div>
 
-    <section  className= 'mainBody'>
-      < MainBody />
-    </section>
+    <div className= 'mainLayout'>
+      <aside className= 'mainSideBar'>
+        < MainSideBarContainer />
+      </aside>
 
-    <section  className= 'mainShowSection'>
-      < MainShowSection />
-    </section>
+      <section  className= 'mainBody'>
+        < MainBodyContainer />
+      </section>
+
+      <section  className= 'mainShowSection'>
+        < MainShowSection />
+      </section>
+    </div>
   </div>);
 };
 
