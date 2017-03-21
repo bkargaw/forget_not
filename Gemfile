@@ -8,6 +8,7 @@ end
 
 # gem for heroku deployment
 gem 'rails_12factor'
+gem 'faker'
 ruby '2.3.1'
 # gem for auth
 gem 'bcrypt'
@@ -48,7 +49,6 @@ group :development do
   gem 'annotate'
   gem 'better_errors'
   gem 'binding_of_caller'
-  gem 'faker'
   gem 'pry-rails'
 
   gem 'listen', '~> 3.0.5'
