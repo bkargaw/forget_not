@@ -8,19 +8,18 @@ const Tasks = (props) => {
   <div>
     <div className= 'mainLayout'>
       <aside className= 'mainSideBar'>
-        < MainSideBarContainer />
+        <MainSideBarContainer />
       </aside>
 
       <section  className= 'mainBody'>
-        < MainBodyContainer />
+        { props.children}
       </section>
 
       <section  className= 'mainShowSection'>
-        < MainShowSectionContainer />
+        <MainShowSectionContainer />
       </section>
     </div>
 
-    { props.children }
   </div>);
 };
 

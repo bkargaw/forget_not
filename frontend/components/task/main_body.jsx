@@ -5,15 +5,22 @@ import TaskFormContainer from './task_form_container';
 class mainBody extends React.Component{
   constructor(props) {
     super(props);
+    this.state = {path: props.indexType};
   }
 
   componentDidMount(){
-    debugger;
-    if(!this.props.updateTasks) this.props.getAllTasks();
+    if(this.props.getAllTasks){
+      this.props.getAllTasks();
+    }else {
+      this.props.updateTasks();
+    }
   }
 
   componentWillReceiveProps(nextProps){
-    if(nextProps.indexType !== this.props.indexType) nextProps.updateTasks();
+    if(nextProps.indexType !== this.props.indexType){
+      nextProps.updateTasks();
+      this.setState({path: nextProps.indexType});
+    }
   }
 
   render(){
@@ -22,7 +29,7 @@ class mainBody extends React.Component{
               {this.props.tasks.map((task, idx) =>(
                 <li key={idx}>
                   <input type='checkbox'/>
-                  <Link to={`tasks/${idx}`}>{task.title}</Link>
+                  <Link to={`tasks/${this.state.path}/${idx}`}>{task.title}</Link>
                 </li>
               )
               )}
@@ -34,6 +41,8 @@ class mainBody extends React.Component{
       <br/>
 
       { allTasks }
+
+      {this.props.children}
     </div>
     );
   }

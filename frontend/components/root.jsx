@@ -5,6 +5,7 @@ import ReduxModal from 'react-redux-modal';
 
 import App from './app';
 import SessionFormContainer from './session/session_form_container';
+import MainBodyContainer from './task/main_body_container';
 import RangesContainer from './task/range_container';
 import ListContainer from './lists/list_container';
 import TaskShowContainer from './task/task_show_container';
@@ -31,25 +32,30 @@ const Root = ({ store }) => {
           <IndexRoute component={ splashPage}/>
 
           <Route path='/tasks' component={ Tasks } onEnter={ _ensureLogin }>
-            
+            <IndexRoute component={MainBodyContainer}/>
             <Route path='/tasks/all' component={ RangesContainer }>
-              <Route path='/tasks/all/:taskid' component={ TaskShowContainer }/>
+              <Route path='/tasks/all/:taskid'
+                component={ TaskShowContainer }/>
             </Route>
 
             <Route path='/tasks/today' component={ RangesContainer }>
-              <Route path='/tasks/today/:taskid' component={ TaskShowContainer }/>
+              <Route path='/tasks/today/:taskid'
+                     component={ TaskShowContainer }/>
             </Route>
 
             <Route path='/tasks/tomorrow' component={ RangesContainer }>
-              <Route path='/tasks/tomorrow/:taskid' component={ TaskShowContainer }/>
+              <Route path='/tasks/tomorrow/:taskid'
+                     component={ TaskShowContainer }/>
             </Route>
 
             <Route path='/tasks/week' component={ RangesContainer }>
-              <Route path='/tasks/week/:taskid' component={ TaskShowContainer }/>
+              <Route path='/tasks/week/:taskid'
+                     component={ TaskShowContainer }/>
             </Route>
 
             <Route path='/tasks/:listId' component={ ListContainer }>
-              <Route path='/tasks/:listId/:taskid' component={ TaskShowContainer }/>
+              <Route path='/tasks/:listId/:taskid'
+                    component={ TaskShowContainer }/>
             </Route>
           </Route>
 

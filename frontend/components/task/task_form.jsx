@@ -38,7 +38,6 @@ class taskForm extends React.Component{
     let endDate = new Date(this.state.endDate).getTime();
     if(!startDate) startDate= '';
     if(!endDate) endDate = '';
-    debugger;
     let task = merge({},this.state, {startDate}, {endDate});
     this.props.createTask(task);
   }
