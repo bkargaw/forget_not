@@ -1,4 +1,6 @@
 import React from 'react';
+import {merge} from 'lodash';
+
 
 class taskForm extends React.Component{
   constructor(props) {
@@ -7,9 +9,9 @@ class taskForm extends React.Component{
     this.state = {
       title: '',
       repeats: false,
-      startDate: `2017-03-27`,
+      startDate: ``,
       // startDate: `${now.getFullYear()}-${now.getMonth()}-${now.getDate()}`,
-      endDate: `2017-03-27`,
+      endDate: ``,
       // endDate: `${now.getFullYear()}-${now.getMonth()}-${now.getDate()}`,
       estimate: '',
       showStartDate: 'hidden',
@@ -32,8 +34,13 @@ class taskForm extends React.Component{
 
   handleSubmit(e){
     e.preventDefault();
+    let startDate = new Date(this.state.startDate).getTime();
+    let endDate = new Date(this.state.endDate).getTime();
+    if(!startDate) startDate= '';
+    if(!endDate) endDate = '';
     debugger;
-    this.props.createTask(this.state);
+    let task = merge({},this.state, {startDate}, {endDate});
+    this.props.createTask(task);
   }
 
 
@@ -78,7 +85,6 @@ class taskForm extends React.Component{
     return( e=>{
       this.setState({showStateChangers: 'hidden'});
     });
-
   }
 
   handleDateChange(feild){
@@ -89,8 +95,7 @@ class taskForm extends React.Component{
 
   render(){
     return(
-      <div
-        onBlur={ this.toggleBlur() }>
+      <div>
         <form onSubmit={ this.handleSubmit }>
           <input type='text'
                  placeholder='Add a Task'
@@ -106,7 +111,6 @@ class taskForm extends React.Component{
             <button className={this.state.buttonStartDate}
                     onClick={ this.toggleShow('start') }
                     value='Add Start Date'>
-
               <i className="fa fa-play" aria-hidden="true"></i>
             </button>
 

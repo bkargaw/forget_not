@@ -19,7 +19,10 @@ class mainBody extends React.Component{
     const allTasks =
             <ul>
               {this.props.tasks.map((task, idx) =>(
-                <li key={idx}>{task.title}</li>
+                <li key={idx}>
+                  <input type='checkbox'/>
+                  <Link to={`tasks/${idx}`}>{task.title}</Link>
+                </li>
               )
               )}
             </ul>;

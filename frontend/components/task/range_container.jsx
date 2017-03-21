@@ -9,8 +9,8 @@ import {getAllTasks,
         getAllTaskForWeek} from '../../actions/tasks_actions';
 
 
-const mapStateToProps = (state,ownProps) => {
-  let path =ownProps.location.pathname.split('/');
+const mapStateToProps = (state, ownProps) => {
+  let path = ownProps.location.pathname.split('/');
   let indexType = path[path.length -1];
   return({
     tasks: Object.keys(state.tasks).map(id => state.tasks[id]),
