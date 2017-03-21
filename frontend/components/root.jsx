@@ -6,6 +6,7 @@ import ReduxModal from 'react-redux-modal';
 import App from './app';
 import SessionFormContainer from './session/session_form_container';
 import MainBodyContainer from './task/main_body_container';
+import MainShowSectionContainer from './task/main_show_section_container';
 import RangesContainer from './task/range_container';
 import ListContainer from './lists/list_container';
 import TaskShowContainer from './task/task_show_container';
@@ -29,31 +30,36 @@ const Root = ({ store }) => {
       <div className='check'>
       <Router history={ hashHistory }>
         <Route path='/' component={ App }>
-          <IndexRoute component={ splashPage}/>
+          <IndexRoute component={ splashPage }/>
 
           <Route path='/tasks' component={ Tasks } onEnter={ _ensureLogin }>
-            <IndexRoute component={MainBodyContainer}/>
+            <IndexRoute component={ MainBodyContainer }/>
             <Route path='/tasks/all' component={ RangesContainer }>
+              <IndexRoute component={ MainShowSectionContainer }/>
               <Route path='/tasks/all/:taskid'
                 component={ TaskShowContainer }/>
             </Route>
 
             <Route path='/tasks/today' component={ RangesContainer }>
+              <IndexRoute component={ MainShowSectionContainer }/>
               <Route path='/tasks/today/:taskid'
                      component={ TaskShowContainer }/>
             </Route>
 
             <Route path='/tasks/tomorrow' component={ RangesContainer }>
+              <IndexRoute component={ MainShowSectionContainer }/>
               <Route path='/tasks/tomorrow/:taskid'
                      component={ TaskShowContainer }/>
             </Route>
 
             <Route path='/tasks/week' component={ RangesContainer }>
+              <IndexRoute component={ MainShowSectionContainer }/>
               <Route path='/tasks/week/:taskid'
                      component={ TaskShowContainer }/>
             </Route>
 
             <Route path='/tasks/:listId' component={ ListContainer }>
+              <IndexRoute component={ MainShowSectionContainer }/>
               <Route path='/tasks/:listId/:taskid'
                     component={ TaskShowContainer }/>
             </Route>

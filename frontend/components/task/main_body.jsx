@@ -19,7 +19,14 @@ class mainBody extends React.Component{
   componentWillReceiveProps(nextProps){
     if(nextProps.indexType !== this.props.indexType){
       nextProps.updateTasks();
-      this.setState({path: nextProps.indexType});
+      let path = nextProps.location.pathname.split('/');
+      let indexType;
+      if(path[0].length === 0 ){
+        indexType = path[path.length -1];
+      }else {
+        indexType = path[path.length -2];
+      }
+      this.setState({path: indexType});
     }
   }
 
@@ -35,14 +42,16 @@ class mainBody extends React.Component{
               )}
             </ul>;
     return(
-    <div className='MAIN BODY CONTAINER'>
-      <TaskFormContainer />
+    <div className='MAINBODYCONTAINER'>
+      <section  className= 'mainbodySection'>
+        <TaskFormContainer />
+        <br/>
+        { allTasks }
+      </section>
 
-      <br/>
-
-      { allTasks }
-
-      {this.props.children}
+      <section  className= 'mainShowSection'>
+        {this.props.children}
+      </section>
     </div>
     );
   }

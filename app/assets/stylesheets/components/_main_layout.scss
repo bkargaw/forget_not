@@ -12,16 +12,23 @@
 }
 
 .mainBody{
-  flex: 3;
-  background-color: white;
-  border-radius: 10px;
+  flex: 6;
   height: 100vh;
 }
 
+.MAINBODYCONTAINER{
+  display: flex;
+}
+
+.mainbodySection{
+  flex: 1;
+  height: 100vh;
+  border-radius: 10px;
+  background-color: white;
+}
 .mainShowSection{
-  flex: 3;
+  flex: 1;
   background-color: $showlightblueRTM;
   border-radius: 10px;
   height: 100vh;
-
 }
