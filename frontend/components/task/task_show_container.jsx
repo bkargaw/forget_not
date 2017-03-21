@@ -1,35 +1,25 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import {getAllTasks} from '../../actions/tasks_actions';
+import {getTask, updatTask} from '../../actions/tasks_actions';
 
-import MainBody from './main_body';
+import mainShowSection from './main_show_section';
 
-const mapStateToProps = (state,ownProps) => {
-  let indexType;
-  if(ownProps.indexType){
-  indexType = ownProps.indexType;
-}else {
-  indexType = 'all';
-}
+const mapStateToProps = (state, { params }) => {
+  let task = state.tasks[params.taskid];
 return({
-  tasks: Object.keys(state.tasks).map(id => state.tasks[id]),
-  indexType
+  task
   });
 };
 
 const mapDispatchToProps = (dispatch,ownProps) => {
-  if(ownProps.updateTasks){
-    return ({
-      getAllTasks: () => dispatch(getAllTasks()),
-      updateTasks: () => dispatch(ownProps.updateTasks())
-    });
-  }
+
 return ({
-  getAllTasks: () => dispatch(getAllTasks())
-});
+  getTask: (id) => dispatch(getTask(id)),
+  updatTask: (task) => dispatch(updatTask(task))
+  });
 };
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(MainBody);
+)(mainShowSection);

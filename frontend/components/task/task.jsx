@@ -19,6 +19,7 @@ const Tasks = (props) => {
         < MainShowSectionContainer />
       </section>
     </div>
+
     { props.children }
   </div>);
 };

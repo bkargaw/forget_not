@@ -8,6 +8,7 @@ class mainBody extends React.Component{
   }
 
   componentDidMount(){
+    debugger;
     if(!this.props.updateTasks) this.props.getAllTasks();
   }
 
@@ -27,7 +28,7 @@ class mainBody extends React.Component{
               )}
             </ul>;
     return(
-    <div>
+    <div className='MAIN BODY CONTAINER'>
       <TaskFormContainer />
 
       <br/>
