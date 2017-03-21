@@ -18,10 +18,6 @@ export const removeTask = (task) =>({
   task
 });
 
-export const getAllTasks = () => dispatch => (
-  TaskUtil.fetchAllTasks()
-  .then((res)=> dispatch(receiveAllTasks(res)))
-);
 
 export const getTask = (id) => dispatch => (
   TaskUtil.fetchTask(id)
@@ -46,6 +42,10 @@ export const deleteTask = (id) => dispatch => (
 );
 
 // ---range---
+export const getAllTasks = () => dispatch => (
+  TaskUtil.fetchAllTasks()
+  .then((res)=> dispatch(receiveAllTasks(res)))
+);
 
 export const getAllTaskForToday = () => dispatch => (
   TaskUtil.fetchTodayTasks()

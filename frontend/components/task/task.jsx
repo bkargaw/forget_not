@@ -3,12 +3,9 @@ import MainSideBarContainer from './main_side_bar_container';
 import MainBodyContainer from './main_body_container';
 import MainShowSection from './main_show_section';
 
-const Tasks = () => {
+const Tasks = (props) => {
   return(
   <div>
-    <div className='blueSpace'>
-    </div>
-
     <div className= 'mainLayout'>
       <aside className= 'mainSideBar'>
         < MainSideBarContainer />
@@ -22,6 +19,7 @@ const Tasks = () => {
         < MainShowSection />
       </section>
     </div>
+    { props.children }
   </div>);
 };
 

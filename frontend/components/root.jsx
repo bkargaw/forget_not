@@ -5,7 +5,7 @@ import ReduxModal from 'react-redux-modal';
 
 import SessionFormContainer from './session/session_form_container';
 import App from './app';
-import RangeContainer from './task/range_container';
+import RangesContainer from './task/range_container';
 import ListContainer from './lists/list_container';
 import Tasks from './task/task';
 import splashPage from './splash_Page';
@@ -24,15 +24,15 @@ const Root = ({ store }) => {
 
   return(
     <Provider store={ store }>
-      <div>
+      <div className='check'>
       <Router history={ hashHistory }>
         <Route path='/' component={ App }>
-          <IndexRoute component={splashPage}/>
-          <Route path='/tasks' component={ Tasks } onEnter={_ensureLogin}>
-            <Route path='/tasks/all' component={ RangeContainer }/>
-            <Route path='/tasks/today' component={ RangeContainer }/>
-            <Route path='/tasks/tomorrow' component={ RangeContainer }/>
-            <Route path='/tasks/week' component={ RangeContainer }/>
+          <IndexRoute component={ splashPage}/>
+          <Route path='/tasks' component={ Tasks } onEnter={ _ensureLogin }>
+            <Route path='/tasks/all' component={ RangesContainer }/>
+            <Route path='/tasks/today' component={ RangesContainer }/>
+            <Route path='/tasks/tomorrow' component={ RangesContainer }/>
+            <Route path='/tasks/week' component={ RangesContainer }/>
             <Route path='/tasks/:listId' component={ ListContainer }/>
           </Route>
         </Route>
