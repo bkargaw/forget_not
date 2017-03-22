@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import {getAllTasks} from '../../actions/tasks_actions';
+import {getAllTasks, deleteTask} from '../../actions/tasks_actions';
 
 import MainBody from './main_body';
 
@@ -21,7 +21,8 @@ const mapDispatchToProps = (dispatch,ownProps) => {
   if(ownProps.updateTasks){
     return ({
       getAllTasks: () => dispatch(getAllTasks()),
-      updateTasks: () => dispatch(ownProps.updateTasks())
+      deleteTask: (id) => dispatch(deleteTask(id)),
+      updateTasks: () => dispatch(ownProps.updateTasks()),
     });
   }
 return ({

@@ -1,11 +1,15 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, hashHistory } from 'react-router';
 import TaskFormContainer from './task_form_container';
 
 class mainBody extends React.Component{
   constructor(props) {
     super(props);
-    this.state = {path: props.indexType};
+    this.state = { path: props.indexType,
+                   DeletList: [],
+                   ShowButton: 'hidden'
+                 };
+    this.handelDelete = this.handelDelete.bind(this);
   }
 
   componentDidMount(){
@@ -14,6 +18,27 @@ class mainBody extends React.Component{
     }else {
       this.props.updateTasks();
     }
+  }
+
+  handelDelete(){
+    debugger;
+      let DeletList = this.state.DeletList;
+      DeletList.forEach(id => this.props.deleteTask(id));
+      hashHistory.push(this.props.route.path);
+  }
+
+  updateDeleteList(id){
+    return( e =>{
+      let DeletList = this.state.DeletList;
+      let index = DeletList.indexOf(id);
+      if (index > -1) {
+        DeletList.splice(index, 1);
+      }else{
+        DeletList.push(id);
+      }
+      this.setState({ DeletList, ShowButton: '' });
+    }
+  );
   }
 
   componentWillReceiveProps(nextProps){
@@ -35,8 +60,11 @@ class mainBody extends React.Component{
             <ul>
               {this.props.tasks.map((task, idx) =>(
                 <li key={idx}>
-                  <input type='checkbox'/>
-                  <Link to={`tasks/${this.state.path}/${task.id}`}>{task.title}</Link>
+                  <input type='checkbox'
+                    onClick={this.updateDeleteList(task.id)}/>
+                  <Link to={`tasks/${this.state.path}/${task.id}`}>
+                    {task.title}
+                  </Link>
                 </li>
               )
               )}
@@ -46,6 +74,11 @@ class mainBody extends React.Component{
       <section  className= 'mainbodySection'>
         <TaskFormContainer />
         <br/>
+        <button className ={this.state.ShowButton}
+                onClick= { this.handelDelete}
+                value='Delete Tasks'>
+           Delete Tasks
+         </button>
         { allTasks }
       </section>
 

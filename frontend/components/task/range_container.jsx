@@ -6,7 +6,8 @@ import MainBody from './main_body';
 import {getAllTasks,
         getAllTaskForToday,
         getAllTaskForTomorrow,
-        getAllTaskForWeek} from '../../actions/tasks_actions';
+        getAllTaskForWeek,
+        deleteTask} from '../../actions/tasks_actions';
 
 
 const mapStateToProps = (state, ownProps) => {
@@ -37,7 +38,8 @@ const mapDispatchToProps = (dispatch,ownProps) => {
   }
 
   return({
-    updateTasks: () => dispatch(updateTasks())
+    updateTasks: () => dispatch(updateTasks()),
+    deleteTask: (id) => dispatch(deleteTask(id))
   });
 };
 
