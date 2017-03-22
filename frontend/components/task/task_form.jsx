@@ -90,26 +90,28 @@ class taskForm extends React.Component{
 
   render(){
     return(
-      <div>
+      <div className='addTaskForm'>
         <form onSubmit={ this.handleSubmit }>
-          <input type='text'
-                 placeholder='Add a Task'
+          <input id='addTitle'
+                 type='text'
+                 placeholder=' Add a Task'
                  value={this.state.title}
                  onFocus={ this.toggleShow('wholeForm') }
                  onChange={ this.handleDateChange('title') } />
-          <input type='submit' value= 'Add Task'/>
 
-        <div className={this.state.showStateChangers}>
-
+            <div className={this.state.showStateChangers}>
+            <div className='addTaskButtons'>
+            <div className='editButtons'>
             <button className={this.state.buttonStartDate}
                     onClick={ this.toggleShow('start') }
                     value='Add Start Date'>
               <i className="fa fa-play" aria-hidden="true"></i>
             </button>
 
-            <input className={this.state.showStartDate}
-                   type='date'
-                   onChange={this.handleDateChange('startDate')}/>
+            <label className={this.state.showStartDate}>Start Date
+              <input type='date'
+                     onChange={this.handleDateChange('startDate')}/>
+            </label>
 
             <button className={this.state.buttonEndDate}
                     onClick={ this.toggleShow('end')}
@@ -117,9 +119,10 @@ class taskForm extends React.Component{
               <i className="fa fa-stop-circle-o" aria-hidden="true"></i>
             </button>
 
-            <input  className={this.state.showEndDate}
-                    type='date'
-                    onChange={this.handleDateChange('endDate')}/>
+            <label className={this.state.showEndDate} >End Date
+              <input  type='date'
+                      onChange={this.handleDateChange('endDate')}/>
+            </label>
 
               <button className={this.state.buttonEstimate}
                 onClick={ this.toggleShow('estimate')}
@@ -131,7 +134,11 @@ class taskForm extends React.Component{
                      onChange={this.handleDateChange('estimate')}
                      type='text'
                      placeholder='Add Estimate'/>
+              </div>
+              <input type='submit' value= 'Add Task'/>
+              </div>
             </div>
+
         </form>
       </div>
     );

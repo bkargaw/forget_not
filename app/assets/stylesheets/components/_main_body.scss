@@ -1,0 +1,43 @@
+.mainbodySection{
+  display: block;
+}
+.mainbodySection li{
+  border-top: 1px solid $light-gray;
+  padding: 5px;
+  margin-left: 5px;
+}
+.mainbodySection li:hover{
+  background-color: orange;
+
+}
+
+#addTitle {
+  width: 95%;
+  border: 1px solid gray;
+  border-radius: 2px;
+  margin: 5px;
+  margin-top: 40px;
+  margin-left: 10px;
+  height: 20px;
+}
+
+.addTaskButtons{
+  display: flex;
+}
+.addTaskButtons input[type='submit']{
+  flex: 1;
+  margin-left: 10px;
+}
+
+.editButtons{
+  flex: 10;
+}
+.mainbodySection input[type='text'] {
+  border: 1px solid gray;
+  border-radius: 2px;
+  height: 15px;
+}
+
+.addTaskForm label input{
+  margin-right: 4px;
+}

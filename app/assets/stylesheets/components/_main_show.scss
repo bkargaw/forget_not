@@ -1,0 +1,15 @@
+.totalShowSummery{
+  display: block;
+}
+
+.totalShowSummery h4{
+  margin-left: 20px;
+  font-size: 30px;
+}
+.ShowSummary{
+  display: flex;
+}
+.ShowSummary li{
+  background-color: $lightblueRTM;
+  margin-left: 10px;
+}

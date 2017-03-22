@@ -52,13 +52,15 @@ class mainShowSection extends React.Component {
   render(){
     if(this.props.status){
       return(
-        <ul>
-          <h4>{this.props.title}</h4>
+      <div calssName='totalShowSummery'>
+        <h4>{this.props.title}</h4>
+        <ul className='ShowSummary'>
           <li>count {this.props.status.count}</li>
           <li>completed {this.props.status.completedCount}</li>
           <li>todayCount {this.props.status.todayCout}</li>
           <li>overDueCount {this.props.status.overDueCout}</li>
         </ul>
+      </div>
       );
 
     }else if(this.props.task){

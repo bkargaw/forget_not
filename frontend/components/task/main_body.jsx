@@ -74,8 +74,7 @@ class mainBody extends React.Component{
       <section  className= 'mainbodySection'>
         <TaskFormContainer />
         <br/>
-        <button className ={this.state.ShowButton}
-                onClick= { this.handelDelete}
+        <button onClick= { this.handelDelete}
                 value='Delete Tasks'>
            Delete Tasks
          </button>
