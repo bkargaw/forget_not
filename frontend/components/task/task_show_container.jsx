@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import {getTask, updatTask} from '../../actions/tasks_actions';
+import {getTask, updateTask} from '../../actions/tasks_actions';
 
 import mainShowSection from './main_show_section';
 
@@ -14,7 +14,7 @@ const mapStateToProps = (state, ownProps) =>  {
 
 const mapDispatchToProps = (dispatch,ownProps) => ({
   getTask: (id) => dispatch(getTask(id)),
-  updatTask: (task) => dispatch(updatTask(task))
+  updateTask: (task) => dispatch(updateTask(task))
 });
 
 

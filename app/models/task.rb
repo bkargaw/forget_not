@@ -9,10 +9,11 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  user_id    :integer          not null
-#  list_id    :integer
 #  estimate   :string
 #  startDate  :float
 #  endDate    :float
+#  list_id    :integer          default("1")
+#
 
 class Task < ApplicationRecord
   validates :title, :user, presence: true

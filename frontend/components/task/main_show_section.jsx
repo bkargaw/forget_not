@@ -33,7 +33,7 @@ class mainShowSection extends React.Component {
    if(!endDate) endDate = '';
    let task = merge({},this.state, {startDate},
                     {endDate},{id: this.props.task.id});
-   this.props.updatTask(task);
+   this.props.updateTask(task);
    this.setState( {
                  title: '',
                  startDate: ``,
@@ -51,7 +51,7 @@ class mainShowSection extends React.Component {
   render(){
     if(this.props.status){
       return(
-      <div calssName='totalShowSummery'>
+      <div className='totalShowSummery'>
         <h4>{this.props.title}</h4>
         <ul className='ShowSummary'>
           <li>count {this.props.status.count}</li>

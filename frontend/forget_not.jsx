@@ -5,10 +5,14 @@ import configureStore from './store/store';
 
 // test the ajax requests for the task api
 import  * as TasksUtil from './util/tasks_api_util';
+import  * as ListsUtil from './util/lists_api_util';
 import  * as Tasksactions from './actions/tasks_actions';
+import  * as Listsactions from './actions/list_actions';
 
 window.TasksUtil = TasksUtil;
+window.ListsUtil = ListsUtil;
 window.Tasksactions = Tasksactions;
+window.Listsactions = Listsactions;
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;

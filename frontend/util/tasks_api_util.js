@@ -21,7 +21,7 @@ export const createTask =(task)=>(
   })
 );
 
-export const updatTask =(task)=>(
+export const updateTask =(task)=>(
   $.ajax({
     url: `api/tasks/${task.id}`,
     method: 'PATCH',
@@ -64,12 +64,12 @@ export const fetchWeekTasks = ()=>(
 
 
 // ---type----
-//   fetchAllListsTypeTasks
-//
-// export const fetchAllListsTypeTasks = listId =>(
-//   $.ajax({
-//     url: `api/tasks`,
-//     data: {filterOn: 'type',
-//           listId}
-//   })
-// );
+  // fetchAllListsTypeTasks
+
+export const fetchAllListsTypeTasks = listId =>(
+  $.ajax({
+    url: `api/tasks`,
+    data: {filterOn: 'type',
+          listId}
+  })
+);

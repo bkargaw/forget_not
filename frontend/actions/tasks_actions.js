@@ -13,6 +13,7 @@ export const receiveTask = (task) =>({
   type: RECEIVE_TASK,
   task
 });
+
 export const removeTask = (task) =>({
   type: REMOVE_TASK,
   task
@@ -25,14 +26,13 @@ export const getTask = (id) => dispatch => (
 );
 
 // --- edit---
-
 export const createTask = (task) => dispatch => (
   TaskUtil.createTask(task)
   .then((res)=> dispatch(receiveTask(res)))
 );
 
-export const updatTask = (task) => dispatch => (
-  TaskUtil.updatTask(task)
+export const updateTask = (task) => dispatch => (
+  TaskUtil.updateTask(task)
   .then((res)=> dispatch(receiveTask(res)))
 );
 
@@ -41,9 +41,16 @@ export const deleteTask = (id) => dispatch => (
   .then((res)=> dispatch(removeTask(res)))
 );
 
+
 // ---range---
 export const getAllTasks = () => dispatch => (
   TaskUtil.fetchAllTasks()
+  .then((res)=> dispatch(receiveAllTasks(res)))
+);
+
+// ---type---
+export const getAllListTasks = (listId) => dispatch => (
+  TaskUtil.fetchAllListsTypeTasks(listId)
   .then((res)=> dispatch(receiveAllTasks(res)))
 );
 

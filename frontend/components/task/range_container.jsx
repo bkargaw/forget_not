@@ -7,8 +7,8 @@ import {getAllTasks,
         getAllTaskForToday,
         getAllTaskForTomorrow,
         getAllTaskForWeek,
-        deleteTask} from '../../actions/tasks_actions';
-
+        deleteTask,
+        getAllListTasks} from '../../actions/tasks_actions';
 
 const mapStateToProps = (state, ownProps) => {
   let path = ownProps.location.pathname.split('/');
@@ -21,6 +21,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch,ownProps) => {
   let updateTasks = getAllTasks;
+  debugger;
   switch (ownProps.location.pathname) {
     case '/tasks/all':
       updateTasks = getAllTasks;
@@ -35,8 +36,13 @@ const mapDispatchToProps = (dispatch,ownProps) => {
       updateTasks = getAllTaskForWeek;
       break;
     default:
+    // route --> 'task/listId'
+      updateTasks = getAllListTasks;
+      return({
+        updateTasks: (listId) => dispatch(updateTasks(listId)),
+        deleteTask: (id) => dispatch(deleteTask(id))
+      });
   }
-
   return({
     updateTasks: () => dispatch(updateTasks()),
     deleteTask: (id) => dispatch(deleteTask(id))

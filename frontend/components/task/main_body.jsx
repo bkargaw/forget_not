@@ -13,10 +13,27 @@ class mainBody extends React.Component{
   }
 
   componentDidMount(){
+    debugger;
     if(this.props.getAllTasks){
       this.props.getAllTasks();
+    }else if (this.props.params.listId){
+      this.props.updateTasks(this.props.params.listId);
     }else {
       this.props.updateTasks();
+    }
+  }
+
+  componentWillReceiveProps(nextProps){
+    if(nextProps.indexType !== this.props.indexType){
+      nextProps.updateTasks();
+      let path = nextProps.location.pathname.split('/');
+      let indexType;
+      if(path[0].length === 0 ){
+        indexType = path[path.length -1];
+      }else {
+        indexType = path[path.length -2];
+      }
+      this.setState({path: indexType});
     }
   }
 
@@ -40,19 +57,6 @@ class mainBody extends React.Component{
   );
   }
 
-  componentWillReceiveProps(nextProps){
-    if(nextProps.indexType !== this.props.indexType){
-      nextProps.updateTasks();
-      let path = nextProps.location.pathname.split('/');
-      let indexType;
-      if(path[0].length === 0 ){
-        indexType = path[path.length -1];
-      }else {
-        indexType = path[path.length -2];
-      }
-      this.setState({path: indexType});
-    }
-  }
 
   render(){
     const allTasks =

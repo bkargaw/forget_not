@@ -54,17 +54,20 @@ class Api::TasksController < ApplicationController
     case params[:filterOn]
     when 'range'
       filter_by_range
+    when 'type'
+      filter_by_type
     else
       current_users_tasks
     end
   end
 
-  # def filter_by_type(tasks)
-  #   tasks.where('list_id = ?', task_params.list_id)
-  # end
+  def filter_by_type
+    Task.where('user_id = ? And "list_id" = ?',
+               current_user.id, params[:listId])
+  end
 
   def filter_by_range
-    date, now = get_date
+    date = get_date
     Task.where('user_id = ? And "endDate" < ?', current_user.id, date)
   end
 
@@ -86,7 +89,6 @@ class Api::TasksController < ApplicationController
     else
       now.to_f
     end
-
   end
 
   def forma_js_date_to_datetime(task)
