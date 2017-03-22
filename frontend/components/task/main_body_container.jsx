@@ -4,6 +4,7 @@ import {getAllTasks, deleteTask} from '../../actions/tasks_actions';
 
 import MainBody from './main_body';
 
+
 const mapStateToProps = (state,ownProps) => {
   let indexType;
   if(ownProps.indexType){
@@ -22,7 +23,7 @@ const mapDispatchToProps = (dispatch,ownProps) => {
     return ({
       getAllTasks: () => dispatch(getAllTasks()),
       deleteTask: (id) => dispatch(deleteTask(id)),
-      updateTasks: () => dispatch(ownProps.updateTasks()),
+      updateTasks: () => dispatch(ownProps.updateTasks())
     });
   }
 return ({

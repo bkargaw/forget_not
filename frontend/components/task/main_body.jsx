@@ -16,13 +16,13 @@ class mainBody extends React.Component{
     if(this.props.getAllTasks){
       this.props.getAllTasks();
     }else if (this.props.params.listId){
+      this.props.updateTasks(this.props.params.listId);
     }else {
       this.props.updateTasks();
     }
   }
 
   componentWillReceiveProps(nextProps){
-    debugger;
     if(nextProps.indexType !== this.props.indexType){
       if (nextProps.params.listId){
         nextProps.updateTasks(nextProps.params.listId);

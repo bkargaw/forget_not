@@ -9,7 +9,6 @@ class Greeting extends React.Component {
     super(props);
   }
   addModal(title) {
-    let oppsitButton = title == 'Signup' ? 'Login' : 'Signup';
     return () =>(
     modal.add(sessionFormContainer, {
       title: title,
@@ -22,10 +21,6 @@ class Greeting extends React.Component {
       // wanna show the top right close button
       //.. all what you put in here you will get access in
       // the modal props ;)
-      changeform: () => {
-
-                    this.addModal(oppsitButton);
-                  }
     })
   );
   }

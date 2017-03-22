@@ -10,8 +10,6 @@ import {getAllTasks,
         deleteTask,
         getAllListTasks} from '../../actions/tasks_actions';
 
-import { getAllLists } from '../../actions/list_actions';
-
 const mapStateToProps = (state, ownProps) => {
   let path = ownProps.location.pathname.split('/');
   let indexType = path[path.length -1];
@@ -37,7 +35,7 @@ const mapDispatchToProps = (dispatch,ownProps) => {
       updateTasks = getAllTaskForWeek;
       break;
     default:
-    // route --> 'task/listId'
+      // route --> 'task/listId'
       updateTasks = getAllListTasks;
       return({
         updateTasks: (listId) => dispatch(updateTasks(listId)),
