@@ -6,9 +6,9 @@ mike = User.create(username: 'Mike Epps',
                    email: 'mikeisgreate@gmail.com',
                    password: 'thisismike')
 
-index = List.create(name: 'index')
-index_personal = List.create(name: 'personal')
-index_work = List.create(name: 'work')
+index = List.create(name: 'index', user_id: mike.id)
+index_personal = List.create(name: 'personal', user_id: mike.id)
+index_work = List.create(name: 'work', user_id: mike.id)
 
 #  title      :string           not null
 #  user_id    :integer          not null
@@ -24,22 +24,22 @@ index_work = List.create(name: 'work')
 now = DateTime.now
 
   Task.create(title: "read #{Faker::Book.title}",
-              user_id: mike.id,
+              user_id: mike.id, list_id: index.id,
               endDate: DateTime.new(now.year, now.month, now.day +
               rand(6), rand(23), rand(59), rand(59)))
 
   Task.create(title: "talk to #{Faker::Book.author}",
-              user_id: mike.id,
+              user_id: mike.id, list_id: index.id,
               endDate: DateTime.new(now.year, now.month, now.day +
               rand(6), rand(23), rand(59), rand(59)))
 
   Task.create(title: "visit #{Faker::Book.author}",
-              user_id: mike.id,
+              user_id: mike.id, list_id: index.id,
               endDate: DateTime.new(now.year, now.month, now.day +
               rand(6), rand(23), rand(59), rand(59)))
 
   Task.create(title: "setup a meet and greet with #{Faker::Book.author}",
-              user_id: mike.id,
+              user_id: mike.id, list_id: index.id,
               endDate: DateTime.new(now.year, now.month, now.day +
               rand(6), rand(23), rand(59), rand(59)))
 
@@ -50,6 +50,6 @@ now = DateTime.now
               rand(6), rand(23), rand(59), rand(59)))
 
   Task.create(title: "apply to #{Faker::Book.publisher}",
-              user_id: mike.id, completed: true,
+              user_id: mike.id, completed: true, list_id: index.id,
               endDate: DateTime.new(now.year, now.month, now.day +
               rand(6), rand(23), rand(59), rand(59)))

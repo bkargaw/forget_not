@@ -27,7 +27,6 @@ class mainShowSection extends React.Component {
 
  handleSubmit(e){
    e.preventDefault();
-   debugger;
    let startDate = new Date(this.state.startDate).getTime();
    let endDate = new Date(this.state.endDate).getTime();
    if(!startDate) startDate= '';
@@ -68,44 +67,46 @@ class mainShowSection extends React.Component {
       let endTime;
       let estimate;
       if(this.props.task.startDate) {
-      startTime = <p>Start Date: { new Date(this.props.task.startDate).toDateString() }</p>;
+      startTime = <p>Start Date: {' ' + new Date(this.props.task.startDate).toDateString() }</p>;
       }
       if(this.props.task.endDate) {
-      endTime = <p>End Date: { new Date(this.props.task.endDate).toDateString() }</p>;
+      endTime = <p>End Date: {' ' + new Date(this.props.task.endDate).toDateString() }</p>;
       }
       if(this.props.task.estimate) {
       estimate = <p>Estimate Duration: {this.props.task.estimate }</p>;
       }
 
       return(
-        <div>
+        <div className='TaskShowEdit'>
+          <div className='showTaskStaff'>
           <h4>{this.props.task.title}</h4>
           { startTime }
           { endTime }
           { estimate }
+        </div>
+          <h3>Edit Task</h3>
+          <form className='TaskEdit'
+                onSubmit={ this.handleSubmit }>
 
-            <h3>Edit Task</h3>
-          <form onSubmit={ this.handleSubmit }>
-
-            <label>Tilte
+            <label>{"Title  "}
               <input type='text'
                      placeholder={this.props.task.title}
                      onChange={ this.handleChange('title') } />
             </label>
 
-            <label>Start Date
+            <label>{'Start Date  '}
               <input className={this.state.showStartDate}
                      type='date'
                      onChange={this.handleChange('startDate')}/>
             </label>
 
-            <label>End Date
+            <label>{"End Date  "}
               <input  className={this.state.showEndDate}
                       type='date'
                       onChange={this.handleChange('endDate')}/>
             </label>
 
-            <label>Estimate
+            <label>{'Estimate  '}
                 <input className={this.state.showEstimate}
                        onChange={this.handleChange('estimate')}
                        type='text'

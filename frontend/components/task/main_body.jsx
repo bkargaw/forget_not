@@ -21,7 +21,6 @@ class mainBody extends React.Component{
   }
 
   handelDelete(){
-    debugger;
       let DeletList = this.state.DeletList;
       DeletList.forEach(id => this.props.deleteTask(id));
       hashHistory.push(this.props.route.path);
