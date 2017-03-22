@@ -36,31 +36,31 @@ const Root = ({ store }) => {
             <IndexRoute component={ MainBodyContainer }/>
             <Route path='/tasks/all' component={ RangesContainer }>
               <IndexRoute component={ MainShowSectionContainer }/>
-              <Route path='/tasks/all/:taskid'
+              <Route path='/tasks/all/:taskId'
                 component={ TaskShowContainer }/>
             </Route>
 
             <Route path='/tasks/today' component={ RangesContainer }>
               <IndexRoute component={ MainShowSectionContainer }/>
-              <Route path='/tasks/today/:taskid'
+              <Route path='/tasks/today/:taskId'
                      component={ TaskShowContainer }/>
             </Route>
 
             <Route path='/tasks/tomorrow' component={ RangesContainer }>
               <IndexRoute component={ MainShowSectionContainer }/>
-              <Route path='/tasks/tomorrow/:taskid'
+              <Route path='/tasks/tomorrow/:taskId'
                      component={ TaskShowContainer }/>
             </Route>
 
             <Route path='/tasks/week' component={ RangesContainer }>
               <IndexRoute component={ MainShowSectionContainer }/>
-              <Route path='/tasks/week/:taskid'
+              <Route path='/tasks/week/:taskId'
                      component={ TaskShowContainer }/>
             </Route>
 
             <Route path='/tasks/:listId' component={ ListContainer }>
               <IndexRoute component={ MainShowSectionContainer }/>
-              <Route path='/tasks/:listId/:taskid'
+              <Route path='/tasks/:listId/:taskId'
                     component={ TaskShowContainer }/>
             </Route>
           </Route>

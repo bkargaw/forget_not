@@ -36,7 +36,7 @@ class mainBody extends React.Component{
               {this.props.tasks.map((task, idx) =>(
                 <li key={idx}>
                   <input type='checkbox'/>
-                  <Link to={`tasks/${this.state.path}/${idx}`}>{task.title}</Link>
+                  <Link to={`tasks/${this.state.path}/${task.id}`}>{task.title}</Link>
                 </li>
               )
               )}

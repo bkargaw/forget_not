@@ -46,7 +46,7 @@ class Api::TasksController < ApplicationController
 
   def task_params
     params.require(:task).permit(:title, :startDate, :endDate, :user_id,
-                                 :estimates, :list)
+                                 :estimate, :list)
   end
 
   def filter_for_index

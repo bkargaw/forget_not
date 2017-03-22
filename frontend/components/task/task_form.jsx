@@ -8,7 +8,6 @@ class taskForm extends React.Component{
     let now = new Date;
     this.state = {
       title: '',
-      repeats: false,
       startDate: ``,
       // startDate: `${now.getFullYear()}-${now.getMonth()}-${now.getDate()}`,
       endDate: ``,
@@ -26,7 +25,6 @@ class taskForm extends React.Component{
                   };
 
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.togglerepeats = this.togglerepeats.bind(this);
     this.toggleShow = this.toggleShow.bind(this);
     this.handleDateChange = this.handleDateChange.bind(this);
     this.toggleBlur = this.toggleBlur.bind(this);
@@ -40,14 +38,12 @@ class taskForm extends React.Component{
     if(!endDate) endDate = '';
     let task = merge({},this.state, {startDate}, {endDate});
     this.props.createTask(task);
-  }
-
-
-  togglerepeats(feild){
-    return e =>{
-      e.preventDefault();
-      this.setState({[feild]: !this.state[feild]});
-    };
+    this.setState( {
+                  title: '',
+                  startDate: ``,
+                  endDate: ``,
+                  estimate: ''
+                });
   }
 
   toggleShow(val){
@@ -98,14 +94,12 @@ class taskForm extends React.Component{
         <form onSubmit={ this.handleSubmit }>
           <input type='text'
                  placeholder='Add a Task'
+                 value={this.state.title}
                  onFocus={ this.toggleShow('wholeForm') }
                  onChange={ this.handleDateChange('title') } />
           <input type='submit' value= 'Add Task'/>
 
         <div className={this.state.showStateChangers}>
-            <button onClick={ this.togglerepeats('repeats')}>
-              <i className="fa fa-repeat" aria-hidden="true"/>
-            </button>
 
             <button className={this.state.buttonStartDate}
                     onClick={ this.toggleShow('start') }

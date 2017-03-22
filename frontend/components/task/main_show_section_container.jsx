@@ -12,8 +12,13 @@ return({
 });
 };
 
+const mapDispatchToProps = (dispatch,ownProps) => ({
+  getTask: (id) => dispatch(getTask(id))
+});
+
+
 
 export default connect(
   mapStateToProps,
-  null
+  mapDispatchToProps
 )(MainShowSection);
