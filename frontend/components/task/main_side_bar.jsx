@@ -2,6 +2,8 @@ import  React  from 'react';
 import { Link } from 'react-router';
 import {modal} from 'react-redux-modal';
 import AddListContainer from '../list/add_list_container';
+import EditList from '../list/edit_list_container';
+import RemoveList from '../list/remove_list_container';
 
 class mainSideBar extends React.Component {
   constructor(props) {
@@ -16,7 +18,7 @@ class mainSideBar extends React.Component {
       this.props.getAllLists();
   }
 
-  addModal(title) {
+  addModal(title, id , name) {
     return () =>(
     modal.add(AddListContainer, {
       title: title,
@@ -29,6 +31,47 @@ class mainSideBar extends React.Component {
       // wanna show the top right close button
       //.. all what you put in here you will get access in
       // the modal props ;)
+      id: id,
+
+      name: name
+
+    })
+  );
+  }
+  addRenameModal(title, id) {
+    return () =>(
+    modal.add(EditList, {
+      title: title,
+      size: 'small', // large, medium or small,
+      closeOnOutsideClick: false, // (optional) Switch to true
+      // if you want to close the modal by clicking outside of it,
+      hideTitleBar: false, // (optional) Switch to
+      // true if do not want the default title bar and close button,
+      hideCloseButton: false, // (optional) if you don't
+      // wanna show the top right close button
+      //.. all what you put in here you will get access in
+      // the modal props ;)
+      ListId: id
+
+    })
+  );
+  }
+
+  addRemoveModal(title, id) {
+    return () =>(
+    modal.add(RemoveList, {
+      title: title,
+      size: 'small', // large, medium or small,
+      closeOnOutsideClick: false, // (optional) Switch to true
+      // if you want to close the modal by clicking outside of it,
+      hideTitleBar: false, // (optional) Switch to
+      // true if do not want the default title bar and close button,
+      hideCloseButton: false, // (optional) if you don't
+      // wanna show the top right close button
+      //.. all what you put in here you will get access in
+      // the modal props ;)
+      id: id
+
     })
   );
   }
@@ -64,7 +107,13 @@ class mainSideBar extends React.Component {
                 <Link to={`tasks/${list.id}`}>
                   {list.name.replace(/\b\w/g, l => l.toUpperCase())}
                 </Link>
-                <i className="fa fa-arrow-circle-o-down" aria-hidden="true"></i>
+                  <i className="fa fa-arrow-circle-o-down" aria-hidden="true"></i>
+
+                  <ul className='EditListOptions'>
+                    <li onClick={this.addRenameModal('Rename list', list.id,list.name)}>
+                      Rename List
+                    </li>
+                  </ul>
               </li>
             )
             )}
