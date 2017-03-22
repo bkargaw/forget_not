@@ -10,6 +10,8 @@ import {getAllTasks,
         deleteTask,
         getAllListTasks} from '../../actions/tasks_actions';
 
+import { getAllLists } from '../../actions/list_actions';
+
 const mapStateToProps = (state, ownProps) => {
   let path = ownProps.location.pathname.split('/');
   let indexType = path[path.length -1];
@@ -21,7 +23,6 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch,ownProps) => {
   let updateTasks = getAllTasks;
-  debugger;
   switch (ownProps.location.pathname) {
     case '/tasks/all':
       updateTasks = getAllTasks;
