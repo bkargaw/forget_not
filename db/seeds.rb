@@ -7,8 +7,8 @@ mike = User.create(username: 'Mike Epps',
                    password: 'thisismike')
 
 index = List.create(name: 'index')
-index = List.create(name: 'personal')
-index = List.create(name: 'work')
+index_personal = List.create(name: 'personal')
+index_work = List.create(name: 'work')
 
 #  title      :string           not null
 #  user_id    :integer          not null
