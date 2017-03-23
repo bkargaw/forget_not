@@ -67,67 +67,76 @@ class mainSideBar extends React.Component {
           <ul>
             {this.props.lists.slice(1).map((list) =>(
               <li key={list.id}>
-                <Link to={`/tasks/${list.id}`}>
-                  {list.name.replace(/\b\w/g, l => l.toUpperCase())}
-                </Link>
-                  <i className="fa fa-arrow-circle-o-down" aria-hidden="true"></i>
+                <div>
+                  <Link to={`/tasks/${list.id}`}>
+                    {list.name.replace(/\b\w/g, l => l.toUpperCase())}
+                  </Link>
+                  <i className="fa fa-arrow-circle-o-down" aria-hidden="true">
+                    <ul className='EditListOptions'>
+                      <li onClick={this.addModal(EditListContainer,'Rename list', list.id,list.name)}>
+                        Rename List
+                      </li>
+                      <li onClick={this.addModal(RemoveListContainer,'Remove list', list.id, list.name)}>
+                        Remove List
+                      </li>
+                      </ul>
+                  </i>
+                </div>
 
-                  <ul className='EditListOptions'>
-                    <li onClick={this.addModal(EditListContainer,'Rename list', list.id,list.name)}>
-                      Rename List
-                    </li>
-                    <li onClick={this.addModal(RemoveListContainer,'Remove list', list.id, list.name)}>
-                      Remove List
-                    </li>
-                  </ul>
               </li>
             )
             )}
           </ul>;
 
     return(
-      <div className='mainSideBarRange'>
+      <div className='mainSideBar'>
+          <div className='mainSideBarRange'>
 
-        <h4>User Name: {username}</h4>
+          <h4>User Name: {username}</h4>
 
-        <div className='mainSideBarRangeToggle'>
-            <i
-              onClick={this.toggelRangeShow}
-              className="fa fa-angle-down"
-              aria-hidden="true">
-            </i>
-            <div className='indexRap'>
-              <Link to='/tasks/1'>index</Link>
+          <div className='mainSideBarRangeToggle'>
+              <i
+                onClick={this.toggelRangeShow}
+                className="fa fa-angle-down"
+                aria-hidden="true">
+              </i>
+              <div className='indexRap'>
+                <Link to='/tasks/1'>index</Link>
+              </div>
+          </div>
+          <div  className={this.state.rangeState}>
+          <div className='sidebarRanges'>
+            <Link to='/tasks/all'>All Tasks</Link>
+            <Link to='/tasks/today'>Today</Link>
+            <Link to='/tasks/tomorrow'>Tomorrow</Link>
+            <Link to='/tasks/week'>Week</Link>
             </div>
-        </div>
-        <div  className={this.state.rangeState}>
-        <div className='sidebarRanges'>
-          <Link to='/tasks/all'>All Tasks</Link>
-          <Link to='/tasks/today'>Today</Link>
-          <Link to='/tasks/tomorrow'>Tomorrow</Link>
-          <Link to='/tasks/week'>Week</Link>
           </div>
         </div>
 
-        <div className='mainSideBarListToggle'>
-          <i
-            onClick={this.toggelIndexShow}
-            className="fa fa-angle-down"
-            aria-hidden="true">
-            <p>Lists</p>
-          </i>
+        <div className='mainSideBarList'>
+          <div className='mainSideBarListToggle'>
+            <div className='mainSideBarListToggleLInk'>
+              <i onClick={this.toggelIndexShow}
+                 className="fa fa-angle-down"
+                 aria-hidden="true">
+              </i>
+
+              <p>Lists</p>
+            </div>
+            <i onClick={this.addModal(AddListContainer,'Add A List')}
+               className="fa fa-plus-circle" aria-hidden="true">
+              <p><strong>Add list</strong></p>
+            </i>
+          </div>
 
           <div  className={this.state.listState}>
-            <div onClick={this.addModal(AddListContainer,'Add A List')}>
-              <i className="fa fa-plus-circle" aria-hidden="true"></i>
-            </div>
 
             <div className='listRap'>
               { lists }
             </div>
           </div>
         </div>
-
       </div>
     );
   }

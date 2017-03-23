@@ -1,10 +1,17 @@
+
+// ---- List stuff--------
+
 .mainSideBarRange{
   display: block;
   border-bottom: 1px solid $light-blue;
   padding-bottom: 5px;
 }
+
+.mainSideBarRange h4{
+  font-size: 2vw;
+}
 .mainSideBarRange h4, i, a{
-  font-size: 1vw;
+  font-size: 1.3vw;
 }
 
 .mainSideBarRange h4{
@@ -23,43 +30,137 @@
 .indexRap a:hover{
   background-color: $lightest-blue;
   text-decoration: none;
+  cursor: pointer;
 }
 
 
 .mainSideBarRangeToggle i{
-  margin-left: 30%;
+  margin-left: 10%;
+  margin-right: 3px;
   width: 10px;
 }
 .mainSideBarRangeToggle div{
   flex-grow: 1;
 }
+
 .mainSideBarRangeToggle i:hover{
   background-color: $lightest-blue;
+  cursor: pointer;
 }
+
 .sidebarRanges{
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
   flex-wrap: wrap;
 }
 
 .sidebarRanges a{
   display: block;
-  margin: 10px, 10px;
-  flex-grow: 1;
-  width: 50%;
-  text-align: center;
-  padding: 5px;
-  margin: 2px;
+  padding: 4px 0;
+  padding-left: 30px;
 }
-.sidebarRanges a:hover{
+.mainSideBar a:hover{
   background-color: $lightest-blue;
   text-decoration: none;
-
+  cursor: pointer;
 }
 
-.sidebarRanges:nth-child(4){
-  margin-bottom: 100px;
+// ---- List stuff--------
 
+
+.mainSideBarList{
+  display: block;
+  border-bottom: 1px solid $light-blue;
+  padding-top: 5px;
+  padding-bottom: 10px;
+}
+
+.mainSideBarListToggle{
+  display: flex;
+  justify-content: space-between;
+  margin: 5px;
+}
+.mainSideBarListToggle div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 5px;
+}
+
+.mainSideBarListToggle div i{
+  padding-right: 5px;
+  margin-left: 29%;
+  width: 5px
+}
+.mainSideBarListToggle i p{
+  visibility: hidden;
+  width: 60px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  font-size: 12px;
+
+
+   /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+.mainSideBarListToggle i:hover p{
+  visibility: visible;
+  cursor: pointer;
+}
+
+
+.mainSideBarListToggle i{
+  position: relative;
+  top: 8px;
+  right: 3px;
+}
+.mainSideBarListToggleLInk i:hover{
+  background-color: $lightest-blue;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.mainSideBarListToggleLInk i{
+  position: relative;
+  top: 0px;
+}
+
+.listRap{
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+}
+
+.listRap div{
+  display: flex;
+  justify-content: space-between;
+  padding-left: 27px;
+}
+
+.listRap div i{
+  padding-right: 8px;
+}
+.listRap div i ul{
+  visibility: hidden;
+  width: 120px;
+  background-color: white;
+  color: black;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+   /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+.listRap div i:hover ul{
+  visibility: visible;
+}
+.listRap div i:hover ul li:hover{
+  background-color: $lightblueRTM;
+  cursor: pointer;
 }
