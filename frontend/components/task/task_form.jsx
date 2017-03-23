@@ -120,6 +120,7 @@ class taskForm extends React.Component{
             <button className={this.state.buttonStartDate}
                     onClick={ this.toggleShow('start') }
                     value='Add Start Date'>
+              <p className='value'>Add Start Date</p>
               <i className="fa fa-play" aria-hidden="true"></i>
             </button>
 
@@ -131,6 +132,7 @@ class taskForm extends React.Component{
             <button className={this.state.buttonEndDate}
                     onClick={ this.toggleShow('end')}
                     value='Add End Date'>
+              <p className='value'>end Start Date</p>
               <i className="fa fa-stop-circle-o" aria-hidden="true"></i>
             </button>
 
@@ -142,6 +144,7 @@ class taskForm extends React.Component{
               <button className={this.state.buttonEstimate}
                 onClick={ this.toggleShow('estimate')}
                 value='Add Estimate'>
+                <p className='value'>Add Estimate</p>
                 <i className="fa fa-arrows-h" aria-hidden="true"></i>
               </button>
               <label className={this.state.showEstimate} >{"Estimate:  "}
