@@ -6,7 +6,6 @@ import { updateList } from '../../actions/list_actions';
 
 
 const mapDispatchToProps = (dispatch, ownProps)=> {
-  debugger;
 return ({
   updateList: (list) => dispatch(updateList(list))
   });

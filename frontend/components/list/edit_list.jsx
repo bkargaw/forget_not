@@ -5,8 +5,8 @@ import {modal} from 'react-redux-modal';
 class editList extends React.Component{
   constructor(props){
     super(props);
-    debugger;
-    this.state = ({name: this.props.name});
+    this.state = ({name: this.props.name,
+                  id: this.props.id});
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
   }
@@ -32,12 +32,12 @@ class editList extends React.Component{
   render(){
   return(
       <form onSubmit={this.handleSubmit}>
-        <label>Please enter a new list name:
+        <label>{'Please enter a new list name:  '}
           <input type='text'
                  onChange={this.update}
                  value={this.state.name}/>
         </label>
-        <input type='submit' value='Add List'/>
+        <input type='submit' value='Edit List'/>
       </form>
     );
   }

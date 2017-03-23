@@ -2,8 +2,8 @@ import  React  from 'react';
 import { Link } from 'react-router';
 import {modal} from 'react-redux-modal';
 import AddListContainer from '../list/add_list_container';
-import EditList from '../list/edit_list_container';
-import RemoveList from '../list/remove_list_container';
+import EditListContainer from '../list/edit_list_container';
+import RemoveListContainer from '../list/remove_list_container';
 
 class mainSideBar extends React.Component {
   constructor(props) {
@@ -18,12 +18,12 @@ class mainSideBar extends React.Component {
       this.props.getAllLists();
   }
 
-  addModal(title, id , name) {
+  addModal(container, title, id , name) {
     return () =>(
-    modal.add(AddListContainer, {
+    modal.add(container, {
       title: title,
       size: 'small', // large, medium or small,
-      closeOnOutsideClick: false, // (optional) Switch to true
+      closeOnOutsideClick: true, // (optional) Switch to true
       // if you want to close the modal by clicking outside of it,
       hideTitleBar: false, // (optional) Switch to
       // true if do not want the default title bar and close button,
@@ -38,43 +38,6 @@ class mainSideBar extends React.Component {
     })
   );
   }
-  addRenameModal(title, id) {
-    return () =>(
-    modal.add(EditList, {
-      title: title,
-      size: 'small', // large, medium or small,
-      closeOnOutsideClick: false, // (optional) Switch to true
-      // if you want to close the modal by clicking outside of it,
-      hideTitleBar: false, // (optional) Switch to
-      // true if do not want the default title bar and close button,
-      hideCloseButton: false, // (optional) if you don't
-      // wanna show the top right close button
-      //.. all what you put in here you will get access in
-      // the modal props ;)
-      ListId: id
-
-    })
-  );
-  }
-
-  addRemoveModal(title, id) {
-    return () =>(
-    modal.add(RemoveList, {
-      title: title,
-      size: 'small', // large, medium or small,
-      closeOnOutsideClick: false, // (optional) Switch to true
-      // if you want to close the modal by clicking outside of it,
-      hideTitleBar: false, // (optional) Switch to
-      // true if do not want the default title bar and close button,
-      hideCloseButton: false, // (optional) if you don't
-      // wanna show the top right close button
-      //.. all what you put in here you will get access in
-      // the modal props ;)
-      id: id
-
-    })
-  );
-  }
 
   toggelRangeShow(e){
     e.preventDefault();
@@ -84,6 +47,7 @@ class mainSideBar extends React.Component {
       this.setState({rangeState: ''});
     }
   }
+  
   toggelIndexShow(e){
     e.preventDefault();
     if(this.state.listState === ''){
@@ -92,7 +56,6 @@ class mainSideBar extends React.Component {
       this.setState({listState: ''});
     }
   }
-
 
   render (){
     let username;
@@ -110,14 +73,18 @@ class mainSideBar extends React.Component {
                   <i className="fa fa-arrow-circle-o-down" aria-hidden="true"></i>
 
                   <ul className='EditListOptions'>
-                    <li onClick={this.addRenameModal('Rename list', list.id,list.name)}>
+                    <li onClick={this.addModal(EditListContainer,'Rename list', list.id,list.name)}>
                       Rename List
+                    </li>
+                    <li onClick={this.addModal(RemoveListContainer,'Remove list', list.id, list.name)}>
+                      Remove List
                     </li>
                   </ul>
               </li>
             )
             )}
           </ul>;
+
     return(
       <div className='mainSideBarRange'>
 
@@ -151,7 +118,7 @@ class mainSideBar extends React.Component {
           </i>
 
           <div  className={this.state.listState}>
-            <div onClick={this.addModal('Add A List')}>
+            <div onClick={this.addModal(AddListContainer,'Add A List')}>
               <i className="fa fa-plus-circle" aria-hidden="true"></i>
             </div>
 
