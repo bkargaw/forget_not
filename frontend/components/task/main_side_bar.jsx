@@ -47,7 +47,7 @@ class mainSideBar extends React.Component {
       this.setState({rangeState: ''});
     }
   }
-  
+
   toggelIndexShow(e){
     e.preventDefault();
     if(this.state.listState === ''){
@@ -67,7 +67,7 @@ class mainSideBar extends React.Component {
           <ul>
             {this.props.lists.slice(1).map((list) =>(
               <li key={list.id}>
-                <Link to={`tasks/${list.id}`}>
+                <Link to={`/tasks/${list.id}`}>
                   {list.name.replace(/\b\w/g, l => l.toUpperCase())}
                 </Link>
                   <i className="fa fa-arrow-circle-o-down" aria-hidden="true"></i>

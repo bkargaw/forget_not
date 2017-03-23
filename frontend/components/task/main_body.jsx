@@ -5,7 +5,7 @@ import TaskFormContainer from './task_form_container';
 class mainBody extends React.Component{
   constructor(props) {
     super(props);
-    this.state = { path: props.indexType,
+    this.state = { path: this.props.indexType,
                    DeletList: [],
                    ShowButton: 'hidden'
                  };
@@ -13,7 +13,6 @@ class mainBody extends React.Component{
   }
 
   componentDidMount(){
-    debugger;
     if (this.props.params.listId){
      this.props.updateTasks(this.props.params.listId);
     }else if(this.props.getAllTasks){
@@ -48,6 +47,9 @@ class mainBody extends React.Component{
       let DeletList = this.state.DeletList;
       DeletList.forEach(id => this.props.deleteTask(id));
       hashHistory.push(this.props.route.path);
+      this.setState({path: this.props.indexType,
+                     DeletList: [],
+                     ShowButton: 'hidden'});
   }
 
   updateDeleteList(id){

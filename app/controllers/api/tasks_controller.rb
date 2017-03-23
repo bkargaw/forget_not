@@ -32,8 +32,8 @@ class Api::TasksController < ApplicationController
   def destroy
     @task = Task.find_by_id(params[:id])
     if @task
-      @task.destroy
       render :show
+      @task.destroy
     else
       render(
         json: ["given task did not match any tasks in database"],

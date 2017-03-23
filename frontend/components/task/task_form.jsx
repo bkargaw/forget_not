@@ -92,11 +92,12 @@ class taskForm extends React.Component{
 
   render(){
     let selectList;
-    if(this.props.tasks){
+    if(this.props.lists.length){
       selectList= <select onChange={this.handleDateChange('list_id')}>
-                    {this.props.tasks.map(list => (
-                      <option value={list.id}>
-                        list.name
+                    {this.props.lists.map(list => (
+                      <option key={list.id}
+                              value={list.id}>
+                        {list.name}
                       </option>
                     )
                   )}
@@ -122,7 +123,7 @@ class taskForm extends React.Component{
               <i className="fa fa-play" aria-hidden="true"></i>
             </button>
 
-            <label className={this.state.showStartDate}>Start Date
+            <label className={this.state.showStartDate}>{"Start Date:  "}
               <input type='date'
                      onChange={this.handleDateChange('startDate')}/>
             </label>
@@ -133,7 +134,7 @@ class taskForm extends React.Component{
               <i className="fa fa-stop-circle-o" aria-hidden="true"></i>
             </button>
 
-            <label className={this.state.showEndDate} >End Date
+            <label className={this.state.showEndDate} >{"End Date:  "}
               <input  type='date'
                       onChange={this.handleDateChange('endDate')}/>
             </label>
@@ -143,15 +144,16 @@ class taskForm extends React.Component{
                 value='Add Estimate'>
                 <i className="fa fa-arrows-h" aria-hidden="true"></i>
               </button>
-
-              <input className={this.state.showEstimate}
-                     onChange={this.handleDateChange('estimate')}
-                     type='text'
-                     placeholder='Add Estimate'/>
-              </div>
-              <label>Add to a list
-                {selectList}
+              <label className={this.state.showEstimate} >{"Estimate:  "}
+                <input onChange={this.handleDateChange('estimate')}
+                       type='text'
+                       placeholder='Add Estimate'/>
               </label>
+
+               <label>Add to a list
+                 {selectList}
+               </label>
+              </div>
               <input type='submit' value= 'Add Task'/>
               </div>
             </div>
