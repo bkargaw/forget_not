@@ -13,24 +13,27 @@ class mainBody extends React.Component{
   }
 
   componentDidMount(){
-    if(this.props.getAllTasks){
+    debugger;
+    if (this.props.params.listId){
+     this.props.updateTasks(this.props.params.listId);
+    }else if(this.props.getAllTasks){
       this.props.getAllTasks();
-    }else if (this.props.params.listId){
-      this.props.updateTasks(this.props.params.listId);
     }else {
       this.props.updateTasks();
     }
   }
 
   componentWillReceiveProps(nextProps){
-    if(nextProps.indexType !== this.props.indexType){
+    let path = nextProps.location.pathname.split('/');
+    if(nextProps.indexType !== this.props.indexType && path[1] ==='tasks'){
       if (nextProps.params.listId){
         nextProps.updateTasks(nextProps.params.listId);
-      } else {
+      } else if(parseInt(nextProps.indexType) && parseInt(path[1])) {
+        nextProps.updateTasks(parseInt(nextProps.indexType));
+      }else {
         nextProps.updateTasks();
       }
 
-      let path = nextProps.location.pathname.split('/');
       let indexType;
       if(path[0].length === 0 ){
         indexType = path[path.length -1];

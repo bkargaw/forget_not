@@ -13,6 +13,7 @@ class taskForm extends React.Component{
       endDate: ``,
       // endDate: `${now.getFullYear()}-${now.getMonth()}-${now.getDate()}`,
       estimate: '',
+      list_id: 1,
       showStartDate: 'hidden',
       showEndDate: 'hidden',
       showEstimate: 'hidden',
@@ -42,7 +43,8 @@ class taskForm extends React.Component{
                   title: '',
                   startDate: ``,
                   endDate: ``,
-                  estimate: ''
+                  estimate: '',
+                  list_id: 1
                 });
   }
 
@@ -89,6 +91,18 @@ class taskForm extends React.Component{
   }
 
   render(){
+    let selectList;
+    if(this.props.tasks){
+      selectList= <select onChange={this.handleDateChange('list_id')}>
+                    {this.props.tasks.map(list => (
+                      <option value={list.id}>
+                        list.name
+                      </option>
+                    )
+                  )}
+                </select>;
+    }
+
     return(
       <div className='addTaskForm'>
         <form onSubmit={ this.handleSubmit }>
@@ -135,6 +149,9 @@ class taskForm extends React.Component{
                      type='text'
                      placeholder='Add Estimate'/>
               </div>
+              <label>Add to a list
+                {selectList}
+              </label>
               <input type='submit' value= 'Add Task'/>
               </div>
             </div>

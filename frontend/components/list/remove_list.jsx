@@ -14,7 +14,6 @@ class removeList extends React.Component{
 
   handleSubmit(e){
     e.preventDefault();
-    debugger;
     this.props.getAllListTasks()
     .then(res =>{ Object.keys(res)
           .forEach(id => this.props.deleteTask(id));})

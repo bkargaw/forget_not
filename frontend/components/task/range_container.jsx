@@ -20,7 +20,7 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = (dispatch,ownProps) => {
-  let updateTasks = getAllTasks;
+  let updateTasks;
   switch (ownProps.location.pathname) {
     case '/tasks/all':
       updateTasks = getAllTasks;
