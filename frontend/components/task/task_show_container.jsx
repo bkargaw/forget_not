@@ -6,7 +6,8 @@ import mainShowSection from './main_show_section';
 
 const mapStateToProps = (state, ownProps) =>  {
   return({
-    task: state.tasks[ownProps.params.taskId]
+    task: state.tasks[ownProps.params.taskId],
+    lists: state.lists
   });
 };
 
