@@ -46,18 +46,13 @@
 .Source {
   display: flex;
   flex: 1;
-  background-color: white;
-  justify-content: flex-start;
-  align-items: center;
+  justify-content: flex-end;
+  align-items: flex-end;
   margin: 0;
 }
-.Source img{
-  width: 10px;
-  height: 10px;
-}
-.Source a{
-  flex: 6;
-  width: 20px;
+
+.Source:last-child{
+  flex-grow: 40px;
 }
 .Creator{
   display: flex;
