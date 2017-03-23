@@ -30,7 +30,8 @@ class spalshPage extends React.Component {
     return (
       <div className='splashPage'>
         <section className='splashPageMain'>
-            <p>stop thinking about your tasks <br/> let the app remember for you</p>
+          <h1>Forget--Not</h1>
+            <p>stop thinking about your tasks!! let the app remember for you</p>
               <button onClick={this.addModal('Signup')}>
                    GET STARTED
                 </button>

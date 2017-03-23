@@ -2,17 +2,35 @@
   display: block;
 }
 .mainbodySection li{
-  border-top: 1px solid $light-gray;
-  padding: 5px;
-  margin-left: 5px;
+  border-top: 1px dotted $light-gray;
+  padding: 10px 5px;
+  margin-left: 0 5px;
+  font-size: 13px;
 }
-.mainbodySection li:hover{
-  background-color: orange;
+.mainbodySection ul:last-child{
+  padding-top: 10px;
+}
+.mainbodySection ul:last-child{
+  border-bottom: 1px dotted $light-gray;
+  margin:  0 5px;
+}
 
+.mainbodySection input{
+  padding: 5px;
+  margin-left: 10px;
+  margin-right: 6px;
 }
+
+.mainbodySection li:hover{
+  background-color: lightyellow;
+}
+.mainbodySection a:hover{
+  text-decoration: none;
+}
+
 
 #addTitle {
-  width: 95%;
+  width: 40vw;
   border: 1px solid gray;
   border-radius: 2px;
   margin: 5px;
@@ -26,7 +44,8 @@
 }
 .addTaskButtons input[type='submit']{
   flex: 1;
-  margin-left: 10px;
+  margin-right: 10px;
+  height: 15px;
 }
 
 .editButtons{

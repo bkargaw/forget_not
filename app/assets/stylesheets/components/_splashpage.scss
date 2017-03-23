@@ -8,66 +8,64 @@
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  height: 100vw;
+  height: 79vw;
 }
-
 
 .splashPageMain h1 {
-  font-size: 2.5vw;
+  font-size: 4vw;
   position: absolute;
-  top: auto;
-  left: 60%;
-  top: 35%;
-  color: $blue;
+  left: 40%;
+  bottom: 50%;
+  color: $lightest-blue;
 }
 .splashPageMain p {
-  font-size: 1.3vw;
+  font-size: 2vw;
   font-style: italic;
   position: absolute;
-  top: auto;
   left: 30%;
-  bottom: 50%;
+  bottom: 47%;
   color: $lightest-blue;
 }
 
 .splashPageMain button {
   font-size: 1.3vw;
   position: absolute;
-  left: 32%;
-  bottom: 25%;
+  left: 45%;
+  bottom: 37%;
 }
 
 .splashPageFooter{
   display: flex;
-  justify-content: center;
   align-items: center;
 }
 
+
 .Source {
-  display: flex;
   flex: 1;
-  justify-content: flex-end;
-  align-items: flex-end;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 0;
+  height: 7vw;
+  position: relative;
+  left: 10%;
+}
+.Source a:hover{
+  background-color: $light-blue;
+  text-decoration: none;
 }
 
-.Source:last-child{
-  flex-grow: 40px;
-}
 .Creator{
+  flex: 1;
   display: flex;
-  flex: 1.5;
-  justify-content:  flex-start;
+  justify-content:  center;
   align-items:  center;
-  height: 10vw;
+  height: 7vw;
+  position: relative;
+  right: 10%;
 }
-.Creator img{
-  width: 10px;
-  height: 10px;
-}
-.Creator a{
-  flex: 10;
-  width: 20px;
-  justify-content:  flex-start;
-  align-items:  center;
+
+.Creator a:hover{
+  background-color: $light-blue;
+  text-decoration: none;
 }

@@ -150,7 +150,7 @@ class taskForm extends React.Component{
                        placeholder='Add Estimate'/>
               </label>
 
-               <label>Add to a list
+               <label>{"Add to a list  "}
                  {selectList}
                </label>
               </div>
