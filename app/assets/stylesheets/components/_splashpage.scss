@@ -4,29 +4,19 @@
 
 .splashPageMain{
   flex: 1 100%;
-  // background-image: url('http://res.cloudinary.com/dwuzkffrk/image/upload/c_scale,q_100,r_0,w_822/v1489761837/happybackground_zdvlf9.jpg');
-  width: 100vw;
-  height: 80vh;
-  background-repeat: no-repeat;
+  background-image: url('http://res.cloudinary.com/dwuzkffrk/image/upload/v1490230658/yoda_l0z7ed.png');
+  background-position: center;
   background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vw;
 }
 
-.splashPageMainImage{
-  flex: 1 100%;
-  opacity: 1.5;
-  width: 100%;
-  height: inherit;
-  position: absolute;
-  top: 50;
-  left: 0;
-}
 
 .splashPageMain h1 {
   font-size: 2.5vw;
   position: absolute;
   top: auto;
-  left: 13%;
-  right: 16%;
+  left: 60%;
   top: 35%;
   color: $blue;
 }

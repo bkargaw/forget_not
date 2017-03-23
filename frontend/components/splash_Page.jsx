@@ -31,8 +31,6 @@ class spalshPage extends React.Component {
     return (
       <div className='splashPage'>
         <section className='splashPageMain'>
-        <img className='splashPageMainImage' src='http://res.cloudinary.com/dwuzkffrk/image/upload/c_scale,q_100,r_0,w_822/v1489761837/happybackground_zdvlf9.jpg'/>
-            <h1 >The smart to-do app for busy people.</h1>
             <p>stop thinking about your tasks <br/> let the app remember for you</p>
               <button onClick={this.addModal('Signup')}>
                    GET STARTED
