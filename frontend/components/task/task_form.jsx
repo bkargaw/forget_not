@@ -114,12 +114,12 @@ class taskForm extends React.Component{
                  onFocus={ this.toggleShow('wholeForm') }
                  onChange={ this.handleDateChange('title') } />
 
-            <div className={this.state.showStateChangers}>
+          <div className={this.state.showStateChangers}>
             <div className='addTaskButtons'>
-            <div className='editButtons'>
-            <button className={this.state.buttonStartDate}
-                    onClick={ this.toggleShow('start') }
-                    value='Add Start Date'>
+              <div className='editButtons'>
+                <button className={this.state.buttonStartDate}
+                        onClick={ this.toggleShow('start') }
+                        value='Add Start Date'>
               <p className='value'>Add Start Date</p>
               <i className="fa fa-play" aria-hidden="true"></i>
             </button>

@@ -18,11 +18,11 @@ class mainSideBar extends React.Component {
       this.props.getAllLists();
   }
 
-  addModal(container, title, id , name) {
+  addModal(container, title, size, id , name) {
     return () =>(
     modal.add(container, {
       title: title,
-      size: 'small', // large, medium or small,
+      size: size, // large, medium or small,
       closeOnOutsideClick: true, // (optional) Switch to true
       // if you want to close the modal by clicking outside of it,
       hideTitleBar: false, // (optional) Switch to
@@ -73,10 +73,14 @@ class mainSideBar extends React.Component {
                   </Link>
                   <i className="fa fa-arrow-circle-o-down" aria-hidden="true">
                     <ul className='EditListOptions'>
-                      <li onClick={this.addModal(EditListContainer,'Rename list', list.id,list.name)}>
+                      <li onClick={this.addModal(EditListContainer,
+                                   'Rename list', 'small',
+                                   list.id,list.name)}>
                         Rename List
                       </li>
-                      <li onClick={this.addModal(RemoveListContainer,'Remove list', list.id, list.name)}>
+                      <li onClick={this.addModal(RemoveListContainer,
+                                   'Remove list', 'medium',
+                                   list.id, list.name)}>
                         Remove List
                       </li>
                       </ul>
@@ -92,7 +96,7 @@ class mainSideBar extends React.Component {
       <div className='mainSideBar'>
           <div className='mainSideBarRange'>
 
-          <h4>User Name: {username}</h4>
+          <h4>User Name:<br/> {`  ${username}`}</h4>
 
           <div className='mainSideBarRangeToggle'>
               <i
@@ -124,7 +128,8 @@ class mainSideBar extends React.Component {
 
               <p>Lists</p>
             </div>
-            <i onClick={this.addModal(AddListContainer,'Add A List')}
+            <i onClick={this.addModal(AddListContainer,'Add A List',
+                        'small')}
                className="fa fa-plus-circle" aria-hidden="true">
               <p><strong>Add list</strong></p>
             </i>

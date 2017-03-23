@@ -7,18 +7,15 @@
   padding-bottom: 5px;
 }
 
-.mainSideBarRange h4{
-  font-size: 2vw;
-}
-.mainSideBarRange h4, i, a{
-  font-size: 1.3vw;
+.mainSideBarRange i, a{
+  font-size: 1.1vw;
 }
 
 .mainSideBarRange h4{
   margin-bottom: 10px;
   padding-left: 10px;
   padding-bottom: 10px;
-  font-size: 1vw;
+  font-size: 1.4vw;
 }
 
 .mainSideBarRangeToggle{
@@ -95,8 +92,8 @@
 .mainSideBarListToggle i p{
   visibility: hidden;
   width: 60px;
-  background-color: black;
-  color: #fff;
+  background-color: $lightest-blue;
+  color: black;
   text-align: center;
   border-radius: 6px;
   padding: 5px 0;
@@ -109,8 +106,13 @@
 }
 .mainSideBarListToggle i:hover p{
   visibility: visible;
+}
+.mainSideBarListToggle i:hover p:hover{
+  background-color: $light-blue;
+  text-decoration: none;
   cursor: pointer;
 }
+
 
 
 .mainSideBarListToggle i{
@@ -119,7 +121,7 @@
   right: 3px;
 }
 .mainSideBarListToggleLInk i:hover{
-  background-color: $lightest-blue;
+  background-color: $blueRTM;
   text-decoration: none;
   cursor: pointer;
 }
@@ -147,7 +149,7 @@
 .listRap div i ul{
   visibility: hidden;
   width: 120px;
-  background-color: white;
+  background-color: $lightest-blue;
   color: black;
   text-align: center;
   border-radius: 6px;
@@ -161,6 +163,6 @@
   visibility: visible;
 }
 .listRap div i:hover ul li:hover{
-  background-color: $lightblueRTM;
+  background-color: $light-blue;
   cursor: pointer;
 }

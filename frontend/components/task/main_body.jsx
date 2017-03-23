@@ -53,15 +53,16 @@ class mainBody extends React.Component{
   }
 
   updateDeleteList(id){
+    let that = this;
     return( e =>{
-      let DeletList = this.state.DeletList;
+      let DeletList = that.state.DeletList;
       let index = DeletList.indexOf(id);
       if (index > -1) {
         DeletList.splice(index, 1);
       }else{
         DeletList.push(id);
       }
-      this.setState({ DeletList, ShowButton: '' });
+      that.setState({ DeletList, ShowButton: '' });
     }
   );
   }
@@ -71,25 +72,32 @@ class mainBody extends React.Component{
     const allTasks =
             <ul>
               {this.props.tasks.map((task, idx) =>(
-                <Link key={idx} to={`tasks/${this.state.path}/${task.id}`}>
-                  <li >
-                  <input type='checkbox'
-                    onClick={this.updateDeleteList(task.id)}/>
-                    {task.title}
-                </li>
-              </Link>
+                <div key={idx+'check'} className='TaskList'>
+                  <input
+                          type='checkbox'
+                          onClick={this.updateDeleteList(task.id)}/>
+
+                  <Link key={idx} to={`tasks/${this.state.path}/${task.id}`}>
+                    <li >
+                      {task.title}
+                    </li>
+                  </Link>
+                </div>
               )
               )}
             </ul>;
     return(
     <div className='MAINBODYCONTAINER'>
       <section  className= 'mainbodySection'>
+        <div className='DeleteAction'>
+          <i id='delete'
+            onClick= { this.handelDelete }
+             className="fa fa-trash fa-2x" aria-hidden="true">
+          </i>
+          <p>Delete Tasks</p>
+        </div>
         <TaskFormContainer />
         <br/>
-        <button onClick= { this.handelDelete}
-                value='Delete Tasks'>
-           Delete Tasks
-         </button>
         { allTasks }
       </section>
 

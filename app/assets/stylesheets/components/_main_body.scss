@@ -1,30 +1,66 @@
 .mainbodySection{
   display: block;
 }
-.mainbodySection li{
-  border-top: 1px dotted $light-gray;
-  padding: 10px 5px;
-  margin-left: 0 5px;
-  font-size: 13px;
+ #delete {
+  margin-top: 15px;
+  margin-left: 20px;
 }
-.mainbodySection ul:last-child{
-  padding-top: 10px;
-}
-.mainbodySection ul:last-child{
-  border-bottom: 1px dotted $light-gray;
-  margin:  0 5px;
+.mainbodySection .DeleteAction{
+  display: flex
 }
 
+ .DeleteAction p{
+  visibility: hidden;
+    width: 60px;
+    height: 30px;
+    background-color: $lightest-blue;
+    color: black;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+
+    /* Position the tooltip */
+    position: relative;
+    top: 31px;
+    z-index: 1;
+}
+.DeleteAction:hover p{
+  visibility: visible;
+}
+
+.TaskList{
+  display: flex;
+  border-top: 1px dotted $light-gray;
+  flex-grow: 300px;
+  justify-content: center;
+  align-items: center;
+  margin-left: 0 5px;
+  font-size: 13px;
+  width: 40vw;
+  position: relative;
+  left: 10px;
+}
+
+.TaskList:last-child{
+  border-bottom: 1px dotted $light-gray;
+}
+
+.TaskList a{
+  flex: 10;
+  padding: 10px 0px;
+}
 .mainbodySection input{
   padding: 5px;
   margin-left: 10px;
   margin-right: 6px;
 }
 
-.mainbodySection li:hover{
+.TaskList a:hover{
   background-color: lightyellow;
+  flex: 10;
 }
-.mainbodySection a:hover{
+
+.TaskList a:hover{
   text-decoration: none;
 }
 
@@ -34,7 +70,7 @@
   border: 1px solid gray;
   border-radius: 2px;
   margin: 5px;
-  margin-top: 40px;
+  margin-top: 20px;
   margin-left: 10px;
   height: 20px;
 }
@@ -42,8 +78,8 @@
 .addTaskForm button .value{
   visibility: hidden;
   width: 120px;
-  background-color: black;
-  color: #fff;
+  background-color:$lightest-blue;
+  color: black;
   text-align: center;
   border-radius: 6px;
   padding: 5px 0;
@@ -69,6 +105,7 @@
 .editButtons{
   flex: 10;
 }
+
 .mainbodySection input[type='text'] {
   border: 1px solid gray;
   border-radius: 2px;

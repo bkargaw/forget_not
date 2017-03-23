@@ -16,22 +16,39 @@
   position: absolute;
   left: 40%;
   bottom: 50%;
-  color: $lightest-blue;
+  color: $showlightblueRTM;
+}
+.splashPageMain h4 {
+  font-size: 1.8vw;
+  position: absolute;
+  left: 34%;
+  bottom: 43%;
+  color: $showlightblueRTM;
 }
 .splashPageMain p {
-  font-size: 2vw;
+  font-size: 1.7vw;
   font-style: italic;
+  color: $showlightblueRTM;
+}
+
+#quote{
   position: absolute;
-  left: 30%;
-  bottom: 47%;
-  color: $lightest-blue;
+  left: 15%;
+  bottom: 20%;
+}
+
+#yoda{
+  position: absolute;
+  left: 20%;
+  bottom: 17%;
+
 }
 
 .splashPageMain button {
   font-size: 1.3vw;
   position: absolute;
   left: 45%;
-  bottom: 37%;
+  bottom: 33%;
 }
 
 .splashPageFooter{

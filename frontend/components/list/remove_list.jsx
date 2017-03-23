@@ -14,10 +14,7 @@ class removeList extends React.Component{
 
   handleSubmit(e){
     e.preventDefault();
-    this.props.getAllListTasks()
-    .then(res =>{ Object.keys(res)
-          .forEach(id => this.props.deleteTask(id));})
-    .then(()=>this.props.deleteList(this.props.id))
+    this.props.deleteList(this.props.id)
     .then(()=> hashHistory.push('/tasks/all'))
     .then(()=> this.removeThisModal());
   }
