@@ -8,6 +8,11 @@
 .mainbodySection .DeleteAction{
   display: flex
 }
+.DeleteAction{
+  display: flex;
+}
+
+
 
  .DeleteAction p{
   visibility: hidden;
@@ -21,7 +26,7 @@
 
     /* Position the tooltip */
     position: relative;
-    top: 31px;
+    top: 20px;
     z-index: 1;
 }
 .DeleteAction:hover p{
@@ -64,6 +69,9 @@
   text-decoration: none;
 }
 
+.TaskList input[type='checkbox']:hover{
+  cursor: pointer;
+}
 
 #addTitle {
   width: 40vw;
@@ -89,9 +97,12 @@
   top: 160px;
   z-index: 1;
 }
+
 .addTaskForm button:hover .value{
   visibility: visible;
 }
+
+
 
 .addTaskButtons{
   display: flex;

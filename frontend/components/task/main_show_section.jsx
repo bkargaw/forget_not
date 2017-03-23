@@ -60,12 +60,24 @@ class mainShowSection extends React.Component {
     if(this.props.status){
       return(
       <div className='totalShowSummery'>
-        <h4>{this.props.title}</h4>
+        <h4>{this.props.title.replace(/\b\w/g, l => l.toUpperCase())}</h4>
         <ul className='ShowSummary'>
-          <li>count {this.props.status.count}</li>
-          <li>completed {this.props.status.completedCount}</li>
-          <li>todayCount {this.props.status.todayCout}</li>
-          <li>overDueCount {this.props.status.overDueCout}</li>
+          <li>
+            <h6>{this.props.status.count}</h6>
+            <p>Tasks</p>
+          </li>
+          <li>
+            <h6>{this.props.status.completedCount}</h6>
+            <p>completed</p>
+          </li>
+          <li>
+            <h6>{this.props.status.todayCout}</h6>
+            <p>Due today</p>
+          </li>
+          <li>
+            <h6>{this.props.status.overDueCout}</h6>
+            <p>overdue</p>
+          </li>
         </ul>
       </div>
       );
@@ -76,18 +88,39 @@ class mainShowSection extends React.Component {
       let estimate;
       let completed;
       if(this.props.task.startDate) {
-      startTime = <p>Start Date: {' ' + new Date(this.props.task.startDate).toDateString() }</p>;
+      startTime = <li>
+                    <p className='first-child'>start</p>
+                    <p>{' ' + new Date(this.props.task.startDate)
+                        .toDateString() }</p>
+                  </li>;
       }
       if(this.props.task.endDate) {
-      endTime = <p>End Date: {' ' + new Date(this.props.task.endDate).toDateString() }</p>;
+        endTime =   <li>
+                      <p className='first-child'>due</p>
+                      <p>{' ' + new Date(this.props.task.endDate)
+                          .toDateString() }
+                      </p>
+                    </li>;
       }
       if(this.props.task.estimate) {
-      estimate = <p>Estimate Duration: {this.props.task.estimate }</p>;
+      estimate =  <li>
+                   <p className='first-child'>estimate</p>
+                   <p>{this.props.task.estimate }</p>
+                  </li>;
       }
       if(this.props.task.completed) {
-      completed = <p>Completed: {this.props.task.completed }</p>;
+      completed = <li>
+                   <p className='first-child'> completed </p>
+                   <p>{`${this.props.task.completed}` }</p>
+                  </li>;
       }
 
+      let listType = <li>
+                        <p className='first-child'>list</p>
+                        <p>
+                          {this.props.lists[this.props.task.list_id].name}
+                        </p>
+                      </li>;
       let selectList= <select onChange={this.handleChange('list_id')}>
 
         {Object.keys(this.props.lists).map(id =>
@@ -124,13 +157,16 @@ class mainShowSection extends React.Component {
       return(
         <div className='TaskShowEdit'>
           <div className='showTaskStaff'>
-          <h4>{this.props.task.title}</h4>
-          { startTime }
-          { endTime }
-          { estimate }
-          { completed }
-          <p>List Type: {this.props.lists[this.props.task.list_id].name}</p>
-        </div>
+            <h4>{this.props.task.title}</h4>
+            <ul>
+              <li> { startTime } </li>
+              <li> { endTime } </li>
+              <li> { estimate } </li>
+              <li> { completed } </li>
+              <li> { listType } </li>
+            </ul>
+          </div>
+
           <h3>Edit Task</h3>
           <form className='TaskEdit'
                 onSubmit={ this.handleSubmit }>
@@ -160,7 +196,7 @@ class mainShowSection extends React.Component {
             <label>{'Select List Type  '}
                 { selectList }
             </label>
-            <label>{'Completed ? :'}
+            <label>{'Completed:   '}
               { completedOption }
             </label>
 

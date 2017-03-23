@@ -5,42 +5,43 @@
 .splashPageMain{
   flex: 1 100%;
   background-image: url('http://res.cloudinary.com/dwuzkffrk/image/upload/v1490230658/yoda_l0z7ed.png');
-  background-position: center;
+  background-position: center 0px;
   background-size: cover;
   background-repeat: no-repeat;
-  height: 79vw;
+  height: 85vw;
 }
 
 .splashPageMain h1 {
   font-size: 4vw;
   position: absolute;
   left: 40%;
-  bottom: 50%;
+  bottom: 30%;
   color: $showlightblueRTM;
 }
+
 .splashPageMain h4 {
   font-size: 1.8vw;
   position: absolute;
   left: 34%;
-  bottom: 43%;
+  bottom: 24%;
   color: $showlightblueRTM;
 }
 .splashPageMain p {
   font-size: 1.7vw;
   font-style: italic;
-  color: $showlightblueRTM;
+  color: white;
 }
 
 #quote{
   position: absolute;
-  left: 15%;
-  bottom: 20%;
+  left: 13%;
+  bottom: 6%;
 }
 
 #yoda{
   position: absolute;
-  left: 20%;
-  bottom: 17%;
+  left: 15%;
+  bottom: 3%;
 
 }
 
@@ -48,7 +49,7 @@
   font-size: 1.3vw;
   position: absolute;
   left: 45%;
-  bottom: 33%;
+  bottom: 15%;
 }
 
 .splashPageFooter{
@@ -63,7 +64,7 @@
   justify-content: center;
   align-items: center;
   margin: 0;
-  height: 7vw;
+  height: 4vw;
   position: relative;
   left: 10%;
 }
@@ -77,7 +78,7 @@
   display: flex;
   justify-content:  center;
   align-items:  center;
-  height: 7vw;
+  height: 3vw;
   position: relative;
   right: 10%;
 }
