@@ -16,7 +16,6 @@ const mapStateToProps = (state, ownProps) =>  {
 
 
 const mapDispatchToProps = (dispatch,ownProps) =>{
-  debugger;
   return({
   updateTask: (task) => dispatch(updateTask(task))
 });

@@ -12,7 +12,8 @@ const mapStateToProps = (state, ownProps) =>  {
 };
 
 const mapDispatchToProps = (dispatch,ownProps) => ({
-  getTask: (id) => dispatch(getTask(id))
+  getTask: (id) => dispatch(getTask(id)),
+  updateTask: (id) => dispatch(updateTask(id))
 });
 
 

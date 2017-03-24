@@ -22,11 +22,12 @@ return({
 });
 };
 
-const mapDispatchToProps = (dispatch,ownProps) => ({
+const mapDispatchToProps = (dispatch,ownProps) =>{
+return({
   getTask: (id) => dispatch(getTask(id)),
   updateTask: (task) => dispatch(updateTask(task))
 });
-
+};
 
 
 export default connect(

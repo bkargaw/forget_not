@@ -44,12 +44,6 @@ class mainShowSection extends React.Component {
   render(){
 
     if(this.props.status){
-      let today;
-      if (this.props.title === 'today'){
-        today = this.props.status.count;
-      } else{
-        today = this.props.status.todayCout;
-      }
       return(
       <div className='totalShowSummery'>
         <h4>{this.props.title.replace(/\b\w/g, l => l.toUpperCase())}</h4>
@@ -63,7 +57,7 @@ class mainShowSection extends React.Component {
             <p>completed</p>
           </li>
           <li>
-            <h6>{today}</h6>
+            <h6>{ this.props.status.todayCout}</h6>
             <p>Due today</p>
           </li>
           <li>
