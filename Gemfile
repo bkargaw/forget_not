@@ -8,6 +8,7 @@ end
 
 # gem for heroku deployment
 gem 'rails_12factor'
+gem 'seed_dump'
 gem 'faker'
 ruby '2.3.1'
 # gem for auth

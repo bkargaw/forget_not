@@ -20,7 +20,7 @@ class mainShowSection extends React.Component {
    }
  }
 
- addModal(title, task, path) {
+ addModal(title, task, path, updateTask) {
    return () =>(
    modal.add(EditTaskContainer, {
      title: title,
@@ -34,7 +34,8 @@ class mainShowSection extends React.Component {
      //.. all what you put in here you will get access in
      // the modal props ;)
      task: task,
-     path: path
+     path: path,
+     updateTask: updateTask
    })
  );
  }
@@ -127,10 +128,9 @@ class mainShowSection extends React.Component {
           </div>
 
         <button onClick={this.addModal('Edit Task', this.props.task,
-                         this.props.location.pathname)}>
+                         this.props.location.pathname, this.props.updateTask)}>
                Edit Task
         </button>
-
         </div>
       );
     }else {
