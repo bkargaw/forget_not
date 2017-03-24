@@ -24,12 +24,13 @@ by deadlines. The user can also edit and delete task as well lists.
 #### database
   The developmental and production database used for ForgetNor is postgresql. The database holds tables that have data for the users, user's tasks, and and user's lists.
 
-#### Backend  
-    In the backend w
+#### Backend (Tasks)
+  The most interesting part of the Task's implementation in the backend was the way in which index ajax call's were answered. First off, all actions that are preformed in the backend ensure the user is logged in properly. From there it will filter all action based on the users params. The backend index controller
+  allows the ajax request to come in with an options object that will determined how to filter the task data being request. Then the controller will create the necessary data query with a build
+  up conditions created from the option object. lastly we format the data in a way that is more manageable for the front-end.
 
-
-#### Front-end
-  will take filtered tasks from the store and pass them the <List container> and will
+#### Front-end (Tasks)
+  the Front end will then take filtered tasks from the store and pass them the <List container> and will
   render them to (center of the page). it will show the title of each task and make the a link to edit. when they are clicked it will render <ShowTask container> to the right hand side.
   the UI will then be the same to Remember the Milk.
 
