@@ -133,18 +133,18 @@ hr {
 	border: 2px solid $light-gray;
 	padding-left: 2px;
 }
+input[type='text'] {
+	font-family: $sans-serif;
+	border: 1px solid $gray;
+	border: 2px solid $light-gray;
+	padding-left: 2px;
+}
 
 .input-wrapper button {
 	border-top-left-radius: 0;
 	border-bottom-left-radius: 0;
 }
 
-
-
 input[type="search"] {
 	padding: 5px;
-}
-
-.app{
-
 }

@@ -1,7 +1,12 @@
 class Api::TasksController < ApplicationController
 
   def index
-    @tasks = filter_for_index
+    if params[:search_by]
+      @tasks = Task.where("title LIKE :prefix",
+                          prefix: "#{params[:search_by]}%")
+    else
+      @tasks = filter_for_index
+    end
     render :index
   end
 

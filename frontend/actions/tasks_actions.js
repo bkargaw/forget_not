@@ -66,3 +66,9 @@ export const getAllTaskForWeek = () => dispatch => (
   TaskUtil.fetchWeekTasks()
   .then((res)=> dispatch(receiveAllTasks(res)))
 );
+
+// ----search action -------
+export const searchByTaskTitle = (prefix) => dispatch => (
+  TaskUtil.searchByTaskTitle(prefix)
+  .then((res)=> dispatch(receiveAllTasks(res)))
+);

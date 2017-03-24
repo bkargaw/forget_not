@@ -6,7 +6,9 @@ import MainBodyContainer from './main_body_container';
 const Tasks = (props) => {
   return(
   <div>
+    <div className='blueSpace'></div>
     <div className= 'mainLayout'>
+
       <aside className= 'mainSideBar'>
         <MainSideBarContainer />
       </aside>
@@ -15,7 +17,6 @@ const Tasks = (props) => {
         { props.children}
       </section>
 
-      
     </div>
 
   </div>);

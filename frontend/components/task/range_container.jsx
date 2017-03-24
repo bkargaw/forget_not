@@ -60,7 +60,7 @@ const mapDispatchToProps = (dispatch,ownProps) => {
             break;
             default:
             return({
-              updateTasks: (listId) => dispatch(updateTasks(listId)),
+              updateTasks: (listId) => dispatch(getAllListTasks(listId)),
               deleteTask: (id) => dispatch(deleteTask(id))
                 });
           }

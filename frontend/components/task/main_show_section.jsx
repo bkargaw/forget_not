@@ -38,7 +38,6 @@ class mainShowSection extends React.Component {
    if (title === '') title = this.props.task.title;
    let task = merge({},this.state, {startDate},
                     {endDate}, {title}, {id: this.props.task.id});
-                    debugger;
 
    this.props.updateTask(task)
               .then(()=> hashHistory.push(this.props.location.pathname));

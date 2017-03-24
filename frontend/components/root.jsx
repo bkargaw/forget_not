@@ -8,6 +8,8 @@ import SessionFormContainer from './session/session_form_container';
 import MainBodyContainer from './task/main_body_container';
 import MainShowSectionContainer from './task/main_show_section_container';
 import RangesContainer from './task/range_container';
+import SearchContainer from './search/search_container';
+import SearchShowContainer from './search/search_show_container';
 import TaskShowContainer from './task/task_show_container';
 import Tasks from './task/task';
 import splashPage from './splash_Page';
@@ -57,13 +59,20 @@ const Root = ({ store }) => {
                      component={ TaskShowContainer }/>
             </Route>
 
+            <Route path='/tasks/search/:prefix' component={ SearchContainer }>
+              <IndexRoute component={ MainShowSectionContainer }/>
+              <Route path='/tasks/search/:prefix/:taskId'
+                     component={ TaskShowContainer } />
+            </Route>
+
             <Route path='/tasks/:listId' component={ RangesContainer }>
               <IndexRoute component={ MainShowSectionContainer }/>
               <Route path='/tasks/:listId/:taskId'
-                    component={ TaskShowContainer }/>
+                    component={ SearchShowContainer } />
             </Route>
-          </Route>
 
+
+          </Route>
         </Route>
       </Router>
 

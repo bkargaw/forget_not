@@ -93,7 +93,7 @@ class mainSideBar extends React.Component {
           </ul>;
 
     return(
-      <div className='mainSideBar'>
+      <div id='mainSideBar' className='mainSideBar'>
           <div className='mainSideBarRange'>
 
           <h4>User Name:<br/> {`  ${username}`}</h4>

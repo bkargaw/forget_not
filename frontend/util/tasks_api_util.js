@@ -73,3 +73,13 @@ export const fetchAllListsTypeTasks = listId =>(
           listId}
   })
 );
+
+// ---type----
+  // fetchAllListsTypeTasks
+
+export const searchByTaskTitle = prefix =>(
+  $.ajax({
+    url: `api/tasks`,
+    data: {search_by: prefix}
+  })
+);

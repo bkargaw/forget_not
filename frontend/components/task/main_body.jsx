@@ -13,7 +13,6 @@ class mainBody extends React.Component{
   }
 
   componentDidMount(){
-    debugger;
     if (this.props.params.listId){
      this.props.updateTasks(this.props.params.listId);
     }else if(this.props.getAllTasks){
@@ -42,6 +41,16 @@ class mainBody extends React.Component{
       }
       this.setState({path: indexType});
     }
+
+    let listId = nextProps.params.listId;
+    let taskId = nextProps.params.taskId;
+    let thisTask = this.props.tasks.find(el => el.id === parseInt(taskId));
+    let nextTask = nextProps.tasks.find(el => el.id === parseInt(taskId));
+
+    if(taskId && nextTask && (thisTask.list_id !== nextTask.list_id)){
+      nextProps.updateTasks(thisTask.list_id);
+    }
+
   }
 
   handelDelete(){
