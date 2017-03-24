@@ -1,7 +1,12 @@
-#ForgetNot
+# ForgetNot
 
-ForgetNot is a web application inspired by Remember The Milk built using Ruby on Rails and React/Redux. It should allow the user to create tasks to complete, assign various properties
-to each task, add list types to tasks (to create associations)
+### link to the live site
+[ForgetNot](https://forget--not.herokuapp.com/)
+
+ForgetNot is a web application inspired by Remember The Milk built using Ruby on Rails and React/Redux. It allows the user to create tasks to complete, assign various properties
+to each task, add list types to tasks(to create associations). The user should then able to
+filter their task by many filtering options which includes search by name for a task or filter
+by deadlines. The user can also edit and delete task as well lists.
 
 
 ## Features & Implementation
@@ -11,19 +16,19 @@ to each task, add list types to tasks (to create associations)
 
 ### login and signup
 
-  The user will be abel to signup/login through a modal dialog
+  The user will be abel to signup/login through a modal dialog; Full auth of the user is preformed every time signs in.  
 ![alt tag](https://github.com/bkargaw/forget_not/blob/master/docs/wireframes/sign_in:up_page.jpg)
 
 ### Task Rendering and Editing Tasks
 
 #### database
-  There will be three tables that hold the user, tasks, and lists. when the user
-  first login the user table and the task table are used to grab all the tasks
-  associated with the current user list-type of. will allow ajax request to come
-  in to edit and delete a task. default list-type will be index. will also allow
-  ajax request to come in with different list-type.
+  The developmental and production database used for ForgetNor is postgresql. The database holds tables that have data for the users, user's tasks, and and user's lists.
 
-#### front-end
+#### Backend  
+    In the backend w
+
+
+#### Front-end
   will take filtered tasks from the store and pass them the <List container> and will
   render them to (center of the page). it will show the title of each task and make the a link to edit. when they are clicked it will render <ShowTask container> to the right hand side.
   the UI will then be the same to Remember the Milk.
