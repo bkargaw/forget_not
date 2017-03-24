@@ -96,7 +96,7 @@ class mainSideBar extends React.Component {
       <div id='mainSideBar' className='mainSideBar'>
           <div className='mainSideBarRange'>
 
-          <h4>User Name:<br/> {`  ${username}`}</h4>
+          <h4>Name:<br/> {`  ${username}`}</h4>
 
           <div className='mainSideBarRangeToggle'>
               <i

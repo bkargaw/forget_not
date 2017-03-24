@@ -1,6 +1,11 @@
 .mainbodySection{
   display: block;
 }
+
+.mainPageHeaders{
+  display: flex;
+  justify-content: space-between;
+}
  #delete {
   margin-top: 15px;
   margin-left: 20px;

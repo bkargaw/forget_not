@@ -7,9 +7,12 @@ class mainBody extends React.Component{
     super(props);
     this.state = { path: this.props.indexType,
                    DeletList: [],
-                   ShowButton: 'hidden'
+                   ShowButton: 'hidden',
+                   filter: false
                  };
     this.handelDelete = this.handelDelete.bind(this);
+    this.showIncomplete = this.showIncomplete.bind(this);
+    this.showComplete = this.showComplete.bind(this);
   }
 
   componentDidMount(){
@@ -82,33 +85,53 @@ class mainBody extends React.Component{
   }
 
 
+  showIncomplete(e){
+    e.preventDefault();
+    this.setState({filter: false});
+  }
+
+  showComplete(e){
+    e.preventDefault();
+    this.setState({filter: true});
+  }
+
+
   render(){
     const allTasks =
             <ul>
-              {this.props.tasks.map((task, idx) =>(
-                <div key={idx+'check'} className='TaskList'>
-                  <input
-                          type='checkbox'
-                          onClick={this.updateDeleteList(task.id)}/>
-
-                  <Link key={idx} to={`tasks/${this.state.path}/${task.id}`}>
-                    <li >
-                      {task.title}
-                    </li>
-                  </Link>
-                </div>
-              )
+              {this.props.tasks.map((task, idx) =>{
+                if (task.completed === this.state.filter){
+                  return(
+                    <div key={idx+'check'} className='TaskList'>
+                      <input
+                        type='checkbox'
+                        onClick={this.updateDeleteList(task.id)}/>
+                      <Link key={idx} to={`tasks/${this.state.path}/${task.id}`}>
+                        <li >
+                          {task.title}
+                        </li>
+                      </Link>
+                    </div>
+                  );
+                }
+              }
               )}
             </ul>;
     return(
     <div className='MAINBODYCONTAINER'>
       <section  className= 'mainbodySection'>
-        <div className='DeleteAction'>
-          <i id='delete'
-            onClick= { this.handelDelete }
-             className="fa fa-trash fa-2x" aria-hidden="true">
-          </i>
-          <p>Delete Tasks</p>
+       <div className='mainPageHeaders'>
+          <div className='DeleteAction'>
+            <i id='delete'
+               onClick= { this.handelDelete }
+               className="fa fa-trash fa-2x" aria-hidden="true">
+           </i>
+            <p>Delete Tasks</p>
+          </div>
+          <nav>
+            <button onClick={ this.showIncomplete }>Incomplete</button>
+            <button onClick={ this.showComplete }>Completed</button>
+          </nav>
         </div>
         <TaskFormContainer />
         <br/>
