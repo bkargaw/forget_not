@@ -1,30 +1,28 @@
 import React from 'react';
 import { hashHistory } from 'react-router';
+import SearchInput from 'react-search-input';
 
 class SearchForTask extends React.Component {
   constructor( props ) {
     super( props );
     this.state = {prefix: ''};
-
-    this._handleKeyPress = this._handleKeyPress.bind(this);
-
+    this.searchUpdated = this.searchUpdated.bind(this);
   }
 
-  _handleKeyPress(e){
-    debugger;
-    e.preventDefault();
-    if (e.key === 'Enter' && !this.state.prefix !== '') {
-      hashHistory.push(`/tasks/search/${this.state.prefix}`);
-    }else{
-      this.setState({prefix: `${e.key}${this.state.prefix}`});
+  searchUpdated(term){
+    if (term !== ''){
+      hashHistory.push(`/tasks/search/${term}`);
     }
   }
 
 
   render(){
-    return <input type="text"
-                  value={this.state.prefix}
-                  onKeyPress={this._handleKeyPress} />;
+    if(this.props.currentUser){
+      return  <SearchInput className="search-input"
+                           onChange={this.searchUpdated}/>;
+    }else {
+      return <div></div>;
+    }
   }
 }
 

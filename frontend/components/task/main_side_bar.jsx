@@ -74,7 +74,7 @@ class mainSideBar extends React.Component {
                   <i className="fa fa-arrow-circle-o-down" aria-hidden="true">
                     <ul className='EditListOptions'>
                       <li onClick={this.addModal(EditListContainer,
-                                   'Rename list', 'medium',
+                                   'Rename list', 'small',
                                    list.id,list.name)}>
                         Rename List
                       </li>
@@ -129,7 +129,7 @@ class mainSideBar extends React.Component {
               <p>Lists</p>
             </div>
             <i onClick={this.addModal(AddListContainer,'Add A List',
-                        'medium')}
+                        'small')}
                className="fa fa-plus-circle" aria-hidden="true">
               <p><strong>Add list</strong></p>
             </i>

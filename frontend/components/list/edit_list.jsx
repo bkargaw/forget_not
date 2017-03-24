@@ -31,8 +31,9 @@ class editList extends React.Component{
 
   render(){
   return(
-      <form onSubmit={this.handleSubmit}>
+      <form className='Modal' onSubmit={this.handleSubmit}>
         <label>{'Please enter a new list name:  '}
+          <br/>
           <input type='text'
                  onChange={this.update}
                  value={this.state.name}/>
