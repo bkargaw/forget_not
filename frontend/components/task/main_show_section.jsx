@@ -74,14 +74,14 @@ class mainShowSection extends React.Component {
       if(this.props.task.startDate) {
       startTime = <li>
                     <p className='first-child'>start</p>
-                    <p>{' ' + new Date(this.props.task.startDate)
+                    <p>{' ' + new Date(this.props.task.startDate * 1000)
                         .toDateString() }</p>
                   </li>;
       }
       if(this.props.task.endDate) {
         endTime =   <li>
                       <p className='first-child'>due</p>
-                      <p>{' ' + new Date(this.props.task.endDate)
+                      <p>{' ' + new Date(this.props.task.endDate * 1000)
                           .toDateString() }
                       </p>
                     </li>;
