@@ -1,16 +1,21 @@
 import React from 'react';
 import { Link, hashHistory } from 'react-router';
 import TaskFormContainer from './task_form_container';
+import {merge} from 'lodash';
+
 
 class mainBody extends React.Component{
   constructor(props) {
     super(props);
     this.state = { path: this.props.indexType,
-                   DeletList: [],
-                   ShowButton: 'hidden',
+                   TasksToUpdate: [],
+                   ShowButton: 'hide',
+                   showComplete: '',
+                   showIncomplete: 'highlight',
                    filter: false
                  };
     this.handelDelete = this.handelDelete.bind(this);
+    this.handelMarkAsCompleted = this.handelMarkAsCompleted.bind(this);
     this.showIncomplete = this.showIncomplete.bind(this);
     this.showComplete = this.showComplete.bind(this);
   }
@@ -61,25 +66,40 @@ class mainBody extends React.Component{
   }
 
   handelDelete(){
-      let DeletList = this.state.DeletList;
-      DeletList.forEach(id => this.props.deleteTask(id));
-      hashHistory.push(this.props.route.path);
-      this.setState({path: this.props.indexType,
-                     DeletList: [],
-                     ShowButton: 'hidden'});
+    let TasksToUpdate = this.state.TasksToUpdate;
+    TasksToUpdate.forEach(id => this.props.deleteTask(id));
+    hashHistory.push(this.props.route.path);
+    this.setState({path: this.props.indexType,
+                   TasksToUpdate: [],
+                   ShowButton: 'hide'});
+  }
+
+  handelMarkAsCompleted(){
+    let tasks =  Object.keys(this.props.tasks).map(id => this.props.tasks[id]);
+    let selectedTasks = tasks.filter(task =>
+                        this.state.TasksToUpdate.includes(task.id));
+    let that = this;
+    selectedTasks.forEach(task =>{
+      merge(task, {completed: !(that.state.filter)});
+      that.props.updateTask(task);
+    });
+    hashHistory.push(this.props.route.path);
+    this.setState({path: this.props.indexType,
+                   TasksToUpdate: [],
+                   ShowButton: 'hide'});
   }
 
   updateDeleteList(id){
     let that = this;
     return( e =>{
-      let DeletList = that.state.DeletList;
-      let index = DeletList.indexOf(id);
+      let TasksToUpdate = that.state.TasksToUpdate;
+      let index = TasksToUpdate.indexOf(id);
       if (index > -1) {
-        DeletList.splice(index, 1);
+        TasksToUpdate.splice(index, 1);
       }else{
-        DeletList.push(id);
+        TasksToUpdate.push(id);
       }
-      that.setState({ DeletList, ShowButton: '' });
+      that.setState({ TasksToUpdate, ShowButton: '' });
     }
   );
   }
@@ -88,11 +108,13 @@ class mainBody extends React.Component{
   showIncomplete(e){
     e.preventDefault();
     this.setState({filter: false});
+    this.setState({showComplete: '',showIncomplete: 'highlight'});
   }
 
   showComplete(e){
     e.preventDefault();
     this.setState({filter: true});
+    this.setState({showComplete: 'highlight',showIncomplete: ''});
   }
 
 
@@ -121,16 +143,28 @@ class mainBody extends React.Component{
     <div className='MAINBODYCONTAINER'>
       <section  className= 'mainbodySection'>
        <div className='mainPageHeaders'>
-          <div className='DeleteAction'>
-            <i id='delete'
+        <div className='TheMassAssingnButtons'>
+          <div className={this.state.ShowButton + ' ' + 'DeleteAction'}>
+            <i id='massIcons'
                onClick= { this.handelDelete }
                className="fa fa-trash fa-2x" aria-hidden="true">
            </i>
             <p>Delete Tasks</p>
           </div>
+
+          <div className={this.state.ShowButton + ' ' + 'CompleteAction'}>
+            <i id="massIcons"
+               onClick= { this.handelMarkAsCompleted }
+               className="fa fa-check-square fa-2x" aria-hidden="true">
+            </i>
+            <p>Mark Completed</p>
+          </div>
+        </div>
           <nav>
-            <button onClick={ this.showIncomplete }>Incomplete</button>
-            <button onClick={ this.showComplete }>Completed</button>
+            <button className={this.state.showIncomplete}
+                    onClick={ this.showIncomplete }>Completed</button>
+                  <button className={this.state.showComplete}
+                    onClick={ this.showComplete }>Incomplete</button>
           </nav>
         </div>
         <TaskFormContainer />

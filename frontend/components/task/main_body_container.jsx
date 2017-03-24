@@ -1,6 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import {getAllTasks, deleteTask, getAllListTasks } from '../../actions/tasks_actions';
+import {getAllTasks,
+        deleteTask,
+        getAllListTasks,
+        updateTask } from '../../actions/tasks_actions';
 
 import MainBody from './main_body';
 
@@ -23,6 +26,7 @@ const mapDispatchToProps = (dispatch,ownProps) => {
     return ({
       getAllTasks: () => dispatch(getAllTasks()),
       deleteTask: (id) => dispatch(deleteTask(id)),
+      updateTask: (task) => dispatch(updateTask(task)),
       updateTasks: () => dispatch(ownProps.updateTasks())
     });
   }

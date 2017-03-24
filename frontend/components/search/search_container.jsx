@@ -4,7 +4,8 @@ import { connect } from 'react-redux';
 import MainBody from '../task/main_body';
 
 import {searchByTaskTitle,
-        deleteTask} from '../../actions/tasks_actions';
+        deleteTask,
+        updateTask} from '../../actions/tasks_actions';
 
 const mapStateToProps = (state, ownProps) => {
   let path = ownProps.location.pathname.split('/');
@@ -18,6 +19,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch,ownProps) => {
   return ({
     deleteTask: (id) => dispatch(deleteTask(id)),
+    updateTask: (task) => dispatch(updateTask(task)),
     updateTasks: () => dispatch(searchByTaskTitle(ownProps.params.prefix))
   });
 };

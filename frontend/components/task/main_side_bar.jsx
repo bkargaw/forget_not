@@ -96,7 +96,7 @@ class mainSideBar extends React.Component {
       <div id='mainSideBar' className='mainSideBar'>
           <div className='mainSideBarRange'>
 
-          <h4>Name:<br/> {`  ${username}`}</h4>
+          <h4>Name: {`  ${username}`}</h4>
 
           <div className='mainSideBarRangeToggle'>
               <i
@@ -120,9 +120,9 @@ class mainSideBar extends React.Component {
 
         <div className='mainSideBarList'>
           <div className='mainSideBarListToggle'>
-            <div className='mainSideBarListToggleLInk'>
-              <i onClick={this.toggelIndexShow}
-                 className="fa fa-angle-down"
+            <div onClick={this.toggelIndexShow}
+                 className='mainSideBarListToggleLInk'>
+              <i className="fa fa-angle-down"
                  aria-hidden="true">
               </i>
 

@@ -9,7 +9,8 @@ import {getAllTasks,
         getAllTaskForTomorrow,
         getAllTaskForWeek,
         deleteTask,
-        getAllListTasks} from '../../actions/tasks_actions';
+        getAllListTasks,
+        updateTask} from '../../actions/tasks_actions';
 
 const mapStateToProps = (state, ownProps) => {
   let path = ownProps.location.pathname.split('/');
@@ -41,7 +42,8 @@ const mapDispatchToProps = (dispatch,ownProps) => {
         updateTasks = getAllListTasks;
         return({
           updateTasks: (listId) => dispatch(updateTasks(listId)),
-          deleteTask: (id) => dispatch(deleteTask(id))
+          deleteTask: (id) => dispatch(deleteTask(id)),
+          updateTask: (task) => dispatch(updateTask(task))
             });
       }else{
         let path = ownProps.location.pathname.split('/');
@@ -61,20 +63,23 @@ const mapDispatchToProps = (dispatch,ownProps) => {
             default:
             return({
               updateTasks: (listId) => dispatch(getAllListTasks(listId)),
-              deleteTask: (id) => dispatch(deleteTask(id))
+              deleteTask: (id) => dispatch(deleteTask(id)),
+              updateTask: (task) => dispatch(updateTask(task))
                 });
           }
 
         return({
           getAllTasks: () => dispatch(updateTasks()),
-          deleteTask: (id) => dispatch(deleteTask(id))
+          deleteTask: (id) => dispatch(deleteTask(id)),
+          updateTask: (task) => dispatch(updateTask(task))
         });
       }
 
   }
   return({
     updateTasks: () => dispatch(updateTasks()),
-    deleteTask: (id) => dispatch(deleteTask(id))
+    deleteTask: (id) => dispatch(deleteTask(id)),
+    updateTask: (task) => dispatch(updateTask(task))
   });
 };
 

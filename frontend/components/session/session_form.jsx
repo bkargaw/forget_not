@@ -17,9 +17,6 @@ class SessionForm extends React.Component{
     this.props.removeModal();
   }
 
-  // componentWillReceiveProps(newProps){
-  //   if (this.props.errors.length !== 0 ) this.props.removeErrors();
-  // }
   componentDidMount(newProps){
     this.props.removeErrors();
   }

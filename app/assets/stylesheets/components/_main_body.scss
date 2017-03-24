@@ -6,7 +6,12 @@
   display: flex;
   justify-content: space-between;
 }
- #delete {
+
+.TheMassAssingnButtons{
+  display: flex;
+}
+
+ #massIcons {
   margin-top: 15px;
   margin-left: 20px;
 }
@@ -16,6 +21,11 @@
 }
 .mainbodySection .DeleteAction{
   display: flex
+}
+
+// ---- completed buttons----
+.highlight{
+  background-color: $blueRTM
 }
 
 
@@ -43,6 +53,36 @@
   visibility: visible;
 }
 
+////////////
+.mainbodySection .CompleteAction{
+  display: flex
+}
+
+
+.CompleteAction{
+  display: flex;
+}
+
+
+ .CompleteAction p{
+  visibility: hidden;
+    width: 60px;
+    height: 30px;
+    background-color: $lightest-blue;
+    color: black;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+
+    /* Position the tooltip */
+    position: relative;
+    top: 20px;
+    z-index: 1;
+}
+.CompleteAction:hover p{
+  visibility: visible;
+}
+// ------------------------
 .TaskList{
   display: flex;
   border-top: 1px dotted $light-gray;

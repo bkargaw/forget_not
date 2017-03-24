@@ -9,7 +9,7 @@
 export const selectTaskStat = (tasks) =>{
   let arrTasks = Object.keys(tasks).map(id => tasks[id]);
   let count = arrTasks.length;
-  let todayRange = new Date(new Date().setHours(17)).setMinutes(0);
+  let todayRange = new Date(new Date().setHours(24));
   let nowRange = new Date().getTime();
   let todayCout = 0;
   let overDueCout = 0;

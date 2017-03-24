@@ -39,7 +39,7 @@ class EditTask extends React.Component {
     this.props.updateTask(task)
               .then(()=> hashHistory.push(this.props.path))
               .then(()=> this.removeThisModal());
-              
+
     this.setState( {
                   title: '',
                   startDate: ``,
@@ -96,28 +96,28 @@ class EditTask extends React.Component {
 
         <label>
           <p>{"Title  "}</p>
-          <input type='text'
+            <section><input type='text'
                  placeholder={this.props.task.title}
-                 onChange={ this.handleChange('title') } />
+                 onChange={ this.handleChange('title') } /></section>
         </label>
 
         <label>
           <p> {'Start Date  '}</p>
-          <input type='date'
-                 onChange={this.handleChange('startDate')}/>
+            <section><input type='date'
+                 onChange={this.handleChange('startDate')}/></section>
         </label>
 
         <label>
           <p>{"End Date  "}</p>
-          <input type='date'
-                  onChange={this.handleChange('endDate')}/>
+            <section><input type='date'
+                  onChange={this.handleChange('endDate')}/></section>
         </label>
 
         <label>
           <p>{'Estimate  '}</p>
-            <input onChange={this.handleChange('estimate')}
+              <section><input onChange={this.handleChange('estimate')}
                    type='text'
-                   placeholder='Add Estimate'/>
+                   placeholder='Add Estimate'/></section>
         </label>
 
         <label>

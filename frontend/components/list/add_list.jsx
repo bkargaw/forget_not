@@ -18,7 +18,8 @@ class addList extends React.Component{
     e.preventDefault();
     if(this.state.name){
       this.props.createList(this.state)
-      .then(()=> hashHistory.push('/tasks'))
+      .then((res)=> {
+        hashHistory.push(`/tasks/${res.list.id}`);})
       .then(()=> this.removeThisModal());
     }
   }

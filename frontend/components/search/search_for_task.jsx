@@ -12,6 +12,8 @@ class SearchForTask extends React.Component {
   searchUpdated(term){
     if (term !== ''){
       hashHistory.push(`/tasks/search/${term}`);
+    }else {
+      hashHistory.push(`/tasks/1`);
     }
   }
 
