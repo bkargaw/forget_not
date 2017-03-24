@@ -2,22 +2,14 @@ import React from 'react';
 import { Link } from 'react-router';
 import {merge} from 'lodash';
 import { hashHistory } from 'react-router';
+import EditTaskContainer from './edit_task_container';
+import {modal} from 'react-redux-modal';
+
 
 
 class mainShowSection extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-                  title: '',
-                  repeats: false,
-                  startDate: ``,
-                  endDate: ``,
-                  estimate: '',
-                  list_id: 1,
-                  completed: false
-                  };
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleChange = this.handleChange.bind(this);
   }
 
 
@@ -28,32 +20,25 @@ class mainShowSection extends React.Component {
    }
  }
 
- handleSubmit(e){
-   e.preventDefault();
-   let startDate = new Date(this.state.startDate).getTime();
-   let endDate = new Date(this.state.endDate).getTime();
-   if(!startDate) startDate= '';
-   if(!endDate) endDate = '';
-   let title = this.state.title;
-   if (title === '') title = this.props.task.title;
-   let task = merge({},this.state, {startDate},
-                    {endDate}, {title}, {id: this.props.task.id});
-
-   this.props.updateTask(task)
-              .then(()=> hashHistory.push(this.props.location.pathname));
-   this.setState( {
-                 title: this.props.task.title,
-                 startDate: ``,
-                 endDate: ``,
-                 estimate: ''
-               });
+ addModal(title, task, path) {
+   return () =>(
+   modal.add(EditTaskContainer, {
+     title: title,
+     size: 'medium', // large, medium or small,
+     closeOnOutsideClick: false, // (optional) Switch to true
+     // if you want to close the modal by clicking outside of it,
+     hideTitleBar: false, // (optional) Switch to
+     // true if do not want the default title bar and close button,
+     hideCloseButton: false, // (optional) if you don't
+     // wanna show the top right close button
+     //.. all what you put in here you will get access in
+     // the modal props ;)
+     task: task,
+     path: path
+   })
+ );
  }
 
- handleChange(feild){
-   return e =>{
-       this.setState({[feild]: e.target.value});
-     };
- }
 
   render(){
     if(this.props.status){
@@ -119,39 +104,7 @@ class mainShowSection extends React.Component {
                         <p>
                           {this.props.lists[this.props.task.list_id].name}
                         </p>
-                      </li>;
-      let selectList= <select onChange={this.handleChange('list_id')}>
-
-        {Object.keys(this.props.lists).map(id =>
-                     this.props.lists[id]).map(list => {
-                      let sel ='';
-                      if (list.id === this.props.task.list_id){
-                        return(<option key={list.id}
-                                       value={list.id}
-                                       selected>
-                                  {list.name}
-                               </option>);
-                      }else {
-                        return(<option key={list.id}
-                                       value={list.id}>
-                                  {list.name}
-                                </option>);
-                      }
-
-                  })}
-                </select>;
-
-  let completedOption= <select defaultValue={this.props.task.completed}
-                              onChange={this.handleChange('completed')}>
-                           <option key={1}
-                                   value={true}>
-                              {'true'}
-                           </option>
-                           <option key={2}
-                                   value={false}>
-                              {'false'}
-                           </option>
-                       </select>;
+                  </li>;
 
       return(
         <div className='TaskShowEdit'>
@@ -166,48 +119,10 @@ class mainShowSection extends React.Component {
             </ul>
           </div>
 
-          <h3>Edit Task</h3>
-          <form className='TaskEdit'
-                onSubmit={ this.handleSubmit }>
-
-            <label>
-              <p>{"Title  "}</p>
-              <input type='text'
-                     placeholder={this.props.task.title}
-                     onChange={ this.handleChange('title') } />
-            </label>
-
-            <label>
-              <p> {'Start Date  '}</p>
-              <input type='date'
-                     onChange={this.handleChange('startDate')}/>
-            </label>
-
-            <label>
-              <p>{"End Date  "}</p>
-              <input type='date'
-                      onChange={this.handleChange('endDate')}/>
-            </label>
-
-            <label>
-              <p>{'Estimate  '}</p>
-                <input onChange={this.handleChange('estimate')}
-                       type='text'
-                       placeholder='Add Estimate'/>
-            </label>
-
-            <label>
-              <p>{'Select List Type  '}</p>
-              <section>{ selectList }</section>
-            </label>
-
-            <label>
-              <p>{'Completed:   '}</p>
-              <section>{ completedOption }</section>
-            </label>
-
-            <input type='submit' value= 'Update Task'/>
-          </form>
+        <button onClick={this.addModal('Edit Task', this.props.task,
+                         this.props.location.pathname)}>
+               Edit Task
+        </button>
 
         </div>
       );
