@@ -3,6 +3,7 @@ import { hashHistory } from 'react-router';
 
 import GreetingContainer from './greeting/greeting_container';
 import MainHeaderIcon from './greeting/header_icon';
+import SearchForTask from './search/search_for_task';
 
 window.MainHeaderIcon = MainHeaderIcon;
 const App = ({children}) =>{
@@ -10,6 +11,7 @@ const App = ({children}) =>{
     <div className='app'>
     <header className='mainHeader'>
       <MainHeaderIcon />
+      <SearchForTask />
       <GreetingContainer />
     </header>
     {children}

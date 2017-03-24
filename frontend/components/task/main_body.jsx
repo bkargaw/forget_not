@@ -51,6 +51,10 @@ class mainBody extends React.Component{
       nextProps.updateTasks(thisTask.list_id);
     }
 
+    if (path[2] === 'search' && nextProps.indexType !== this.props.indexType){
+      nextProps.updateTasks();
+    }
+
   }
 
   handelDelete(){

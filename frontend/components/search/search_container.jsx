@@ -8,7 +8,7 @@ import {searchByTaskTitle,
 
 const mapStateToProps = (state, ownProps) => {
   let path = ownProps.location.pathname.split('/');
-  let indexType = path[path.length - 2];
+  let indexType =  'search/'+path[path.length - 1];
   return({
     tasks: Object.keys(state.tasks).map(id => state.tasks[id]),
     indexType
