@@ -44,7 +44,8 @@ class taskForm extends React.Component{
                   startDate: ``,
                   endDate: ``,
                   estimate: '',
-                  list_id: 1
+                  list_id: 1,
+                  showStateChangers: 'hidden'
                 });
   }
 
