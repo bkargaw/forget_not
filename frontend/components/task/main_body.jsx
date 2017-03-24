@@ -13,6 +13,7 @@ class mainBody extends React.Component{
   }
 
   componentDidMount(){
+    debugger;
     if (this.props.params.listId){
      this.props.updateTasks(this.props.params.listId);
     }else if(this.props.getAllTasks){

@@ -171,33 +171,40 @@ class mainShowSection extends React.Component {
           <form className='TaskEdit'
                 onSubmit={ this.handleSubmit }>
 
-            <label>{"Title  "}
+            <label>
+              <p>{"Title  "}</p>
               <input type='text'
                      placeholder={this.props.task.title}
                      onChange={ this.handleChange('title') } />
             </label>
 
-            <label>{'Start Date  '}
+            <label>
+              <p> {'Start Date  '}</p>
               <input type='date'
                      onChange={this.handleChange('startDate')}/>
             </label>
 
-            <label>{"End Date  "}
+            <label>
+              <p>{"End Date  "}</p>
               <input type='date'
                       onChange={this.handleChange('endDate')}/>
             </label>
 
-            <label>{'Estimate  '}
+            <label>
+              <p>{'Estimate  '}</p>
                 <input onChange={this.handleChange('estimate')}
                        type='text'
                        placeholder='Add Estimate'/>
             </label>
 
-            <label>{'Select List Type  '}
-                { selectList }
+            <label>
+              <p>{'Select List Type  '}</p>
+              <section>{ selectList }</section>
             </label>
-            <label>{'Completed:   '}
-              { completedOption }
+
+            <label>
+              <p>{'Completed:   '}</p>
+              <section>{ completedOption }</section>
             </label>
 
             <input type='submit' value= 'Update Task'/>

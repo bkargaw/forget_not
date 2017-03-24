@@ -19,7 +19,6 @@ export const removeTask = (task) =>({
   task
 });
 
-
 export const getTask = (id) => dispatch => (
   TaskUtil.fetchTask(id)
   .then((res)=> dispatch(receiveTask(res)))
@@ -40,7 +39,6 @@ export const deleteTask = (id) => dispatch => (
   TaskUtil.deleteTask(id)
   .then((res)=> dispatch(removeTask(res)))
 );
-
 
 // ---range---
 export const getAllTasks = () => dispatch => (
