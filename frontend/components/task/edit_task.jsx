@@ -14,7 +14,7 @@ class EditTask extends React.Component {
                   startDate: ``,
                   endDate: ``,
                   estimate: '',
-                  list_id: 1,
+                  list_id: this.props.task.list_id,
                   completed: false
                   };
     this.handleSubmit = this.handleSubmit.bind(this);

@@ -69,7 +69,7 @@ const mapDispatchToProps = (dispatch,ownProps) => {
           }
 
         return({
-          getAllTasks: () => dispatch(updateTasks()),
+          updateTasks: () => dispatch(updateTasks()),
           deleteTask: (id) => dispatch(deleteTask(id)),
           updateTask: (task) => dispatch(updateTask(task))
         });

@@ -21,5 +21,6 @@ export const selectTaskStat = (tasks) =>{
     if (task.completed === true) completedCount += 1;
   });
 
-  return ({completedCount, todayCout, overDueCout, count});
+  return ({completedCount, todayCout,
+           overDueCout: (overDueCout - completedCount), count});
 };

@@ -55,6 +55,7 @@ class mainBody extends React.Component{
     let thisTask = this.props.tasks.find(el => el.id === parseInt(taskId));
     let nextTask = nextProps.tasks.find(el => el.id === parseInt(taskId));
 
+    debugger;
     if(taskId && nextTask && (thisTask.list_id !== nextTask.list_id)){
       nextProps.updateTasks(thisTask.list_id);
     }
@@ -162,9 +163,9 @@ class mainBody extends React.Component{
         </div>
           <nav>
             <button className={this.state.showIncomplete}
-                    onClick={ this.showIncomplete }>Completed</button>
+                    onClick={ this.showIncomplete }>Incompleted</button>
                   <button className={this.state.showComplete}
-                    onClick={ this.showComplete }>Incomplete</button>
+                    onClick={ this.showComplete }>Completed</button>
           </nav>
         </div>
         <TaskFormContainer />
