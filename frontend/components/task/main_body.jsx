@@ -87,6 +87,7 @@ class mainBody extends React.Component{
     this.setState({path: this.props.indexType,
                    TasksToUpdate: [],
                    ShowButton: 'hide'});
+
   }
 
   updateDeleteList(id){
@@ -167,7 +168,7 @@ class mainBody extends React.Component{
                     onClick={ this.showComplete }>Completed</button>
           </nav>
         </div>
-        <TaskFormContainer />
+        <TaskFormContainer indexType={this.props.indexType}/>
         <br/>
         { allTasks }
       </section>

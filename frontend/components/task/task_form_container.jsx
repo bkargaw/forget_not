@@ -4,9 +4,11 @@ import { createTask } from '../../actions/tasks_actions';
 
 import TaskForm from './task_form';
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state, ownProps) => {
+return({
   lists: Object.keys(state.lists).map(id => state.lists[id])
 });
+};
 const mapDispatchToProps = (dispatch,ownProps) => {
 return ({
   createTask: (task) => dispatch(createTask(task))

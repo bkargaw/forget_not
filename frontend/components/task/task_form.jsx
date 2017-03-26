@@ -93,14 +93,27 @@ class taskForm extends React.Component{
 
   render(){
     let selectList;
+    let ListId = 1;
     if(this.props.lists.length){
+      if ( parseInt(this.props.indexType) ){
+        ListId =  parseInt(this.props.indexType);
+      }
       selectList= <select onChange={this.handleDateChange('list_id')}>
-                    {this.props.lists.map(list => (
-                      <option key={list.id}
-                              value={list.id}>
-                        {list.name}
-                      </option>
-                    )
+                    {this.props.lists.map(list => {
+                      if(list.id === ListId){
+                        return<option key={list.id}
+                                      value={list.id}
+                                      selected>
+                              {list.name}
+                        </option>;
+
+                      }else{
+                        return<option key={list.id}
+                                value={list.id}>
+                          {list.name}
+                        </option>;
+                      }
+                    }
                   )}
                 </select>;
     }
