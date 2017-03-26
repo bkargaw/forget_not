@@ -41,14 +41,6 @@ by deadlines. The user can also edit and delete task as well as lists.
   up conditions created from the option hash. lastly we format the data in a way that is more manageable for the front-end.
 
 
-  ~~~
-  here is an example code snippet that filter the task base on search params ( task name ) entered by the use
-
-  @tasks = Task.where("title LIKE :prefix",
-                      prefix: "#{params[:search_by]}%")
-  ~~~
-
-
 #### Front-end (Tasks)
   The front-end will use the url to figure out which data to request from the back end. The url routes will contain
   default routs for filters like today, tomorrow, this-week and list filters like index, work and personal. The
@@ -57,15 +49,19 @@ by deadlines. The user can also edit and delete task as well as lists.
     range and list filtering options even the lists created by the user)
 
 
-    ~~~
+  ~~~
     hear is the code for creating a route to the range filter -- today
     (note: all routes where generated using react-router)
 
-          <Route path='/tasks/today' component={ RangesContainer }>
-            <IndexRoute component={ MainShowSectionContainer }/>
-            <Route path='/tasks/today/:taskId' component={ TaskShowContainer }/>
-          </Route>
-    ~~~
+
+          <Route path='/tasks' component={ Tasks } onEnter={ _ensureLogin }>
+            <IndexRoute component={ MainBodyContainer }/>
+            <Route path='/tasks/today' component={ RangesContainer }>
+              <IndexRoute component={ MainShowSectionContainer }/>
+              <Route path='/tasks/today/:taskId' component={ TaskShowContainer }/>
+            </Route>
+          ...
+  ~~~
 
   Using the route location or search name given by the user the front-end will create the necessary options hash in order to to make an ajax request to fetch the filtered data from the user. Then the font end had to render the data that it receives back from the backend and update the state of the store which will result in re-rendering of any component that is affected by the change to the state of the store.
 
@@ -73,27 +69,37 @@ by deadlines. The user can also edit and delete task as well as lists.
 
 
 ### Search
-Searching tasks is a standard feature of Remember The Milk. I plan to utilize the Fuse.js library to create a fuzzy search of Task. This search will look go through note taskTitles.
-but before going through all the task when a search is initiated i will get all the users task
-to insure the all the task are in the store... (note this is because filters like Today would have shortened the task list )
+Searching tasks is a standard feature of Remember The Milk. The application will search the whole database for the task by name (provided by the user) and will render all the tasks that start with the provided key word.  
+
+#### Backend (search)
+  The backend in this case does similar thing as filtering the user's task by date ranges, with the key exception that we will filter that data base on the user provided prefix. The search is preformed in a case insensitive manner  and json response is created in a friendly manner for the front-end.
+
+  ~~~
+  here is an example code snippet that filter the task base on search params ( task name ) entered by the use
+
+  @tasks = Task.where("title LIKE :prefix",
+                      prefix: "#{params[:search_by]}%")
+  ~~~
+
+#### front-end (search)
+  The site will utilize react-search-input library to get the use's input and for each character entered by the user the site will make an AIP request and update the store(i.e.the tasks part of the state). This had the added benefit of making he user feel the site is responsive and it also means that the user does not have  to type the whole title of the task in order to be able to find a task they are looking for. Note as our database gets large and making a request for each character will become too costly, thus at that time this section of the application will be changed to be more efficient. For example we can make the API call only when the user presses enter.   
 
 
 # Future Directions for the Project
 
 ### errors
-  Objective: give the user better errors when specific action they take fails (i.e. avoid  alert dialogs). note: this dialog should be user friendly in order to better user experience.
+  Objective: give the user better errors when specific action they take fails (i.e. avoid  alert dialogs). note: this should be user friendly in order to better user experience.
 
 ### Add contacts and allow assignment of task
 
- Objective: people can add others to their contacts and assign tasks to each other, the person does not
-      have a profile to our site then that person would get an email telling them they have a task give to
-      them on our site --- this will have an added benefit of driving new user to our site! :)
+ * Objective: people can add others to their contacts and assign tasks to each other, if the  person does not have a profile to our site then that person would get an email telling them they have a task give to them on our site --- this will have an added benefit of driving new user to our site! :)
 
 ### allow the users to associate task with multiple users and lists
 
-  Objective: the same task can be assingned to multiple users each user will be allowed to to interact with the
-      task end edit it stated
-  Objective: each task can be associated with multiple lists allow for better data filtering and improved application for the user.
+  * Objective: the same task can be assigned to multiple users each user will be allowed to to interact  with the task end edit it.
+
+  * Objective: each task can be associated with multiple lists allow for better data filtering and improved application for the user.
+  
 ### Notes
 
-Objective: Notes belong to Tasks that can be created, read, edited and destroyed through the API.
+  * Objective: Notes belong to Tasks that can be created, read, edited and destroyed through the API.
