@@ -17,8 +17,8 @@ import splashPage from './splash_Page';
 const Root = ({ store }) => {
   const _redirectIfLoggedIn = (nextState, replace) => {
     const currentUser = store.getState().session.currentUser;
-    if (currentUser) {
-      replace('/tasks');
+    if (currentUser && nextState.location.pathname === '/') {
+      replace('/tasks/1');
     }
   };
 
@@ -30,7 +30,7 @@ const Root = ({ store }) => {
     <Provider store={ store }>
       <div className='check'>
       <Router history={ hashHistory }>
-        <Route path='/' component={ App }>
+        <Route path='/' component={ App } onEnter={ _redirectIfLoggedIn }>
           <IndexRoute component={ splashPage }/>
 
           <Route path='/tasks' component={ Tasks } onEnter={ _ensureLogin }>
