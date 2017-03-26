@@ -83,6 +83,10 @@
   visibility: visible;
 }
 // ------------------------
+.TaskListHolder{
+  overflow: auto;
+  height: 40vw;
+}
 .TaskList{
   display: flex;
   border-top: 1px dotted $light-gray;

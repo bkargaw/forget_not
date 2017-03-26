@@ -1,6 +1,7 @@
 html {
 	position: relative;
 	height: 100%;
+	overflow: hidden;
 }
 
 
@@ -155,4 +156,8 @@ input[type="search"] {
 
 i:hover{
 	cursor: pointer;
+}
+
+.app{
+
 }

@@ -121,7 +121,8 @@ class mainBody extends React.Component{
 
   render(){
     const allTasks =
-            <ul>
+          <div>
+            <ul className='TaskListHolder'>
               {this.props.tasks.map((task, idx) =>{
                 if (task.completed === this.state.filter){
                   return(
@@ -139,7 +140,8 @@ class mainBody extends React.Component{
                 }
               }
               )}
-            </ul>;
+            </ul>
+          </div>;
     return(
     <div className='MAINBODYCONTAINER'>
       <section  className= 'mainbodySection'>
@@ -170,6 +172,7 @@ class mainBody extends React.Component{
         </div>
         <TaskFormContainer indexType={this.props.indexType}/>
         <br/>
+
         { allTasks }
       </section>
 
