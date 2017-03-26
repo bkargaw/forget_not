@@ -9,7 +9,6 @@ class mainBody extends React.Component{
     super(props);
     this.state = { path: this.props.indexType,
                    TasksToUpdate: [],
-                   ShowButton: 'hide',
                    showComplete: '',
                    showIncomplete: 'highlight',
                    filter: false
@@ -70,8 +69,7 @@ class mainBody extends React.Component{
     TasksToUpdate.forEach(id => this.props.deleteTask(id));
     hashHistory.push(this.props.route.path);
     this.setState({path: this.props.indexType,
-                   TasksToUpdate: [],
-                   ShowButton: 'hide'});
+                   TasksToUpdate: []});
   }
 
   handelMarkAsCompleted(){
@@ -85,8 +83,7 @@ class mainBody extends React.Component{
     });
     hashHistory.push(this.props.route.path);
     this.setState({path: this.props.indexType,
-                   TasksToUpdate: [],
-                   ShowButton: 'hide'});
+                   TasksToUpdate: []});
 
   }
 
@@ -100,7 +97,7 @@ class mainBody extends React.Component{
       }else{
         TasksToUpdate.push(id);
       }
-      that.setState({ TasksToUpdate, ShowButton: '' });
+      that.setState({ TasksToUpdate });
     }
   );
   }
@@ -147,7 +144,7 @@ class mainBody extends React.Component{
       <section  className= 'mainbodySection'>
        <div className='mainPageHeaders'>
         <div className='TheMassAssingnButtons'>
-          <div className={this.state.ShowButton + ' ' + 'DeleteAction'}>
+          <div className='DeleteAction'>
             <i id='massIcons'
                onClick= { this.handelDelete }
                className="fa fa-trash fa-2x" aria-hidden="true">
