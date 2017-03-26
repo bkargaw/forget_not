@@ -15,8 +15,9 @@ to each task, add list types to tasks (to create associations)
  * Search
 
 ## Design Docs
+  [production docs](https://github.com/bkargaw/forget_not/tree/master/docs)
 
- [View Wireframes](https://github.com/bkargaw/forget_not/tree/master/docs/wireframes)
+  [View Wireframes](https://github.com/bkargaw/forget_not/tree/master/docs/wireframes)
 
  [React Components](https://github.com/bkargaw/forget_not/blob/master/docs/component-hierarchy.md)
 
