@@ -24,7 +24,7 @@ class SessionForm extends React.Component{
   handleSubmit(e){
     e.preventDefault();
     this.props.processForm(this.state)
-    .then(()=> hashHistory.push('/tasks/1'))
+    .then(()=> hashHistory.push('/tasks/all'))
     .then(()=> this.removeThisModal());
   }
 

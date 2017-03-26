@@ -20,7 +20,7 @@ export const login = (user) => dispatch =>(
 export const loginWithDemo = () => dispatch =>(
   SessionUtil.loginWithDemo()
   .then(res => {dispatch(receiveCurrentUser(res));
-                hashHistory.push('/tasks/1');},
+                hashHistory.push('/tasks/all');},
   (err) => dispatch(receiveErrors(err)))
 );
 

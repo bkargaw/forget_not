@@ -18,7 +18,7 @@ const Root = ({ store }) => {
   const _redirectIfLoggedIn = (nextState, replace) => {
     const currentUser = store.getState().session.currentUser;
     if (currentUser && nextState.location.pathname === '/') {
-      replace('/tasks/1');
+      replace('/tasks/all');
     }
   };
 
