@@ -13,6 +13,7 @@ class removeList extends React.Component{
   }
 
   handleSubmit(e){
+    debugger;
     e.preventDefault();
     this.props.deleteList(this.props.id)
     .then(()=> hashHistory.push('/tasks/all'))

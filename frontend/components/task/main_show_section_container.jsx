@@ -9,12 +9,14 @@ import MainShowSection from './main_show_section';
 const mapStateToProps = (state,ownProps) =>{
   let path =  ownProps.location.pathname.split('/');
   let title;
-    if( parseInt(path[path.length - 1]) && Object.keys(state.lists).length ){
+  debugger;
+    if( parseInt(path[path.length - 1]) && Object.keys(state.lists).length
+        && state.tasks[parseInt(path[path.length - 1])]){
       title = state.lists[parseInt( path[path.length - 1] )].name;
     }else if(parseInt(path[path.length - 1])) {
       title = path[path.length - 2];
     }else {
-        title = path[path.length - 1];
+      title = path[path.length - 1];
     }
 return({
   status: selectTaskStat(state.tasks),
