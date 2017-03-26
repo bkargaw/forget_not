@@ -80,6 +80,9 @@ to insure the all the task are in the store... (note this is because filters lik
 
 # Future Directions for the Project
 
+### errors
+  Objective: give the user better errors when specific action they take fails (i.e. avoid  alert dialogs). note: this dialog should be user friendly in order to better user experience.
+
 ### Add contacts and allow assignment of task
 
  Objective: people can add others to their contacts and assign tasks to each other, the person does not
