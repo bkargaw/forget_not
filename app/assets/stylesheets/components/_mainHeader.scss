@@ -5,6 +5,7 @@
   height: 55px;
   background-color: $blueRTM;
   align-items: center;
+  padding: 10px;
 }
 
 .iconAndTitle{
@@ -33,10 +34,12 @@
 
 .search-input{
   background-color: $searchRTM;
-  width: 200px;
+  width: 250px;
+  height: 30px;
   border-radius: 5px;
   position: relative;
   right: 120px;
+
 }
 
 
