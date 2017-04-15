@@ -2,27 +2,27 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
-  height: 55px;
+  height: 100px;
   background-color: $blueRTM;
   align-items: center;
-  padding: 10px;
 }
 
 .iconAndTitle{
+  padding-left: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.headerIcon{
+.headerIcon img{
   height: inherit;
   background-color: white;
   border-radius: 1000px;
-  height: 46px;
+  height: 80px;
+  width: 80px;
   align-items: center;
   justify-content: center;
-  margin-left: 10px;
-  border: 2px solid black;
+  border: 2px solid $blueRTM;
 }
 
 .headerTitle{
@@ -33,32 +33,34 @@
 }
 
 .search-input{
-  background-color: $searchRTM;
-  width: 250px;
-  height: 30px;
-  border-radius: 5px;
+  background-color: white;
+  border: 2px solid $lightblueRTM;
+  width: 300px;
+  height: 35px;
+  border-radius: 10px;
   position: relative;
-  right: 120px;
-
+  text-indent: 12px;
+  right: 170px;
+}
+.search-input input{
+  width: 280px;
 }
 
-
 .mainHeader button{
-  margin-right: 10px;
-  margin-top: 5px;
-  height: 10px;
-  font-size: 1.3vmin;
+  padding: 0 30px;
+  margin: 0;
+  height: 100px;
+  font-size: 2.0vmin;
   background-color: inherit;
 }
 .mainHeader button:hover{
-  color: $light-blue;
-  border-color: $darkest-blue;
+  color: $yodaGreen;
 }
 
 .getIn{
   display: flex;
-  padding-left: 5px;
-  margin-left: 10px
+  padding: 0 20px 0 0px;
+  margin-right: 30px
 }
 
 .errors{

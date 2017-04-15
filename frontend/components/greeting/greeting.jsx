@@ -30,7 +30,7 @@ class Greeting extends React.Component {
   render (){
   if (!!this.props.currentUser){
     return (
-      <div>
+      <div className='getIn'>
         <button
           onClick={this.props.logout}>
             Logout
