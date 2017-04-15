@@ -86,12 +86,18 @@
   font-size: 1.3vw;
   position: absolute;
   left: 42%;
-  top: 85%;
+  top: 77%;
   background-color: $blueRTM;
+  border-bottom: 6px solid $dark-blue;
 }
 
 .splashPageMain button:hover {
-  color: $yodaGreen;
+  // color: $yodaGreen;
+  border-bottom: 3px solid $dark-blue;
+  background-color: $darkest-blue;
+  top: 77.5%;
+
+
 }
 
 .splashPageFooter{
