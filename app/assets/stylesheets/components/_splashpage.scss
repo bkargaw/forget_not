@@ -4,7 +4,7 @@
 
 .splashPageMain{
   flex: 1 100%;
-  background-image: url('http://res.cloudinary.com/dwuzkffrk/image/upload/v1492295997/back_maybe_u9ryfy.jpg');
+  background-image: url('/assets/back_maybe.jpg');
   background-position: center 0px;
   background-size: cover;
   background-repeat: no-repeat;
@@ -51,7 +51,7 @@
 .splashPageMain h1 {
   font-size: 4vw;
   position: absolute;
-  left: 40%;
+  left: 38%;
   top: 25%;
   color: black;
 }
@@ -63,6 +63,7 @@
   top: 32%;
   color: black;
 }
+
 .splashPageMain p {
   font-size: 1.7vw;
   font-style: italic;
@@ -79,13 +80,12 @@
   position: absolute;
   left: 17%;
   top: 154%;
-
 }
 
 .splashPageMain button {
   font-size: 1.3vw;
   position: absolute;
-  left: 45%;
+  left: 42%;
   top: 85%;
   background-color: $blueRTM;
 }
