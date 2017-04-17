@@ -53,7 +53,7 @@ class SessionForm extends React.Component{
     const or = this.props.formType === 'Login' ? 'or' : '';
 
   return (
-    <div>
+    <div className='startSessionForm'>
       <form onSubmit={ this.handleSubmit }>
         { this.renderErrors() }
         <label className="input-wrapper">
@@ -83,14 +83,14 @@ class SessionForm extends React.Component{
               value={ this.state.password } />
         </label>
 
+        <button onClick={() => {this.props.loginWithDemo();
+            this.removeThisModal();
+          }
+        }>
+        Demo User
+      </button>
         <input type='submit' value={header}/>
 
-        <button onClick={() => {this.props.loginWithDemo();
-                                this.removeThisModal();
-                              }
-                            }>
-          Demo User
-        </button>
 
       </form>
    </div>

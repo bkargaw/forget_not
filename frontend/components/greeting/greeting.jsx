@@ -12,7 +12,7 @@ class Greeting extends React.Component {
     return () =>(
     modal.add(sessionFormContainer, {
       title: title,
-      size: 'small', // large, medium or small,
+      size: 'medium', // large, medium or small,
       closeOnOutsideClick: false, // (optional) Switch to true
       // if you want to close the modal by clicking outside of it,
       hideTitleBar: false, // (optional) Switch to

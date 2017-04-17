@@ -31,9 +31,9 @@ class removeList extends React.Component{
     // }
   return(
       <form className='ModalRemove' onSubmit={this.handleSubmit}>
-        <p>{ `Are you sure you want to delete ${this.props.name}`}</p>
-        <p>This action <strong>will</strong> also result the deletion of all
-            the tasks associated with this lits</p>
+        <p>{ `Are you sure you want to delete ${this.props.name}`} list</p>
+        <p>This action will also result the deletion of all
+            the tasks associated with this list</p>
         <input type='submit' value='Remove List'/>
       </form>
     );

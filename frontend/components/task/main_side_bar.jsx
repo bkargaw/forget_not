@@ -71,15 +71,15 @@ class mainSideBar extends React.Component {
                   <Link to={`/tasks/${list.id}`}>
                     {list.name.replace(/\b\w/g, l => l.toUpperCase())}
                   </Link>
-                  <i className="fa fa-arrow-circle-o-down" aria-hidden="true">
+                  <i className="fa fa-arrow-circle-o-down fa-lg" aria-hidden="true">
                     <ul className='EditListOptions'>
                       <li onClick={this.addModal(EditListContainer,
-                                   'Rename list', 'small',
+                                   'Rename list', 'medium',
                                    list.id,list.name)}>
                         Rename List
                       </li>
                       <li onClick={this.addModal(RemoveListContainer,
-                                   'Remove list', 'medium',
+                                   'Remove list', 'large',
                                    list.id, list.name)}>
                         Remove List
                       </li>
@@ -101,7 +101,7 @@ class mainSideBar extends React.Component {
           <div className='mainSideBarRangeToggle'>
               <i
                 onClick={this.toggelRangeShow}
-                className="fa fa-angle-down"
+                className="fa fa-angle-down fa-lg"
                 aria-hidden="true">
               </i>
               <div className='indexRap'>
@@ -122,15 +122,15 @@ class mainSideBar extends React.Component {
           <div className='mainSideBarListToggle'>
             <div onClick={this.toggelIndexShow}
                  className='mainSideBarListToggleLInk'>
-              <i className="fa fa-angle-down"
+              <i className="fa fa-angle-down fa-lg"
                  aria-hidden="true">
               </i>
 
               <p>Lists</p>
             </div>
             <i onClick={this.addModal(AddListContainer,'Add A List',
-                        'small')}
-               className="fa fa-plus-circle" aria-hidden="true">
+                        'medium')}
+               className="fa fa-plus-circle fa-lg" aria-hidden="true">
               <p><strong>Add list</strong></p>
             </i>
           </div>
