@@ -1,17 +1,16 @@
 import React from 'react';
 import {merge} from 'lodash';
 import { DateRangePicker, SingleDatePicker, DayPickerRangeController } from 'react-dates';
-
-
+import SimpleSelect from "react-selectize";
 class taskForm extends React.Component{
   constructor(props) {
     super(props);
     let now = new Date;
     this.state = {
       title: '',
-      startDate: ``,
+      startDate: null,
       // startDate: `${now.getFullYear()}-${now.getMonth()}-${now.getDate()}`,
-      endDate: ``,
+      endDate: null,
       // endDate: `${now.getFullYear()}-${now.getMonth()}-${now.getDate()}`,
       estimate: '',
       list_id: 1,
@@ -35,8 +34,8 @@ class taskForm extends React.Component{
 
   handleSubmit(e){
     e.preventDefault();
-    let startDate = new Date(this.state.startDate).getTime();
-    let endDate = new Date(this.state.endDate).getTime();
+    let startDate = new Date(this.state.startDate._d).getTime();
+    let endDate = new Date(this.state.endDate._d).getTime();
     if(!startDate) startDate= '';
     if(!endDate) endDate = '';
     let task = merge({},this.state, {startDate}, {endDate});
@@ -142,30 +141,6 @@ class taskForm extends React.Component{
                   onFocusChange={focusedInput => this.setState({ focusedInput })} // PropTypes.func.isRequired,
                 />
 
-                <button className={this.state.buttonStartDate}
-                        onClick={ this.toggleShow('start') }
-                        value='Add Start Date'>
-              <p className='value'>Add Start Date</p>
-              <i className="fa fa-play" aria-hidden="true"></i>
-            </button>
-
-            <label className={this.state.showStartDate}>{"Start Date:  "}
-              <input type='date'
-                     onChange={this.handleDateChange('startDate')}/>
-            </label>
-
-            <button className={this.state.buttonEndDate}
-                    onClick={ this.toggleShow('end')}
-                    value='Add End Date'>
-              <p className='value'>end Start Date</p>
-              <i className="fa fa-stop-circle-o" aria-hidden="true"></i>
-            </button>
-
-            <label className={this.state.showEndDate} >{"End Date:  "}
-              <input  type='date'
-                      onChange={this.handleDateChange('endDate')}/>
-            </label>
-
               <button className={this.state.buttonEstimate}
                 onClick={ this.toggleShow('estimate')}
                 value='Add Estimate'>
@@ -177,7 +152,6 @@ class taskForm extends React.Component{
                        type='text'
                        placeholder='Add Estimate'/>
               </label>
-
                <label>{"Add to a list  "}
                  {selectList}
                </label>
