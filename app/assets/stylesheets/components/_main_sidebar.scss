@@ -19,7 +19,7 @@
   margin-bottom: 10px;
   padding-left: 10px;
   padding-bottom: 10px;
-  font-size: 1.2vw;
+  font-size: 1.4vw;
   font-weight: lighter;
 }
 
@@ -27,9 +27,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 5px;
+  margin: 0;
 }
-.indexRap a:hover{
+.indexRap a{
+  width: inherit;
+  display: block;
+}
+.indexRap:hover{
   background-color: $lightest-blue;
   text-decoration: none;
   cursor: pointer;
@@ -37,17 +41,19 @@
 
 
 .mainSideBarRangeToggle i{
-  margin-left: 10%;
-  margin-right: 3px;
+  margin-left: 9%;
+  margin-right: 6px;
   width: 10px;
+  margin-right: 18px;
 }
 .mainSideBarRangeToggle div{
   flex-grow: 1;
 }
 
 .mainSideBarRangeToggle i:hover{
-  background-color: $lightest-blue;
   cursor: pointer;
+  border-bottom: 2px solid;
+
 }
 
 .sidebarRanges{
@@ -59,7 +65,7 @@
 .sidebarRanges a{
   display: block;
   padding: 4px 0;
-  padding-left: 30px;
+  padding-left: 46px;
 }
 .mainSideBar a:hover{
   background-color: $lightest-blue;
@@ -84,31 +90,32 @@
 }
 .mainSideBarListToggle div{
   display: flex;
-  margin-left: 15px;
+  margin-left: 14px;
 }
 
 .mainSideBarListToggle div i{
-  padding-right: 5px;
+  padding-right: 26px;
   width: 5px
 }
 .mainSideBarListToggle div p{
-  font-size: 1.2vw;
+  font-size: 1.3vw;
+  height: 20px;
 }
-
 
 .mainSideBarListToggle i p{
   visibility: hidden;
-  width: 60px;
+  width: 100px;
   background-color: $lightest-blue;
   color: black;
   text-align: center;
   border-radius: 6px;
-  padding: 5px 0;
-  font-size: 12px;
+  padding: 5px;
+  font-size: 14px;
 
 
    /* Position the tooltip */
   position: absolute;
+  right: -4px;
   z-index: 1;
 }
 
@@ -136,6 +143,10 @@
   cursor: pointer;
 }
 
+.mainSideBarListToggleLInk i p{
+  font-size: 1.3vw;
+}
+
 
 .listRap{
   display: flex;
@@ -146,12 +157,14 @@
 .listRap div{
   display: flex;
   justify-content: space-between;
-  padding-left: 27px;
+
   margin-top: 7px;
 }
 .listRap div a{
   flex-grow: 10;
-  height: 20px;
+  padding-left: 50px;
+  height: 30px;
+  font-size: 1.3vw;
 }
 
 .listRap div i{
@@ -164,14 +177,17 @@
   color: black;
   text-align: center;
   border-radius: 6px;
-  padding: 8px 0;
+  padding: 0;
 
    /* Position the tooltip */
   position: absolute;
+  left: 100px;
   z-index: 100;
 }
-.listRap div i ul p{
-  margin: 5px 0;
+.listRap div i ul li{
+  padding: 2px;
+  height: 20px;
+  font-size: 14px;
 }
 .listRap div i:hover ul{
   visibility: visible;

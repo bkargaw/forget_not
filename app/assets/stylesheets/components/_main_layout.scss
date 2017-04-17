@@ -1,8 +1,17 @@
+.blankSpace{
+  height: 5px;
+  // background: $lightblueRTM;
+}
 .mainLayout {
  display: flex;
 }
 
 .mainSideBar{
+  flex: 1.2;
+  background-color: $lightblueRTM;
+  border-radius: 10px;
+}
+.spaceHolder{
   flex: 1.2;
   background-color: $lightblueRTM;
 }
@@ -22,6 +31,7 @@
   border-radius: 10px;
   background-color: white;
 }
+
 .mainShowSection{
   flex: 1;
   background-color: $showlightblueRTM;

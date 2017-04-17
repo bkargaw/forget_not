@@ -1,5 +1,6 @@
 import React from 'react';
 import {merge} from 'lodash';
+import { DateRangePicker, SingleDatePicker, DayPickerRangeController } from 'react-dates';
 
 
 class taskForm extends React.Component{
@@ -21,7 +22,8 @@ class taskForm extends React.Component{
       buttonEndDate: '',
       buttonEstimate: '',
       showStateChangers: 'hidden',
-      doesNothing: ''
+      doesNothing: '',
+      focusedInput: null
       // list_id: this.props.list_id || ''
                   };
 
@@ -131,6 +133,15 @@ class taskForm extends React.Component{
           <div className={this.state.showStateChangers}>
             <div className='addTaskButtons'>
               <div className='editButtons'>
+
+                <DateRangePicker
+                  startDate={this.state.startDate} // momentPropTypes.momentObj or null,
+                  endDate={this.state.endDate} // momentPropTypes.momentObj or null,
+                  onDatesChange={({ startDate, endDate }) => this.setState({ startDate, endDate })} // PropTypes.func.isRequired,
+                  focusedInput={this.state.focusedInput} // PropTypes.oneOf([START_DATE, END_DATE]) or null,
+                  onFocusChange={focusedInput => this.setState({ focusedInput })} // PropTypes.func.isRequired,
+                />
+
                 <button className={this.state.buttonStartDate}
                         onClick={ this.toggleShow('start') }
                         value='Add Start Date'>

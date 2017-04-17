@@ -14,6 +14,7 @@ const App = ({children}) =>{
       <SearchForTask />
       <GreetingContainer />
     </header>
+    <div className='blankSpace'/>
     {children}
   </div>
 );

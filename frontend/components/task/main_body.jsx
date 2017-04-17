@@ -53,7 +53,6 @@ class mainBody extends React.Component{
     let taskId = nextProps.params.taskId;
     let thisTask = this.props.tasks.find(el => el.id === parseInt(taskId));
     let nextTask = nextProps.tasks.find(el => el.id === parseInt(taskId));
-
     if(taskId && nextTask && (thisTask.list_id !== nextTask.list_id)){
       nextProps.updateTasks(thisTask.list_id);
     }

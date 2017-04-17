@@ -43,12 +43,22 @@
   top: 100px;
 }
 
+.rrm-title{
+  background-color: $blueRTM;
+
+}
 
 .rrm-title h2{
   position: relative;
+  color: white;
   left: 40px;
 }
-
+.rr-close{
+  color: white !important;
+}
+.rr-close:hover{
+  border: 2px solid white !important;
+}
 
 .startSessionForm{
   display: flex;
@@ -97,16 +107,9 @@
 .startSessionForm input[type='submit'] {
   font-size: 16px;
   background-color: $blueRTM;
-  border-bottom: 4px solid $dark-blue;
+  // border-bottom: 4px solid $dark-blue;
 }
 
-
-// .startSessionForm input[type='submit']:hover {
-//   background-color: $darkest-blue;
-//   border-bottom: 2px solid $dark-blue;
-//   position: relative;
-//   top: 2px;
-// }
 
 .startSessionForm button {
   margin-top: 16px;
@@ -115,11 +118,5 @@
 	border-bottom-left-radius: 0;
   font-size: 16px;
   background-color: $blueRTM;
-  border-bottom: 4px solid $dark-blue;
+  // border-bottom: 4px solid $dark-blue;
 }
-// .startSessionForm button:hover {
-//   background-color: $darkest-blue;
-//   border-bottom: 2px solid $dark-blue;
-//   position: relative;
-//   top: 2px;
-// }

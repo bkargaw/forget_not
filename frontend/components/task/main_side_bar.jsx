@@ -71,7 +71,7 @@ class mainSideBar extends React.Component {
                   <Link to={`/tasks/${list.id}`}>
                     {list.name.replace(/\b\w/g, l => l.toUpperCase())}
                   </Link>
-                  <i className="fa fa-arrow-circle-o-down fa-lg" aria-hidden="true">
+                  <i className="fa fa-arrow-circle-o-down" aria-hidden="true">
                     <ul className='EditListOptions'>
                       <li onClick={this.addModal(EditListContainer,
                                    'Rename list', 'medium',
@@ -105,7 +105,7 @@ class mainSideBar extends React.Component {
                 aria-hidden="true">
               </i>
               <div className='indexRap'>
-                <Link to='/tasks/1'>index</Link>
+                <Link to='/tasks/1'>Index</Link>
               </div>
           </div>
           <div  className={this.state.rangeState}>
@@ -130,8 +130,8 @@ class mainSideBar extends React.Component {
             </div>
             <i onClick={this.addModal(AddListContainer,'Add A List',
                         'medium')}
-               className="fa fa-plus-circle fa-lg" aria-hidden="true">
-              <p><strong>Add list</strong></p>
+               className="fa fa-plus-circle" aria-hidden="true">
+              <p>Add List</p>
             </i>
           </div>
 

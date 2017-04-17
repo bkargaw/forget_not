@@ -16,7 +16,7 @@ body {
 
 button, input[type="submit"] {
 	background-color: $blueRTM;
-  border-bottom: 4px solid $dark-blue;
+  // border-bottom: 4px solid $dark-blue;
 	color: white;
 	font-weight: bold;
 	padding: 7px 9px;
@@ -31,7 +31,7 @@ button, input[type="submit"] {
 
 button:hover, input[type="submit"]:hover {
 	background-color: $darkest-blue;
-  border-bottom: 2px solid $dark-blue;
+  // border-bottom: 2px solid $dark-blue;
   position: relative;
   top: 2px;
 }
@@ -130,9 +130,6 @@ i:hover{
 	cursor: pointer;
 }
 
-.app{
-
-}
 .fa:hover{
 	color: $yodaGreen;
 }
