@@ -1,7 +1,11 @@
 import React from 'react';
 import {merge} from 'lodash';
 import { DateRangePicker, SingleDatePicker, DayPickerRangeController } from 'react-dates';
-import SimpleSelect from "react-selectize";
+import {SimpleSelect} from "react-selectize";
+import 'react-dates/lib/css/_datepicker.css';
+import 'react-selectize/themes/index.css';
+
+
 class taskForm extends React.Component{
   constructor(props) {
     super(props);
@@ -95,6 +99,9 @@ class taskForm extends React.Component{
   render(){
     let selectList;
     let ListId = 1;
+    let options;
+    let SimpleSelectList;
+    var self = this;
     if(this.props.lists.length){
       if ( parseInt(this.props.indexType) ){
         ListId =  parseInt(this.props.indexType);
@@ -117,6 +124,13 @@ class taskForm extends React.Component{
                     }
                   )}
                 </select>;
+      options = this.props.lists.map(list => (
+        {label: list.name, value: list.id}
+      )
+      )
+      SimpleSelectList = <SimpleSelect options = {options}
+                                       placeholder = "Select a List">
+                          </SimpleSelect>
     }
 
     return(
@@ -152,9 +166,9 @@ class taskForm extends React.Component{
                        type='text'
                        placeholder='Add Estimate'/>
               </label>
-               <label>{"Add to a list  "}
-                 {selectList}
-               </label>
+
+                {SimpleSelectList}
+
               </div>
               <input type='submit' value= 'Add Task'/>
               </div>
