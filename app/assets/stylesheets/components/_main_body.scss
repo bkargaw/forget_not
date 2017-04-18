@@ -1,3 +1,21 @@
+.DayPickerKeyboardShortcuts__show{
+  visibility: hidden;
+}
+.react-selectize.root-node{
+  width: 154px !important;
+}
+.DateInput{
+  width: 80px !important;
+  padding: 3px 8px  !important;
+
+}
+.DateInput:hover {
+  cursor: pointer !important;
+  background-color: $yodaGreen !important;
+}
+.DateInput__display-text{
+  padding: 0 !important;
+}
 
 .mainbodySection{
   display: block;
@@ -126,9 +144,9 @@
 
 #addTitle {
   width: 40vw;
-  border: 1px solid gray;
-  border-radius: 2px;
-  margin: 5px;
+  border: 2px solid $lightblueRTM;
+  border-radius: 5px;
+  margin-bottom: 10px;
   margin-top: 20px;
   margin-left: 10px;
   height: 20px;
@@ -166,12 +184,16 @@
 
 .editButtons{
   flex: 10;
+  display: flex;
+  margin-left: 20px;
+  // justify-content: space;
 }
 
 .mainbodySection input[type='text'] {
-  border: 1px solid gray;
+  border: 1px solid $lightblueRTM;
   border-radius: 2px;
-  height: 15px;
+  height: 26px;
+  margin: 0 20px;
 }
 
 .addTaskForm label input{
