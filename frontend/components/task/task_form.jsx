@@ -2,7 +2,6 @@ import React from 'react';
 import {merge} from 'lodash';
 import { DateRangePicker, SingleDatePicker, DayPickerRangeController } from 'react-dates';
 import {SimpleSelect} from "react-selectize";
-import { Nav } from 'bootstrap-components';
 import 'react-dates/lib/css/_datepicker.css';
 import 'react-selectize/themes/index.css';
 

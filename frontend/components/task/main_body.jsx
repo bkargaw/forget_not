@@ -2,21 +2,23 @@ import React from 'react';
 import { Link, hashHistory } from 'react-router';
 import TaskFormContainer from './task_form_container';
 import {merge} from 'lodash';
-
+import { Nav, NavItem } from 'react-bootstrap';
+// import 'bootstrap/dist/css/bootstrap.css';
 
 class mainBody extends React.Component{
   constructor(props) {
     super(props);
     this.state = { path: this.props.indexType,
                    TasksToUpdate: [],
-                   showComplete: '',
-                   showIncomplete: 'highlight',
+                   whichTab: 'Incompleted',
                    filter: false
                  };
     this.handelDelete = this.handelDelete.bind(this);
     this.handelMarkAsCompleted = this.handelMarkAsCompleted.bind(this);
     this.showIncomplete = this.showIncomplete.bind(this);
     this.showComplete = this.showComplete.bind(this);
+    this.handleSelect = this.handleSelect.bind(this)
+
   }
 
   componentDidMount(){
@@ -102,18 +104,20 @@ class mainBody extends React.Component{
   }
 
 
-  showIncomplete(e){
-    e.preventDefault();
+  showIncomplete(selectedKey){
     this.setState({filter: false});
-    this.setState({showComplete: '',showIncomplete: 'highlight'});
+    this.setState({whichTab: 'Incompleted'});
   }
 
-  showComplete(e){
-    e.preventDefault();
+  showComplete(selectedKey){
     this.setState({filter: true});
-    this.setState({showComplete: 'highlight',showIncomplete: ''});
+    this.setState({whichTab: 'Completed'});
   }
 
+  handleSelect(selectedKey){
+    if (selectedKey == 'Completed') this.showComplete(selectedKey)
+    if (selectedKey == 'Incompleted') this.showIncomplete(selectedKey)
+  }
 
   render(){
     const allTasks =
@@ -141,6 +145,10 @@ class mainBody extends React.Component{
     return(
     <div className='MAINBODYCONTAINER'>
       <section  className= 'mainbodySection'>
+        <Nav bsStyle="tabs" justified activeKey={this.state.whichTab} onSelect={this.handleSelect}>
+          <NavItem eventKey={'Incompleted'} >Incompleted</NavItem>
+          <NavItem eventKey={'Completed'} >Completed</NavItem>
+        </Nav>
        <div className='mainPageHeaders'>
         <div className='TheMassAssingnButtons'>
           <div className='DeleteAction'>
@@ -159,12 +167,6 @@ class mainBody extends React.Component{
             <p>Mark Completed</p>
           </div>
         </div>
-          <nav>
-            <button className={this.state.showIncomplete}
-                    onClick={ this.showIncomplete }>Incompleted</button>
-                  <button className={this.state.showComplete}
-                    onClick={ this.showComplete }>Completed</button>
-          </nav>
         </div>
         <TaskFormContainer indexType={this.props.indexType}/>
         <br/>
