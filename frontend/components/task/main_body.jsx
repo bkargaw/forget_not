@@ -4,6 +4,9 @@ import TaskFormContainer from './task_form_container';
 import {merge} from 'lodash';
 import { Nav, NavItem } from 'react-bootstrap';
 // import 'bootstrap/dist/css/bootstrap.css';
+// import { navtabs } from 'bootstrap-css'
+
+
 
 class mainBody extends React.Component{
   constructor(props) {
