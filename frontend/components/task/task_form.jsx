@@ -19,7 +19,6 @@ class taskForm extends React.Component{
       estimate: '',
       list_id: 1,
       showStateChangers: 'hidden',
-      doesNothing: '',
       focusedInput: null
       // list_id: this.props.list_id || ''
                   };
@@ -27,7 +26,6 @@ class taskForm extends React.Component{
     this.handleSubmit = this.handleSubmit.bind(this);
     this.toggleShow = this.toggleShow.bind(this);
     this.handleDateChange = this.handleDateChange.bind(this);
-    this.toggleBlur = this.toggleBlur.bind(this);
   }
 
   handleSubmit(e){
@@ -53,21 +51,10 @@ class taskForm extends React.Component{
   toggleShow(val){
     return( e=>{
     e.preventDefault();
-      let dateToShow;
-      let buttonToHide;
-      if (val ==='wholeForm') {
-        dateToShow = 'showStateChangers';
-        buttonToHide = 'doesNothing';
-      }
-
-      if (this.state[dateToShow] === ''){
-        this.setState({[dateToShow]: 'hidden'});
-        this.setState({[buttonToHide]:''});
-      }else if (val ==='wholeForm'){
-        //do nothing
+      if (this.state[val] === ''){
+        this.setState({[val]: 'hidden'});
       }else
-        this.setState({[buttonToHide]: 'hidden'});
-        this.setState({[dateToShow]: ''});
+        this.setState({[val]: ''});
   });
   }
 
@@ -110,7 +97,7 @@ class taskForm extends React.Component{
                  type='text'
                  placeholder=' Add a Task'
                  value={this.state.title}
-                 onFocus={ this.toggleShow('wholeForm') }
+                 onFocus={ this.toggleShow('showStateChangers') }
                  onChange={ this.handleDateChange('title') } />
 
           <div className={this.state.showStateChangers}>
