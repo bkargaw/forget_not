@@ -1,3 +1,31 @@
+.empty_list{
+  display: block;
+  width: inherit;
+  font-style: italic;
+  font-weight: lighter;
+  text-align: center;
+  color: $yodaGreen;
+}
+// .active a{
+//   color: $yodaGreen !important;
+// }
+.nav_tabs_holder{
+  display: flex;
+  // background-color: $lightblueRTM;
+}
+.nav_tabs_holder div{
+  height: inherit;
+  flex: 1;
+  border-bottom: 1px solid #ddd;
+}
+.nav-tabs{
+  flex: 1 !important;
+}
+.nav-tabs a{
+  padding: 5px !important;
+}
+
+
 .DayPickerKeyboardShortcuts__show{
   visibility: hidden;
 }
@@ -17,10 +45,14 @@
   padding: 0 !important;
 }
 
+
 .mainbodySection{
   display: block;
+  flex: 1.3;
+  height: 45vw;
+  border-radius: 20px;
+  background-color: white;
 }
-
 .mainPageHeaders{
   display: flex;
   justify-content: space-between;
@@ -45,6 +77,8 @@
 
 .DeleteAction{
   display: flex;
+  width: 50px;
+  margin-left: 10px;
 }
 
 
@@ -60,7 +94,8 @@
 
     /* Position the tooltip */
     position: relative;
-    top: 20px;
+    top: 49px;
+    right: 35px;
     z-index: 1;
 }
 .DeleteAction:hover p{
@@ -80,7 +115,7 @@
 
  .CompleteAction p{
   visibility: hidden;
-    width: 60px;
+    width: 90px;
     height: 30px;
     background-color: $lightest-blue;
     color: black;
@@ -90,7 +125,8 @@
 
     /* Position the tooltip */
     position: relative;
-    top: 20px;
+    top: 49px;
+    right: 40px;
     z-index: 1;
 }
 .CompleteAction:hover p{
@@ -99,7 +135,7 @@
 // ------------------------
 .TaskListHolder{
   overflow: auto;
-  height: 40vw;
+  height: 33vw;
 }
 .TaskList{
   display: flex;
@@ -148,7 +184,7 @@
   border-radius: 5px;
   margin-bottom: 10px;
   margin-top: 20px;
-  margin-left: 10px;
+  margin-left: 20px;
   height: 20px;
 }
 

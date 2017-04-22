@@ -13,11 +13,11 @@ class mainBody extends React.Component{
     super(props);
     this.state = { path: this.props.indexType,
                    TasksToUpdate: [],
-                   whichTab: 'Incompleted',
+                   whichTab: 'Incomplete',
                    filter: false
                  };
     this.handelDelete = this.handelDelete.bind(this);
-    this.handelMarkAsCompleted = this.handelMarkAsCompleted.bind(this);
+    this.handelMarkAsComplete = this.handelMarkAsComplete.bind(this);
     this.showIncomplete = this.showIncomplete.bind(this);
     this.showComplete = this.showComplete.bind(this);
     this.handleSelect = this.handleSelect.bind(this)
@@ -76,7 +76,7 @@ class mainBody extends React.Component{
                    TasksToUpdate: []});
   }
 
-  handelMarkAsCompleted(){
+  handelMarkAsComplete(){
     let tasks =  Object.keys(this.props.tasks).map(id => this.props.tasks[id]);
     let selectedTasks = tasks.filter(task =>
                         this.state.TasksToUpdate.includes(task.id));
@@ -109,49 +109,73 @@ class mainBody extends React.Component{
 
   showIncomplete(selectedKey){
     this.setState({filter: false});
-    this.setState({whichTab: 'Incompleted'});
+    this.setState({whichTab: 'Incomplete'});
   }
 
   showComplete(selectedKey){
     this.setState({filter: true});
-    this.setState({whichTab: 'Completed'});
+    this.setState({whichTab: 'Complete'});
   }
 
   handleSelect(selectedKey){
-    if (selectedKey == 'Completed') this.showComplete(selectedKey)
-    if (selectedKey == 'Incompleted') this.showIncomplete(selectedKey)
+    if (selectedKey == 'Complete') this.showComplete(selectedKey)
+    if (selectedKey == 'Incomplete') this.showIncomplete(selectedKey)
+  }
+
+  is_empty(){
+    let check = true;
+    this.props.tasks.forEach((task) =>{
+      if (task.completed === this.state.filter){
+        check = false;
+      }
+    })
+    return check;
   }
 
   render(){
-    const allTasks =
-          <div>
-            <ul className='TaskListHolder'>
-              {this.props.tasks.map((task, idx) =>{
-                if (task.completed === this.state.filter){
-                  return(
-                    <div key={idx+'check'} className='TaskList'>
-                      <input
-                        type='checkbox'
-                        onClick={this.updateDeleteList(task.id)}/>
-                      <Link key={idx} to={`tasks/${this.state.path}/${task.id}`}>
-                        <li >
-                          {task.title}
-                        </li>
-                      </Link>
-                    </div>
-                  );
-                }
+    let allTasks;
+
+      if (this.is_empty()) {
+        if(this.state.filter){
+          allTasks = <div className='empty_list'>You have no Complete Task in this category!! </div>
+        }else {
+          allTasks = <div className='empty_list'>You have no more Incomplete Task in this category!! </div>
+        }
+      }else {
+        allTasks =
+        <div>
+          <ul className='TaskListHolder'>
+            {this.props.tasks.map((task, idx) =>{
+              if (task.completed === this.state.filter){
+                return(
+                  <div key={idx+'check'} className='TaskList'>
+                    <input
+                      type='checkbox'
+                      onClick={this.updateDeleteList(task.id)}/>
+                    <Link key={idx} to={`tasks/${this.state.path}/${task.id}`}>
+                      <li >
+                        {task.title}
+                      </li>
+                    </Link>
+                  </div>
+                );
               }
-              )}
-            </ul>
-          </div>;
+            }
+            )}
+          </ul>
+        </div>;
+      }
+
     return(
     <div className='MAINBODYCONTAINER'>
       <section  className= 'mainbodySection'>
-        <Nav bsStyle="tabs" justified activeKey={this.state.whichTab} onSelect={this.handleSelect}>
-          <NavItem eventKey={'Incompleted'} >Incompleted</NavItem>
-          <NavItem eventKey={'Completed'} >Completed</NavItem>
-        </Nav>
+        <div className= 'nav_tabs_holder'>
+          <div></div>
+          <Nav bsStyle="tabs" justified activeKey={this.state.whichTab} onSelect={this.handleSelect}>
+            <NavItem eventKey={'Incomplete'} >Incomplete</NavItem>
+            <NavItem eventKey={'Complete'} >Complete</NavItem>
+          </Nav>
+        </div>
        <div className='mainPageHeaders'>
         <div className='TheMassAssingnButtons'>
           <div className='DeleteAction'>
@@ -164,10 +188,10 @@ class mainBody extends React.Component{
 
           <div className={this.state.ShowButton + ' ' + 'CompleteAction'}>
             <i id="massIcons"
-               onClick= { this.handelMarkAsCompleted }
+               onClick= { this.handelMarkAsComplete }
                className="fa fa-check-square fa-2x" aria-hidden="true">
             </i>
-            <p>Mark Completed</p>
+            <p>Mark Complete</p>
           </div>
         </div>
         </div>

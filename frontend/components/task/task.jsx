@@ -3,22 +3,34 @@ import MainSideBarContainer from './main_side_bar_container';
 import MainBodyContainer from './main_body_container';
 // import MainShowSectionContainer from './main_show_section_container';
 
-const Tasks = (props) => {
-  return(
-  <div>
-    <div className= 'mainLayout'>
+class Tasks extends React.Component{
+  constructor(props){
+    super(props);
+  }
 
-      <aside className= 'mainSideBar'>
-        <MainSideBarContainer />
-      </aside>
+  componentDidMount(){
+    document.body.classList.toggle('noscroll', this.props.isDark)
+  }
 
-      <section  className= 'mainBody'>
-        { props.children}
-      </section>
+  componentWillUnmount() {
+    document.body.classList.remove('noscroll')
+  }
 
-    </div>
+ render(){
+   return(
+   <div>
+     <div className= 'mainLayout'>
+       <aside className= 'mainSideBar'>
+         <MainSideBarContainer />
+       </aside>
+       <section  className= 'mainBody'>
+         { this.props.children}
+       </section>
+     </div>
 
-  </div>);
-};
+   </div>);
+   }
+
+}
 
 export default Tasks;

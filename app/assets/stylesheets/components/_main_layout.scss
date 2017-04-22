@@ -1,14 +1,14 @@
-.blankSpace{
-  height: 5px;
-  // background: $lightblueRTM;
+.noscroll {
+  overflow: hidden;
 }
+
 .mainLayout {
  display: flex;
 }
 
 .mainSideBar{
   flex: 1.2;
-  background-color: $lightblueRTM;
+  background-color: $showlightblueRTM;
   border-radius: 10px;
 }
 .spaceHolder{
@@ -25,12 +25,6 @@
   display: flex;
 }
 
-.mainbodySection{
-  flex: 1.3;
-  height: 100vh;
-  border-radius: 10px;
-  background-color: white;
-}
 
 .mainShowSection{
   flex: 1;

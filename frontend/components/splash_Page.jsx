@@ -29,7 +29,6 @@ class spalshPage extends React.Component {
   }
 
   scrollDown(givenTarget,e){
-    debugger
     let target = $('.'+ givenTarget);
        $('html, body').animate({
          scrollTop: target.offset().top

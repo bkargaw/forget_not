@@ -4,7 +4,10 @@
 }
 
 // fading of the spalshPage
-
+.splashPageMain{
+  background-color: white;
+  z-index: -100;
+}
 .splashPageMainBackground{
     -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
        -moz-animation: fadein 2s; /* Firefox < 16 */
@@ -48,7 +51,7 @@
   flex: 1 100%;
   // assets/back_maybe.jpg
   background-image: url('https://ymedialabs.com/wp-content/uploads/2015/12/syncplicity_hero-1-1894x1080.jpg');
-  position: relative;
+  
   background-attachment: fixed;
   background-position: center 0;
   background-repeat: no-repeat;
@@ -184,6 +187,7 @@
   align-items: center;
   font-family: $sans-serif;
   font-style: italic;
+  background-color: white;
 }
 .FoundersSection img{
   width: 150px;
@@ -257,6 +261,7 @@
   display: flex;
   align-items: center;
   padding: 20px 0;
+  background-color: white;
 }
 
 

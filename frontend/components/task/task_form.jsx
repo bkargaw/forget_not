@@ -32,7 +32,6 @@ class taskForm extends React.Component{
 
   handleSubmit(e){
     e.preventDefault();
-    debugger;
     let startDate = '';
     let endDate = '';
     let list_id = 1;

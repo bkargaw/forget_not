@@ -3,15 +3,14 @@ import { Link } from 'react-router';
 import {merge} from 'lodash';
 import { hashHistory } from 'react-router';
 import EditTaskContainer from './edit_task_container';
+import ShowListDetail from '../list_detail/list_detail_container';
+import ShowCompleteness from '../show_completeness/show_completeness_container';
 import {modal} from 'react-redux-modal';
-
-
 
 class mainShowSection extends React.Component {
   constructor(props) {
     super(props);
   }
-
 
  componentWillReceiveProps(nextProps){
    if ( nextProps.params.taskId !== this.props.params.taskId){
@@ -40,9 +39,14 @@ class mainShowSection extends React.Component {
  );
  }
 
-
   render(){
-
+    let ranges= ['all', 'today', 'tomorrow','week']
+    let showChart;
+      if (ranges.includes(this.props.location.pathname.split('/')[2])){
+        showChart =  <ShowListDetail />
+      }else {
+        showChart =  <ShowCompleteness />
+      }
     if(this.props.status){
       return(
       <div className='totalShowSummery'>
@@ -65,6 +69,8 @@ class mainShowSection extends React.Component {
             <p>overdue</p>
           </li>
         </ul>
+
+        { showChart }
       </div>
       );
 

@@ -53,6 +53,22 @@
   top: 22px;
 }
 
+// show the charts
+.List_Show{
+  margin-top: 75px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.List_Show h2{
+ font-size: 19px;
+ font-style: italic;
+ font-weight: 100;
+}
+
+
 // --- show a single task
 
 .showTaskStaff{
