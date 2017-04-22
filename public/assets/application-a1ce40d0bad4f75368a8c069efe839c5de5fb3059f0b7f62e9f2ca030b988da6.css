@@ -1,0 +1,1581 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+ */
+/* PHASE 0: Reset */
+@import url(http://weloveiconfonts.com/api/?family=fontawesome);
+/* line 3, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/base/reset.scss */
+html, body, header, nav, h1, a,
+ul, li, strong, main, button, i,
+section, img, div, h2, p, form,
+fieldset, label, input, textarea,
+span, article, footer, time, small {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  color: inherit;
+  text-align: inherit;
+  text-decoration: inherit;
+  vertical-align: inherit;
+  box-sizing: inherit;
+  background: transparent;
+}
+
+/* line 22, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/base/reset.scss */
+ul {
+  list-style: none;
+}
+
+/* line 26, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/base/reset.scss */
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* line 32, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/base/reset.scss */
+input[type="password"],
+input[type="email"],
+input[type="text"],
+input[type="submit"],
+textarea,
+button {
+  /*
+  Get rid of native styling. Read more here:
+  http://css-tricks.com/almanac/properties/a/appearance/
+  */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* line 47, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/base/reset.scss */
+button,
+input[type="submit"] {
+  cursor: pointer;
+}
+
+/* Clearfix */
+/* line 54, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/base/reset.scss */
+.group:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* line 1, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/base/layout.scss */
+html {
+  position: relative;
+  height: 100%;
+}
+
+/* line 7, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/base/layout.scss */
+body {
+  width: 100%;
+  overflow: inherit;
+  margin: 0 auto;
+  font-family: arial, helvetica, sans-serif;
+  font-size: 16px;
+  background-color: #e4eef8;
+}
+
+/* line 17, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/base/layout.scss */
+button, input[type="submit"] {
+  background-color: #0060bf;
+  color: white;
+  font-weight: bold;
+  padding: 7px 9px;
+  margin: 5px;
+  border-radius: 3px;
+  transition: background-color 0.3s;
+  font-family: arial, helvetica, sans-serif;
+  text-transform: uppercase;
+  font-size: 12px;
+  text-align: center;
+}
+
+/* line 32, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/base/layout.scss */
+button:hover, input[type="submit"]:hover {
+  background-color: #265e8b;
+  position: relative;
+  top: 2px;
+}
+
+/* line 39, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/base/layout.scss */
+a:hover {
+  text-decoration: underline;
+}
+
+/* line 43, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/base/layout.scss */
+.hidden {
+  display: none !important;
+}
+
+/* line 47, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/base/layout.scss */
+.hide {
+  visibility: hidden;
+}
+
+/*
+	Font Elements
+*/
+/* line 55, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/base/layout.scss */
+h1 {
+  font-size: 24px;
+  font-style: italic;
+  font-weight: bold;
+}
+
+/* line 61, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/base/layout.scss */
+h2 {
+  text-align: center;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+/* line 67, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/base/layout.scss */
+p {
+  line-height: 16px;
+}
+
+/* line 71, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/base/layout.scss */
+img {
+  width: 100%;
+  height: 100%;
+}
+
+/* line 76, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/base/layout.scss */
+small {
+  font-size: 9px;
+  color: #999;
+  font-family: arial, helvetica, sans-serif;
+}
+
+/*
+	Header Rules
+*/
+/* line 86, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/base/layout.scss */
+hr {
+  border: 0;
+  height: 1px;
+  background-color: #e2e2e2;
+}
+
+/* line 92, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/base/layout.scss */
+.hr-top, .hr-bottom {
+  width: 100%;
+  margin: 0;
+}
+
+/* line 97, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/base/layout.scss */
+.hr-top {
+  height: 2px;
+  margin-bottom: 1px;
+}
+
+/*
+	Images
+*/
+/* line 106, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/base/layout.scss */
+.thumbnail {
+  height: 100px;
+}
+
+/* line 110, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/base/layout.scss */
+.thumbnail img {
+  object-fit: cover;
+}
+
+/*
+	Inputs
+*/
+/* line 118, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/base/layout.scss */
+input[type='text'] {
+  font-family: arial, helvetica, sans-serif;
+  border: 1px solid #999;
+  border: 2px solid #d7e7f5;
+  padding-left: 2px;
+}
+
+/* line 125, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/base/layout.scss */
+input[type="search"] {
+  padding: 5px;
+}
+
+/* line 129, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/base/layout.scss */
+i:hover {
+  cursor: pointer;
+}
+
+/* line 133, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/base/layout.scss */
+.fa:hover {
+  color: #4fa847;
+}
+
+/* line 1, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/base/grid.scss */
+.col {
+  float: left;
+  box-sizing: border-box;
+}
+
+/* Attribute selector targeting all elements
+with a class attribute containing 'col-' */
+/* line 8, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/base/grid.scss */
+[class*='col-'] {
+  padding-right: 20px;
+}
+
+/* line 12, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/base/grid.scss */
+[class*='col-']:last-of-type {
+  padding-right: 0;
+}
+
+/* line 16, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/base/grid.scss */
+.col-2-3 {
+  width: 66.6666%;
+}
+
+/* line 20, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/base/grid.scss */
+.col-1-2 {
+  width: 50%;
+}
+
+/* line 24, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/base/grid.scss */
+.col-1-3 {
+  width: 33.3333%;
+}
+
+@media all and (max-width: 1000px) {
+  /* line 29, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/base/grid.scss */
+  [class*='col-'] {
+    width: 100%;
+  }
+}
+/* line 1, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_all_modals.scss */
+.ModalRemove {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 160px;
+}
+
+/* line 9, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_all_modals.scss */
+.ModalRemove p {
+  font-weight: lighter;
+  line-height: 1em;
+  font-size: 20px;
+  padding: 5px;
+}
+
+/* line 15, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_all_modals.scss */
+.ModalRemove input {
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+/* line 19, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_all_modals.scss */
+.ModalRemove input:hover {
+  background-color: red;
+}
+
+/* line 23, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_all_modals.scss */
+.Modal {
+  display: flex;
+  height: 140px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* line 31, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_all_modals.scss */
+.Modal input {
+  margin-top: 20px;
+  margin-right: 30px;
+  height: 30px;
+}
+
+/* line 36, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_all_modals.scss */
+.Modal label {
+  font-style: italic;
+  font-weight: lighter;
+  font-size: 20px;
+}
+
+/* line 42, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_all_modals.scss */
+.rrm-content {
+  top: 100px;
+}
+
+/* line 46, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_all_modals.scss */
+.rrm-title {
+  background-color: #0060bf;
+}
+
+/* line 51, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_all_modals.scss */
+.rrm-title h2 {
+  position: relative;
+  color: white;
+  left: 40px;
+}
+
+/* line 56, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_all_modals.scss */
+.rr-close {
+  color: white !important;
+}
+
+/* line 59, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_all_modals.scss */
+.rr-close:hover {
+  border: 2px solid white !important;
+}
+
+/* line 63, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_all_modals.scss */
+.startSessionForm {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 230px;
+}
+
+/* line 70, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_all_modals.scss */
+.startSessionForm {
+  height: inherit;
+  width: inherit;
+}
+
+/*
+	Inputs
+*/
+/* line 79, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_all_modals.scss */
+.input-wrapper {
+  display: flex;
+  margin: 5px 0;
+  justify-content: space-between;
+  padding: 5px 0px;
+  align-items: center;
+}
+
+/* line 86, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_all_modals.scss */
+.input-wrapper span {
+  flex: 1;
+  margin-right: 36px;
+  font-size: 19px;
+}
+
+/* line 93, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_all_modals.scss */
+.input-wrapper input {
+  flex: 2;
+  font-family: arial, helvetica, sans-serif;
+  border: 1px solid #999;
+  float: right;
+  border: 2px solid #e2e2e2;
+  padding-left: 2px;
+  height: 30px;
+  font-size: 19px;
+}
+
+/* line 107, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_all_modals.scss */
+.startSessionForm input[type='submit'] {
+  font-size: 16px;
+  background-color: #0060bf;
+}
+
+/* line 114, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_all_modals.scss */
+.startSessionForm button {
+  margin-top: 16px;
+  margin-right: 30px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  font-size: 16px;
+  background-color: #0060bf;
+}
+
+/* line 1, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_mainHeader.scss */
+.mainHeader {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  height: 100px;
+  background-color: #0060bf;
+  align-items: center;
+  z-index: 3;
+}
+
+/* line 11, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_mainHeader.scss */
+.iconAndTitle {
+  padding-left: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* line 18, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_mainHeader.scss */
+.headerIcon img {
+  height: inherit;
+  background-color: inherit;
+  border-radius: 1000px;
+  height: 80px;
+  width: 80px;
+  align-items: center;
+  justify-content: center;
+}
+
+/* line 29, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_mainHeader.scss */
+.headerTitle {
+  color: white;
+  font-size: 2.5vw;
+  padding: 0;
+  margin-left: 10px;
+}
+
+/* line 36, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_mainHeader.scss */
+.search-input {
+  background-color: white;
+  border: 1px solid #d7e7f5;
+  width: 300px;
+  height: 35px;
+  border-radius: 10px;
+  position: relative;
+  text-indent: 12px;
+  right: 170px;
+}
+
+/* line 46, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_mainHeader.scss */
+.search-input input {
+  width: 280px;
+}
+
+/* line 50, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_mainHeader.scss */
+.mainHeader button {
+  padding: 0 30px;
+  margin: 0;
+  height: 100px;
+  font-size: 2.0vmin;
+  background-color: inherit;
+  border: 0px;
+}
+
+/* line 58, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_mainHeader.scss */
+.mainHeader button:hover {
+  color: #4fa847;
+}
+
+/* line 62, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_mainHeader.scss */
+.getIn {
+  display: flex;
+  padding: 0 20px 0 0px;
+  margin-right: 30px;
+}
+
+/* line 68, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_mainHeader.scss */
+.errors {
+  color: #ff0000;
+  list-style-type: circle;
+}
+
+/* line 1, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_body.scss */
+.empty_list {
+  display: block;
+  width: inherit;
+  font-style: italic;
+  font-weight: lighter;
+  text-align: center;
+  color: #4fa847;
+}
+
+/* line 12, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_body.scss */
+.nav_tabs_holder {
+  display: flex;
+}
+
+/* line 16, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_body.scss */
+.nav_tabs_holder div {
+  height: inherit;
+  flex: 1;
+  border-bottom: 1px solid #ddd;
+}
+
+/* line 21, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_body.scss */
+.nav-tabs {
+  flex: 1 !important;
+}
+
+/* line 24, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_body.scss */
+.nav-tabs a {
+  padding: 5px !important;
+}
+
+/* line 29, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_body.scss */
+.DayPickerKeyboardShortcuts__show {
+  visibility: hidden;
+}
+
+/* line 32, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_body.scss */
+.react-selectize.root-node {
+  width: 154px !important;
+}
+
+/* line 35, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_body.scss */
+.DateInput {
+  width: 80px !important;
+  padding: 3px 8px  !important;
+}
+
+/* line 40, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_body.scss */
+.DateInput:hover {
+  cursor: pointer !important;
+  background-color: #4fa847 !important;
+}
+
+/* line 44, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_body.scss */
+.DateInput__display-text {
+  padding: 0 !important;
+}
+
+/* line 49, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_body.scss */
+.mainbodySection {
+  display: block;
+  flex: 1.3;
+  height: 45vw;
+  border-radius: 20px;
+  background-color: white;
+}
+
+/* line 56, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_body.scss */
+.mainPageHeaders {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* line 61, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_body.scss */
+.TheMassAssingnButtons {
+  display: flex;
+}
+
+/* line 65, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_body.scss */
+#massIcons {
+  margin-top: 15px;
+  margin-left: 20px;
+}
+
+/* line 70, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_body.scss */
+.mainbodySection nav {
+  margin-top: 10px;
+}
+
+/* line 73, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_body.scss */
+.mainbodySection .DeleteAction {
+  display: flex;
+}
+
+/* line 78, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_body.scss */
+.DeleteAction {
+  display: flex;
+  width: 50px;
+  margin-left: 10px;
+}
+
+/* line 85, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_body.scss */
+.DeleteAction p {
+  visibility: hidden;
+  width: 60px;
+  height: 30px;
+  background-color: #f0f8fc;
+  color: black;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  /* Position the tooltip */
+  position: relative;
+  top: 49px;
+  right: 35px;
+  z-index: 1;
+}
+
+/* line 101, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_body.scss */
+.DeleteAction:hover p {
+  visibility: visible;
+}
+
+/* line 106, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_body.scss */
+.mainbodySection .CompleteAction {
+  display: flex;
+}
+
+/* line 111, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_body.scss */
+.CompleteAction {
+  display: flex;
+}
+
+/* line 116, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_body.scss */
+.CompleteAction p {
+  visibility: hidden;
+  width: 90px;
+  height: 30px;
+  background-color: #f0f8fc;
+  color: black;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  /* Position the tooltip */
+  position: relative;
+  top: 49px;
+  right: 40px;
+  z-index: 1;
+}
+
+/* line 132, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_body.scss */
+.CompleteAction:hover p {
+  visibility: visible;
+}
+
+/* line 136, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_body.scss */
+.TaskListHolder {
+  overflow: auto;
+  height: 33vw;
+}
+
+/* line 140, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_body.scss */
+.TaskList {
+  display: flex;
+  border-top: 1px dotted #e2e2e2;
+  flex-grow: 300px;
+  justify-content: center;
+  align-items: center;
+  margin-left: 9px;
+  font-size: 13px;
+  width: 45vw;
+  position: relative;
+  left: 10px;
+}
+
+/* line 153, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_body.scss */
+.TaskList:last-child {
+  border-bottom: 1px dotted #e2e2e2;
+}
+
+/* line 157, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_body.scss */
+.TaskList a {
+  flex: 10;
+  padding: 10px 0px;
+}
+
+/* line 161, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_body.scss */
+.mainbodySection input {
+  padding: 5px;
+  margin-left: 10px;
+  margin-right: 15px;
+}
+
+/* line 167, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_body.scss */
+.TaskList a:hover {
+  background-color: lightyellow;
+  flex: 10;
+  text-decoration: none;
+}
+
+/* line 173, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_body.scss */
+.TaskList input[type='checkbox']:hover {
+  cursor: pointer;
+}
+
+/* line 177, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_body.scss */
+.TaskList li {
+  font-size: 1.2vw;
+}
+
+/* line 181, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_body.scss */
+#addTitle {
+  width: 40vw;
+  border: 2px solid #d7e7f5;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  margin-left: 20px;
+  height: 20px;
+}
+
+/* line 191, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_body.scss */
+.addTaskForm button .value {
+  visibility: hidden;
+  width: 120px;
+  background-color: #f0f8fc;
+  color: black;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  /* Position the tooltip */
+  position: absolute;
+  top: 160px;
+  z-index: 1;
+}
+
+/* line 206, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_body.scss */
+.addTaskForm button:hover .value {
+  visibility: visible;
+}
+
+/* line 212, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_body.scss */
+.addTaskButtons {
+  display: flex;
+}
+
+/* line 215, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_body.scss */
+.addTaskButtons input[type='submit'] {
+  flex: 1;
+  margin-right: 10px;
+  height: 15px;
+}
+
+/* line 221, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_body.scss */
+.editButtons {
+  flex: 10;
+  display: flex;
+  margin-left: 20px;
+}
+
+/* line 228, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_body.scss */
+.mainbodySection input[type='text'] {
+  border: 1px solid #d7e7f5;
+  border-radius: 2px;
+  height: 26px;
+  margin: 0 20px;
+}
+
+/* line 235, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_body.scss */
+.addTaskForm label input {
+  margin-right: 4px;
+}
+
+/* line 1, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_layout.scss */
+.noscroll {
+  overflow: hidden;
+}
+
+/* line 5, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_layout.scss */
+.mainLayout {
+  display: flex;
+}
+
+/* line 9, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_layout.scss */
+.mainSideBar {
+  flex: 1.2;
+  background-color: #e4eef8;
+  border-radius: 10px;
+}
+
+/* line 14, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_layout.scss */
+.spaceHolder {
+  flex: 1.2;
+  background-color: #d7e7f5;
+}
+
+/* line 19, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_layout.scss */
+.mainBody {
+  flex: 6;
+  height: 100vh;
+}
+
+/* line 24, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_layout.scss */
+.MAINBODYCONTAINER {
+  display: flex;
+}
+
+/* line 29, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_layout.scss */
+.mainShowSection {
+  flex: 1;
+  background-color: #e4eef8;
+  border-radius: 10px;
+  height: 100vh;
+}
+
+/* line 1, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_show.scss */
+.totalShowSummery {
+  display: block;
+}
+
+/* line 5, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_show.scss */
+.totalShowSummery h4 {
+  margin: 15px;
+  font-size: 22px;
+  margin-left: 20px;
+  font-weight: lighter;
+}
+
+/* line 11, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_show.scss */
+.ShowSummary {
+  display: flex;
+}
+
+/* line 14, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_show.scss */
+.ShowSummary li {
+  background-color: #d7e7f5;
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 6px;
+  border-radius: 5px;
+}
+
+/* line 24, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_show.scss */
+.ShowSummary li:first-child {
+  margin-left: 15px;
+}
+
+/* line 27, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_show.scss */
+.ShowSummary li:first-child h6 {
+  color: #0060bf;
+}
+
+/* line 30, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_show.scss */
+.ShowSummary li:last-child h6 {
+  color: #D87F4F;
+}
+
+/* line 34, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_show.scss */
+.ShowSummary h6 {
+  font-size: 1.4vw;
+  margin: 0 10px;
+}
+
+/* line 38, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_show.scss */
+.ShowSummary ul li h6 {
+  font-size: 1.4vw;
+  margin: 0 10px;
+}
+
+/* line 42, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_show.scss */
+.ShowSummary p {
+  font-size: 1.2vw;
+}
+
+/* line 46, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_show.scss */
+.TaskShowEdit button {
+  position: relative;
+  top: 20px;
+  left: 46px;
+}
+
+/* line 51, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_show.scss */
+.TaskShowEdit button:hover {
+  position: relative;
+  top: 22px;
+}
+
+/* line 57, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_show.scss */
+.List_Show {
+  margin-top: 75px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* line 65, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_show.scss */
+.List_Show h2 {
+  font-size: 19px;
+  font-style: italic;
+  font-weight: 100;
+  background-color: white;
+  padding: 5px;
+}
+
+/* line 76, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_show.scss */
+.showTaskStaff {
+  display: block;
+}
+
+/* line 80, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_show.scss */
+.showTaskStaff h4 {
+  margin-left: 30px;
+  font-size: 18px;
+  margin-bottom: 5px;
+  font-weight: lighter;
+}
+
+/* line 88, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_show.scss */
+.showTaskStaff ul {
+  display: block;
+}
+
+/* line 92, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_show.scss */
+.showTaskStaff ul li li {
+  display: flex;
+}
+
+/* line 96, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_show.scss */
+.showTaskStaff ul li li p {
+  flex: 6;
+  font-size: 1.2vw;
+  padding-top: 10px;
+}
+
+/* line 102, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_show.scss */
+.showTaskStaff ul li li .first-child {
+  flex: 1;
+}
+
+/* line 105, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_show.scss */
+.showTaskStaff ul li {
+  margin-left: 30px;
+  margin-right: 20px;
+}
+
+/* line 114, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_show.scss */
+.highlight {
+  background-color: #0060bf;
+}
+
+/* line 117, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_show.scss */
+.TaskShowEdit h3 {
+  margin-left: 10vw;
+  margin-top: 30px;
+  font-size: 15px;
+  margin-bottom: 5px;
+  font-weight: lighter;
+}
+
+/* line 126, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_show.scss */
+.TaskEdit {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+/* line 132, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_show.scss */
+.TaskEdit label {
+  display: flex;
+}
+
+/* line 137, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_show.scss */
+.TaskEdit label p {
+  flex: 1;
+  margin-left: 30px;
+}
+
+/* line 142, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_show.scss */
+.TaskEdit label {
+  margin-left: 30px;
+  margin-top: 7px;
+}
+
+/* line 147, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_show.scss */
+.TaskEdit input[type='text'] {
+  flex: 3;
+  width: 200px;
+}
+
+/* line 152, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_show.scss */
+.TaskEdit input[type='date'] {
+  flex: 3;
+  width: 130px;
+}
+
+/* line 160, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_show.scss */
+.TaskEdit label section {
+  flex: 3;
+  flex-shrink: 10;
+  width: 30px;
+}
+
+/* line 165, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_show.scss */
+.TaskEdit input[type='submit'] {
+  margin-left: 7vw;
+  margin-top: 15px;
+  width: 12vw;
+}
+
+/* line 3, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_sidebar.scss */
+#mainSideBar {
+  width: 85%;
+  margin-left: 15px;
+}
+
+/* line 8, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_sidebar.scss */
+.mainSideBarRange {
+  display: block;
+  border-bottom: 1px solid #6288a5;
+  padding-bottom: 5px;
+}
+
+/* line 14, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_sidebar.scss */
+.mainSideBarRange a {
+  font-size: 1.3vw;
+}
+
+/* line 18, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_sidebar.scss */
+.mainSideBarRange h4 {
+  margin-bottom: 10px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  font-size: 1.4vw;
+  font-weight: lighter;
+}
+
+/* line 26, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_sidebar.scss */
+.mainSideBarRangeToggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+/* line 32, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_sidebar.scss */
+.indexRap a {
+  width: inherit;
+  display: block;
+}
+
+/* line 36, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_sidebar.scss */
+.indexRap:hover {
+  background-color: #f0f8fc;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* line 43, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_sidebar.scss */
+.mainSideBarRangeToggle i {
+  margin-left: 9%;
+  margin-right: 6px;
+  width: 10px;
+  margin-right: 18px;
+}
+
+/* line 49, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_sidebar.scss */
+.mainSideBarRangeToggle div {
+  flex-grow: 1;
+}
+
+/* line 53, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_sidebar.scss */
+.mainSideBarRangeToggle i:hover {
+  cursor: pointer;
+  border-bottom: 2px solid;
+}
+
+/* line 59, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_sidebar.scss */
+.sidebarRanges {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+/* line 65, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_sidebar.scss */
+.sidebarRanges a {
+  display: block;
+  padding: 4px 0;
+  padding-left: 46px;
+}
+
+/* line 70, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_sidebar.scss */
+.mainSideBar a:hover {
+  background-color: #f0f8fc;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* line 79, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_sidebar.scss */
+.mainSideBarList {
+  display: block;
+  border-bottom: 1px solid #6288a5;
+  padding-top: 5px;
+  padding-bottom: 10px;
+}
+
+/* line 86, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_sidebar.scss */
+.mainSideBarListToggle {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px;
+}
+
+/* line 91, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_sidebar.scss */
+.mainSideBarListToggle div {
+  display: flex;
+  margin-left: 14px;
+}
+
+/* line 96, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_sidebar.scss */
+.mainSideBarListToggle div i {
+  padding-right: 26px;
+  width: 5px;
+}
+
+/* line 100, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_sidebar.scss */
+.mainSideBarListToggle div p {
+  font-size: 1.3vw;
+  height: 20px;
+}
+
+/* line 105, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_sidebar.scss */
+.mainSideBarListToggle i p {
+  visibility: hidden;
+  width: 100px;
+  background-color: #f0f8fc;
+  color: black;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  font-size: 14px;
+  /* Position the tooltip */
+  position: absolute;
+  right: -4px;
+  z-index: 1;
+}
+
+/* line 122, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_sidebar.scss */
+.mainSideBarListToggle i:hover p {
+  visibility: visible;
+}
+
+/* line 125, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_sidebar.scss */
+.mainSideBarListToggle i:hover p:hover {
+  background-color: #6288a5;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* line 131, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_sidebar.scss */
+.mainSideBarListToggle .fa-plus-circle {
+  position: relative;
+  top: 1px;
+  right: 3px;
+}
+
+/* line 137, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_sidebar.scss */
+.mainSideBarListToggleLInk {
+  flex-grow: 4;
+}
+
+/* line 140, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_sidebar.scss */
+.mainSideBarListToggleLInk:hover {
+  background-color: #f0f8fc;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* line 146, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_sidebar.scss */
+.mainSideBarListToggleLInk i p {
+  font-size: 1.3vw;
+}
+
+/* line 151, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_sidebar.scss */
+.listRap {
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+}
+
+/* line 157, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_sidebar.scss */
+.listRap div {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 7px;
+}
+
+/* line 163, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_sidebar.scss */
+.listRap div a {
+  flex-grow: 10;
+  padding-left: 50px;
+  height: 30px;
+  font-size: 1.3vw;
+}
+
+/* line 170, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_sidebar.scss */
+.listRap div i {
+  padding-right: 8px;
+}
+
+/* line 173, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_sidebar.scss */
+.listRap div i ul {
+  visibility: hidden;
+  width: 120px;
+  background-color: #f0f8fc;
+  color: black;
+  text-align: center;
+  border-radius: 6px;
+  padding: 0;
+  /* Position the tooltip */
+  position: absolute;
+  left: 100px;
+  z-index: 100;
+}
+
+/* line 187, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_sidebar.scss */
+.listRap div i ul li {
+  padding: 2px;
+  height: 20px;
+  font-size: 14px;
+}
+
+/* line 192, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_sidebar.scss */
+.listRap div i:hover ul {
+  visibility: visible;
+}
+
+/* line 195, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_main_sidebar.scss */
+.listRap div i:hover ul li:hover {
+  background-color: #6288a5;
+  cursor: pointer;
+}
+
+/* line 2, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_splashpage.scss */
+.splashPage {
+  display: block;
+}
+
+/* line 7, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_splashpage.scss */
+.splashPageMain {
+  background-color: white;
+  z-index: -100;
+}
+
+/* line 11, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_splashpage.scss */
+.splashPageMainBackground {
+  -webkit-animation: fadein 2s;
+  /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 2s;
+  /* Firefox < 16 */
+  -ms-animation: fadein 2s;
+  /* Internet Explorer */
+  -o-animation: fadein 2s;
+  /* Opera < 12.1 */
+  animation: fadein 2s;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* Internet Explorer */
+@-ms-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* line 50, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_splashpage.scss */
+.splashPageMainBackground {
+  flex: 1 100%;
+  background-image: url("https://ymedialabs.com/wp-content/uploads/2015/12/syncplicity_hero-1-1894x1080.jpg");
+  background-attachment: fixed;
+  background-position: center 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  top: -100px;
+  z-index: -1;
+  /* Set a specific height */
+  min-height: 55vw;
+}
+
+/* line 65, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_splashpage.scss */
+.splashPageMain h1 {
+  font-size: 4vw;
+  position: absolute;
+  left: 30%;
+  top: 25%;
+  color: #0060bf;
+}
+
+/* line 73, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_splashpage.scss */
+.splashPageMain h4 {
+  font-size: 3vw;
+  position: absolute;
+  left: 28%;
+  top: 32%;
+  color: white;
+}
+
+/* line 81, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_splashpage.scss */
+.splashPageMain p {
+  font-size: 1.7vw;
+  font-style: italic;
+  color: #0060bf;
+}
+
+/* line 87, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_splashpage.scss */
+#quote {
+  position: absolute;
+  left: 13%;
+  top: 250%;
+}
+
+/* line 93, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_splashpage.scss */
+#yoda {
+  position: absolute;
+  left: 17%;
+  top: 254%;
+}
+
+/* line 99, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_splashpage.scss */
+.splashPageMain button {
+  font-size: 1.3vw;
+  position: absolute;
+  left: 45%;
+  top: 70%;
+  background-color: #0060bf;
+  border-bottom: 3px solid #4d7b9f;
+}
+
+/* line 108, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_splashpage.scss */
+.splashPageMain button:hover {
+  border-bottom: 1px solid #4d7b9f;
+  background-color: #265e8b;
+  top: 70.5%;
+}
+
+/* line 118, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_splashpage.scss */
+.bounce_fa {
+  width: 60px;
+  height: 60px;
+  display: block;
+  text-align: center;
+  color: #d7e7f5;
+  font: normal 45px 'FontAwesome';
+  line-height: 60px;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* line 130, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_splashpage.scss */
+.bounce_fa:hover {
+  color: #4fa847;
+}
+
+/* line 135, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_splashpage.scss */
+.fa-angle-double-down:before {
+  content: "\f103";
+}
+
+/* line 137, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_splashpage.scss */
+.bounce {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  width: 60px;
+  height: 60px;
+  margin-left: -30px;
+  border: 2px solid lightblueRTM;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+  animation: bounce 2s infinite;
+  -webkit-animation: bounce 2s infinite;
+  -moz-animation: bounce 2s infinite;
+  -o-animation: bounce 2s infinite;
+}
+
+@-webkit-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -webkit-transform: translateY(0);
+  }
+  40% {
+    -webkit-transform: translateY(-30px);
+  }
+  60% {
+    -webkit-transform: translateY(-15px);
+  }
+}
+@-moz-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -moz-transform: translateY(0);
+  }
+  40% {
+    -moz-transform: translateY(-30px);
+  }
+  60% {
+    -moz-transform: translateY(-15px);
+  }
+}
+@-o-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -o-transform: translateY(0);
+  }
+  40% {
+    -o-transform: translateY(-30px);
+  }
+  60% {
+    -o-transform: translateY(-15px);
+  }
+}
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
+/* line 183, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_splashpage.scss */
+.FoundersSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: arial, helvetica, sans-serif;
+  font-style: italic;
+  background-color: white;
+}
+
+/* line 192, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_splashpage.scss */
+.FoundersSection img {
+  width: 150px;
+  height: 150px;
+  border-radius: 200px;
+}
+
+/* line 199, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_splashpage.scss */
+#slide {
+  position: relative;
+  left: -100%;
+  -webkit-animation: slide 2.0s forwards;
+  -webkit-animation-delay: .5s;
+  animation: slide 2.0s forwards;
+  animation-delay: .5s;
+}
+
+@-webkit-keyframes slide {
+  100% {
+    left: 0;
+  }
+}
+@keyframes slide {
+  100% {
+    left: 0;
+  }
+}
+/* line 217, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_splashpage.scss */
+.FoundersSection h3 {
+  font-size: 28px;
+  color: #0060bf;
+}
+
+/* line 222, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_splashpage.scss */
+.FoundersSection h4 {
+  font-size: 26px;
+  color: #0060bf;
+  padding: 0;
+  margin: 10px 0;
+}
+
+/* line 228, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_splashpage.scss */
+.fountderQuote {
+  display: flex;
+  width: 80%;
+}
+
+/* line 234, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_splashpage.scss */
+.fountderQuote p {
+  font-family: arial, helvetica, sans-serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 24px;
+  color: #4f4f4f;
+  line-height: 2;
+  padding: 1em 0;
+}
+
+/* line 244, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_splashpage.scss */
+.fa-quote-left:before, .fa-quote-right:before {
+  margin: 10px;
+  color: #4f4f4f;
+  position: relative;
+  top: 35%;
+}
+
+/* line 250, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_splashpage.scss */
+.fa-quote-left:before {
+  margin-right: 60px;
+}
+
+/* line 253, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_splashpage.scss */
+.fa-quote-right:before {
+  margin-left: 50px;
+}
+
+/* line 260, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_splashpage.scss */
+.splashPageFooter {
+  display: flex;
+  align-items: center;
+  padding: 20px 0;
+  background-color: white;
+}
+
+/* line 268, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_splashpage.scss */
+.Source {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 5%;
+  height: 4vw;
+}
+
+/* line 277, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_splashpage.scss */
+.fa-github:hover {
+  color: #4fa847;
+}
+
+/* line 281, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_splashpage.scss */
+.Creator {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 3vw;
+  margin-left: 6%;
+}
+
+/* line 290, /Users/brukargaw/Desktop/forget_not/app/assets/stylesheets/components/_splashpage.scss */
+.fa-linkedin-square:hover {
+  color: #4fa847;
+}

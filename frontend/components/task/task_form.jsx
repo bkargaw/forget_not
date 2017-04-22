@@ -3,7 +3,7 @@ import {merge} from 'lodash';
 import { DateRangePicker, SingleDatePicker, DayPickerRangeController } from 'react-dates';
 import {SimpleSelect} from "react-selectize";
 import 'react-dates/lib/css/_datepicker.css';
-// import 'react-selectize/themes/index.css';
+import 'react-selectize/themes/index.css';
 
 
 class taskForm extends React.Component{
