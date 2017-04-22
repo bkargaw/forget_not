@@ -51,7 +51,11 @@
     "redux-logger": "^2.8.2",
     "redux-thunk": "^2.2.0",
     "url-loader": "^0.5.8",
-    "webpack": "^2.2.1"
+    "webpack": "^2.2.1",
+    "bootstrap-css": "^4.0.0-alpha.5",
+    "css-loader": "^0.28.0",
+    "style-loader": "^0.16.1",
+    "svg-inline-loader": "^0.7.1"
   },
   "devDependencies": {
     "bootstrap-css": "^4.0.0-alpha.5",
