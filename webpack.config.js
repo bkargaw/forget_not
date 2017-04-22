@@ -17,8 +17,17 @@ module.exports = {
           presets: ['es2015', 'react']
         }
       },
-      { test: /\.css$/, loader: "style-loader!css-loader?importLoaders=1" },
-      { test: /\.(png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000' }
+      {
+        test: /\.css$/,
+        include: [
+            path.resolve(__dirname, "not_exist_path")
+        ],
+        loader: "style!css"
+      },
+      {
+          test: /\.(png|jpg|woff|woff2|eot|ttf|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+          loader: 'url?limit=512&&name=[path][name].[ext]?[hash]'
+      }
     ]
   },
   devtool: 'source-maps',
