@@ -16,9 +16,9 @@ by deadlines. The user can also edit and delete task as well as lists.
   * js - front-end coding language
   * react - frame work for js
   * Redux - architecture used in the implementation in the front end
+  * React - js library used to build user interfaces
   * postgresql - database
   * github - online repository
-  * heroku - site host
   * webpack - bundle js script and css files
   * babel - convert es6 syntax to es5
 
@@ -29,7 +29,7 @@ by deadlines. The user can also edit and delete task as well as lists.
 ![alt tag](https://github.com/bkargaw/forget_not/blob/master/docs/live_photos/ForgetNot_SplashPage.png)
 
 ### login and signup
-  The user will be abel to signup/login through a modal dialog; Full auth of the user is preformed every time signs in.
+  The user will be abel to signup/login through a modal dialog; Full auth of the user is preformed every time user signs in. The Session for the user is maintained when the user closed the page without logging out; thus allowing the user to be logged in immediatly when the site is loaded up again.
 
 ![alt tag](https://github.com/bkargaw/forget_not/blob/master/docs/live_photos/Sign_up.png)
 
