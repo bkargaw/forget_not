@@ -7,6 +7,7 @@ end
 
 
 # gem for heroku deployment
+gem 'http'
 gem 'rails_12factor'
 gem 'seed_dump'
 gem 'faker'
