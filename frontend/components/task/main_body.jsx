@@ -3,8 +3,6 @@ import { Link, hashHistory } from 'react-router';
 import TaskFormContainer from './task_form_container';
 import {merge} from 'lodash';
 import { Nav, NavItem } from 'react-bootstrap';
-// import 'bootstrap/dist/css/bootstrap.css';
-// import { navtabs } from 'bootstrap-css'
 
 
 

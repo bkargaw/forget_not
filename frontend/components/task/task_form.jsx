@@ -81,6 +81,7 @@ class taskForm extends React.Component{
       options = this.props.lists.map(list => (
         {label: list.name, value: list.id}
       )
+      
       )
     }
 
