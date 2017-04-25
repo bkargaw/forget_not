@@ -55,12 +55,11 @@ by deadlines. The user can also edit and delete task as well as lists.
   (note: the user will be able  to navigate to these routes using side nav bar that contains listing of all the
     range and list filtering options even the lists created by the user)
 
-
-  ~~~
-    hear is the code for creating a route to the range filter -- today
-    (note: all routes where generated using react-router)
-
-
+<!---
+hear is the code for creating a route to the range filter -- today
+(note: all routes where generated using react-router)
+--->
+ ```js
           <Route path='/tasks' component={ Tasks } onEnter={ _ensureLogin }>
             <IndexRoute component={ MainBodyContainer }/>
             <Route path='/tasks/today' component={ RangesContainer }>
@@ -68,7 +67,7 @@ by deadlines. The user can also edit and delete task as well as lists.
               <Route path='/tasks/today/:taskId' component={ TaskShowContainer }/>
             </Route>
           ...
-  ~~~
+  ```
 
   Using the route location or search name given by the user the front-end will create the necessary options hash in order to to make an ajax request to fetch the filtered data from the user. Then the font end had to render the data that it receives back from the backend and update the state of the store which will result in re-rendering of any component that is affected by the change to the state of the store.
 
@@ -81,12 +80,13 @@ Searching tasks is a standard feature of Remember The Milk. The application will
 #### Backend (search)
   The backend in this case does similar thing as filtering the user's task by date ranges, with the key exception that we will filter that data base on the user provided prefix. The search is preformed in a case insensitive manner  and json response is created in a friendly manner for the front-end.
 
-  ~~~
+
   here is an example code snippet that filter the task base on search params ( task name ) entered by the use
+   ```ruby
 
   @tasks = Task.where("title LIKE :prefix",
-                      prefix: "#{params[:search_by]}%")
-  ~~~
+                      prefix: "%#{params[:search_by]}%")
+   ```
 
 #### front-end (search)
   The site will utilize react-search-input library to get the use's input and for each character entered by the user the site will make an AIP request and update the store(i.e.the tasks part of the state). This had the added benefit of making he user feel the site is responsive and it also means that the user does not have  to type the whole title of the task in order to be able to find a task they are looking for. Note as our database gets large and making a request for each character will become too costly, thus at that time this section of the application will be changed to be more efficient. For example we can make the API call only when the user presses enter.   
