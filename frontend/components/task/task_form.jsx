@@ -2,6 +2,7 @@ import React from 'react';
 import {merge} from 'lodash';
 import { DateRangePicker, SingleDatePicker, DayPickerRangeController } from 'react-dates';
 import 'react-dates/lib/css/_datepicker.css';
+import { DropdownButton, MenuItem } from 'react-bootstrap';
 
 
 class taskForm extends React.Component{
@@ -11,19 +12,18 @@ class taskForm extends React.Component{
     this.state = {
       title: '',
       startDate: null,
-      // startDate: `${now.getFullYear()}-${now.getMonth()}-${now.getDate()}`,
       endDate: null,
-      // endDate: `${now.getFullYear()}-${now.getMonth()}-${now.getDate()}`,
       estimate: '',
       list_id: 1,
       showStateChangers: 'hidden',
-      focusedInput: null
-      // list_id: this.props.list_id || ''
+      focusedInput: null,
+        list_title: "Lists"
                   };
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.toggleShow = this.toggleShow.bind(this);
     this.handleDateChange = this.handleDateChange.bind(this);
+    this.handleSelect = this.handleSelect.bind(this);
   }
 
   handleSubmit(e){
@@ -42,7 +42,8 @@ class taskForm extends React.Component{
                   endDate: ``,
                   estimate: '',
                   list_id: 1,
-                  showStateChangers: 'hidden'
+                  showStateChangers: 'hidden',
+                  list_title: "Lists"
                 });
   }
 
@@ -68,6 +69,12 @@ class taskForm extends React.Component{
       };
   }
 
+  handleSelect(selectedKey){
+    this.setState({list_id: selectedKey});
+    this.setState({list_title: this.props.lists[selectedKey].name});
+  }
+
+
   render(){
     let selectList;
     let ListId = 1;
@@ -78,11 +85,11 @@ class taskForm extends React.Component{
       if ( parseInt(this.props.indexType) ){
         ListId =  parseInt(this.props.indexType);
       }
-      options = this.props.lists.map(list => (
-        {label: list.name, value: list.id}
-      )
-      
-      )
+      SimpleSelectList =  <DropdownButton title={this.state.list_title} onSelect={this.handleSelect}>
+                            {this.props.lists.map(list => (
+                              <MenuItem eventKey={list.id - 1}>{list.name}</MenuItem>
+                            ))}
+                          </DropdownButton>
     }
 
     return(

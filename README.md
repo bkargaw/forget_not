@@ -55,10 +55,8 @@ by deadlines. The user can also edit and delete task as well as lists.
   (note: the user will be able  to navigate to these routes using side nav bar that contains listing of all the
     range and list filtering options even the lists created by the user)
 
-<!---
 hear is the code for creating a route to the range filter -- today
 (note: all routes where generated using react-router)
---->
  ```js
           <Route path='/tasks' component={ Tasks } onEnter={ _ensureLogin }>
             <IndexRoute component={ MainBodyContainer }/>
@@ -70,8 +68,6 @@ hear is the code for creating a route to the range filter -- today
   ```
 
   Using the route location or search name given by the user the front-end will create the necessary options hash in order to to make an ajax request to fetch the filtered data from the user. Then the font end had to render the data that it receives back from the backend and update the state of the store which will result in re-rendering of any component that is affected by the change to the state of the store.
-
-![alt tag](https://github.com/bkargaw/forget_not/blob/master/docs/wireframes/main_page%20with%20show%20task.png)
 
 
 ### Search

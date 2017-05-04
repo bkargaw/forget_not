@@ -10,7 +10,6 @@ end
 gem 'http'
 gem 'rails_12factor'
 gem 'seed_dump'
-gem 'faker'
 ruby '2.3.1'
 # gem for auth
 gem 'bcrypt'
@@ -41,17 +40,10 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger
-
-  gem 'byebug', platform: :mri
-end
-
 group :development do
   gem 'annotate'
   gem 'better_errors'
   gem 'binding_of_caller'
-  gem 'pry-rails'
 
   gem 'listen', '~> 3.0.5'
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
@@ -63,3 +55,18 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# the following gems were add for testing code
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
+  gem 'byebug', platform: :mri
+  gem 'pry-rails'
+end
+
+group :test do
+  gem 'capybara'
+  gem 'shoulda-matchers', '~>3.1'
+  gem 'faker'
+  gem 'launchy'
+end

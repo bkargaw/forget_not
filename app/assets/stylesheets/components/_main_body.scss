@@ -6,12 +6,9 @@
   text-align: center;
   color: $yodaGreen;
 }
-// .active a{
-//   color: $yodaGreen !important;
-// }
+
 .nav_tabs_holder{
   display: flex;
-  // background-color: $lightblueRTM;
 }
 .nav_tabs_holder div{
   height: inherit;
@@ -43,6 +40,10 @@
 }
 .DateInput__display-text{
   padding: 0 !important;
+}
+
+.dropdown-menu{
+  top: 60% !important;
 }
 
 

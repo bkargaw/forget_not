@@ -18,7 +18,8 @@ class mainBody extends React.Component{
     this.handelMarkAsComplete = this.handelMarkAsComplete.bind(this);
     this.showIncomplete = this.showIncomplete.bind(this);
     this.showComplete = this.showComplete.bind(this);
-    this.handleSelect = this.handleSelect.bind(this)
+    this.handleSelect = this.handleSelect.bind(this);
+    this.handelSingDelete = this.handelSingDelete.bind(this);
 
   }
 
@@ -73,6 +74,18 @@ class mainBody extends React.Component{
     this.setState({path: this.props.indexType,
                    TasksToUpdate: []});
   }
+
+  handelSingDelete(id){
+    return ()=>{
+      this.props.deleteTask(id);
+      var index = this.state.TasksToUpdate.indexOf(id);
+      if(index > -1){
+        let TasksToUpdate = this.state.TasksToUpdate.splice(index, 1);
+        this.setState({TasksToUpdate});
+      }
+    }
+  }
+
 
   handelMarkAsComplete(){
     let tasks =  Object.keys(this.props.tasks).map(id => this.props.tasks[id]);
@@ -155,6 +168,13 @@ class mainBody extends React.Component{
                         {task.title}
                       </li>
                     </Link>
+                    <div className='DeleteAction'>
+                      <i id='massIcons'
+                         onClick= { this.handelSingDelete(task.id) }
+                         className="fa fa-trash fa-lg" aria-hidden="true">
+                      </i>
+                      <p>Delete Tasks</p>
+                    </div>
                   </div>
                 );
               }
