@@ -119,11 +119,11 @@ class mainShowSection extends React.Component {
           <div className='showTaskStaff'>
             <h4>{this.props.task.title}</h4>
             <ul>
-              <li> { startTime } </li>
-              <li> { endTime } </li>
-              <li> { estimate } </li>
-              <li> { completed } </li>
-              <li> { listType } </li>
+              { startTime }
+              { endTime }
+              { estimate }
+              { completed }
+              { listType }
             </ul>
           </div>
 

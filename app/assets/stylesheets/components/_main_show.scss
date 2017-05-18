@@ -80,7 +80,8 @@
 .showTaskStaff h4{
   margin-left: 30px;
   font-size: 18px;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
+  margin-top: 30px;
   font-weight: lighter;
 
 }
@@ -89,21 +90,22 @@
   display: block;
 }
 
-.showTaskStaff ul li li{
+.showTaskStaff ul li{
   display: flex;
 }
 
-.showTaskStaff ul li li p{
+.showTaskStaff ul li p{
  flex: 6;
  font-size: 1.2vw;
  padding-top: 10px;
 }
 
-.showTaskStaff ul li li .first-child{
- flex: 1;
+.showTaskStaff ul li .first-child{
+ flex: 2;
 }
+
 .showTaskStaff ul li{
-  margin-left: 30px;
+  margin-left: 50px;
   margin-right: 20px;
 }
 

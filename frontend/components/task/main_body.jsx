@@ -163,6 +163,7 @@ class mainBody extends React.Component{
 
   render(){
     let allTasks;
+    let checkMarkMessage;
 
       if (this.is_empty()) {
         if(this.state.filter){
@@ -171,6 +172,11 @@ class mainBody extends React.Component{
           allTasks = <div className='empty_list'>You have no more Incomplete Task in this category!! </div>
         }
       }else {
+        if(this.state.filter){
+          checkMarkMessage = "mark Incomplete";
+        }else {
+          checkMarkMessage = "mark Complete";
+        }
         allTasks =
         <div>
           <ul className='TaskListHolder'>
@@ -186,19 +192,19 @@ class mainBody extends React.Component{
                         {task.title}
                       </li>
                     </Link>
-                    <div className='DeleteAction'>
+                    <div className='DeleteAction TaskCheckMarkMessage1'>
                       <i id='massIcons'
                          onClick= { this.handelSingDelete(task.id) }
                          className="fa fa-trash fa-lg" aria-hidden="true">
                       </i>
                       <p>Delete Task</p>
                     </div>
-                    <div className={'CompleteAction'}>
+                    <div className={'CompleteAction TaskCheckMarkMessage2'}>
                       <i id="massIcons"
                          onClick= { this.handelSingleMarkAsComplete(task.id) }
                          className="fa fa-check-square fa-lg" aria-hidden="true">
                       </i>
-                      <p>Change Complete Status</p>
+                      <p className= "TaskCheckMarkMessage" >{ checkMarkMessage }</p>
                     </div>
                   </div>
                 );
@@ -234,7 +240,7 @@ class mainBody extends React.Component{
                onClick= { this.handelMarkAsComplete }
                className="fa fa-check-square fa-2x" aria-hidden="true">
             </i>
-            <p>Change Status</p>
+            <p>{ checkMarkMessage }</p>
           </div>
         </div>
         </div>
