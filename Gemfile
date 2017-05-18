@@ -8,7 +8,6 @@ end
 
 # gem for heroku deployment
 gem 'newrelic_rpm'
-
 gem 'http'
 gem 'rails_12factor'
 gem 'seed_dump'
