@@ -86,7 +86,7 @@
  .DeleteAction p{
   visibility: hidden;
     width: 60px;
-    height: 30px;
+    height: 36px;
     background-color: $lightest-blue;
     color: black;
     text-align: center;
@@ -95,7 +95,7 @@
 
     /* Position the tooltip */
     position: relative;
-    top: 49px;
+    top: 40px;
     right: 35px;
     z-index: 1;
 }
@@ -117,7 +117,7 @@
  .CompleteAction p{
   visibility: hidden;
     width: 90px;
-    height: 30px;
+    height: 36px;
     background-color: $lightest-blue;
     color: black;
     text-align: center;
@@ -126,7 +126,7 @@
 
     /* Position the tooltip */
     position: relative;
-    top: 49px;
+    top: 40px;
     right: 40px;
     z-index: 1;
 }
@@ -137,6 +137,10 @@
 .TaskListHolder{
   overflow: auto;
   height: 33vw;
+}
+
+.TaskListHolder .CompleteAction{
+  width: 45px;
 }
 .TaskList{
   display: flex;

@@ -15,7 +15,6 @@ class ShowCompleteness extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
-    debugger
     if ( newProps.tasks.length ){
       let data = {}
       let tasks = newProps.tasks

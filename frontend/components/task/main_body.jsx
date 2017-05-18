@@ -78,11 +78,15 @@ class mainBody extends React.Component{
   handelSingDelete(id){
     return ()=>{
       this.props.deleteTask(id);
-      var index = this.state.TasksToUpdate.indexOf(id);
-      if(index > -1){
-        let TasksToUpdate = this.state.TasksToUpdate.splice(index, 1);
-        this.setState({TasksToUpdate});
-      }
+      this.removeFromTaskUpdate(id);
+    }
+  }
+
+  removeFromTaskUpdate(id){
+    var index = this.state.TasksToUpdate.indexOf(id);
+    if(index > -1){
+      let TasksToUpdate = this.state.TasksToUpdate.splice(index, 1);
+      this.setState({TasksToUpdate});
     }
   }
 
@@ -101,6 +105,20 @@ class mainBody extends React.Component{
                    TasksToUpdate: []});
 
   }
+
+  handelSingleMarkAsComplete(id){
+    let that = this;
+    let tasks =  Object.keys(this.props.tasks).map(task_id => this.props.tasks[task_id]);
+    let task = tasks.filter(task =>
+                        [id].includes(task.id));
+        task = task[0];
+    return () =>{
+      this.removeFromTaskUpdate(id)
+      merge(task, {completed: !(that.state.filter)});
+      that.props.updateTask(task);
+    }
+  }
+
 
   updateDeleteList(id){
     let that = this;
@@ -173,7 +191,14 @@ class mainBody extends React.Component{
                          onClick= { this.handelSingDelete(task.id) }
                          className="fa fa-trash fa-lg" aria-hidden="true">
                       </i>
-                      <p>Delete Tasks</p>
+                      <p>Delete Task</p>
+                    </div>
+                    <div className={'CompleteAction'}>
+                      <i id="massIcons"
+                         onClick= { this.handelSingleMarkAsComplete(task.id) }
+                         className="fa fa-check-square fa-lg" aria-hidden="true">
+                      </i>
+                      <p>Change Complete Status</p>
                     </div>
                   </div>
                 );
@@ -204,12 +229,12 @@ class mainBody extends React.Component{
             <p>Delete Tasks</p>
           </div>
 
-          <div className={this.state.ShowButton + ' ' + 'CompleteAction'}>
+          <div className={'CompleteAction'}>
             <i id="massIcons"
                onClick= { this.handelMarkAsComplete }
                className="fa fa-check-square fa-2x" aria-hidden="true">
             </i>
-            <p>Mark Complete</p>
+            <p>Change Status</p>
           </div>
         </div>
         </div>

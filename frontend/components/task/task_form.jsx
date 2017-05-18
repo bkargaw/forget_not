@@ -17,7 +17,7 @@ class taskForm extends React.Component{
       list_id: 1,
       showStateChangers: 'hidden',
       focusedInput: null,
-        list_title: "Lists"
+      list_title: "Lists"
                   };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -25,6 +25,14 @@ class taskForm extends React.Component{
     this.handleDateChange = this.handleDateChange.bind(this);
     this.handleSelect = this.handleSelect.bind(this);
   }
+
+  componentDidMount () {
+    document.body.addEventListener('click', this.toggleBlur());
+   }
+   componentWillUnmount () {
+    document.body.removeEventListener('click', this.toggleBlur());
+   }
+
 
   handleSubmit(e){
     e.preventDefault();
@@ -35,6 +43,7 @@ class taskForm extends React.Component{
     if(this.state.startDate) startDate = new Date(this.state.startDate._d).getTime();
     if(this.state.endDate) endDate = new Date(this.state.endDate._d).getTime();
     let task = merge({},this.state, {list_id},  {startDate}, {endDate});
+
     this.props.createTask(task);
     this.setState( {
                   title: '',
@@ -49,19 +58,32 @@ class taskForm extends React.Component{
 
   toggleShow(val){
     return( e=>{
-    e.preventDefault();
-      if (this.state[val] === ''){
-        this.setState({[val]: 'hidden'});
-      }else
+      e.preventDefault();
+      if (this.state[val] !== ''){
         this.setState({[val]: ''});
+      }
   });
   }
 
   toggleBlur(){
-    return( e=>{
-      this.setState({showStateChangers: 'hidden'});
+    return( e =>{
+      let form = document.getElementById("AddTaskForm");
+      if (!this.isDescendant(form, e.target)){
+        this.setState({showStateChangers: 'hidden'});
+      }
     });
   }
+
+  isDescendant(parent, child) {
+     var node = child.parentNode;
+     while (node != null) {
+         if (node == parent) {
+             return true;
+         }
+         node = node.parentNode;
+     }
+     return false;
+}
 
   handleDateChange(feild){
     return e =>{
@@ -71,7 +93,7 @@ class taskForm extends React.Component{
 
   handleSelect(selectedKey){
     this.setState({list_id: selectedKey});
-    this.setState({list_title: this.props.lists[selectedKey].name});
+    this.setState({list_title: this.props.lists[selectedKey - 1].name});
   }
 
 
@@ -85,16 +107,20 @@ class taskForm extends React.Component{
       if ( parseInt(this.props.indexType) ){
         ListId =  parseInt(this.props.indexType);
       }
-      SimpleSelectList =  <DropdownButton title={this.state.list_title} onSelect={this.handleSelect}>
+      SimpleSelectList =  <DropdownButton title={this.state.list_title} onSelect={this.handleSelect}
+                          key={1} id={`dropdown-basic-${1}`}>
                             {this.props.lists.map(list => (
-                              <MenuItem eventKey={list.id - 1}>{list.name}</MenuItem>
+                              <MenuItem eventKey={list.id}
+                                        key={list.id}
+                                        id={list.id}>{list.name}</MenuItem>
                             ))}
                           </DropdownButton>
     }
 
     return(
       <div className='addTaskForm'>
-        <form onSubmit={ this.handleSubmit }>
+        <form id={"AddTaskForm"}
+              onSubmit={ this.handleSubmit }>
           <input id='addTitle'
                  type='text'
                  placeholder=' Add a Task'
