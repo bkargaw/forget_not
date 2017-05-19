@@ -5,7 +5,7 @@ import { hashHistory } from 'react-router';
 import EditTaskContainer from './edit_task_container';
 import ShowListDetail from '../list_detail/list_detail_container';
 import ShowCompleteness from '../show_completeness/show_completeness_container';
-import {modal} from 'react-redux-modal';
+import { modal } from 'react-redux-modal';
 
 class mainShowSection extends React.Component {
   constructor(props) {
@@ -23,7 +23,7 @@ class mainShowSection extends React.Component {
    return () =>(
    modal.add(EditTaskContainer, {
      title: title,
-     size: 'medium', // large, medium or small,
+     size: 'large', // large, medium or small,
      closeOnOutsideClick: false, // (optional) Switch to true
      // if you want to close the modal by clicking outside of it,
      hideTitleBar: false, // (optional) Switch to

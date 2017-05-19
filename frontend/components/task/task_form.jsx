@@ -1,7 +1,9 @@
 import React from 'react';
 import {merge} from 'lodash';
-import { DateRangePicker, SingleDatePicker, DayPickerRangeController } from 'react-dates';
+
+import { DateRangePicker } from 'react-dates';
 import 'react-dates/lib/css/_datepicker.css';
+
 import { DropdownButton, MenuItem } from 'react-bootstrap';
 
 

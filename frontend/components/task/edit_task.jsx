@@ -4,19 +4,30 @@ import {merge} from 'lodash';
 import { hashHistory } from 'react-router';
 import {modal} from 'react-redux-modal';
 
+import moment from 'moment';
+
+import { DateRangePicker } from 'react-dates';
+import 'react-dates/lib/css/_datepicker.css';
+
 
 class EditTask extends React.Component {
   constructor(props) {
     super(props);
+    let startDate = this.props.task.startDate;
+    let endDate = this.props.task.endDate;
+    debugger;
+    if (startDate) startDate = moment(new Date(startDate * 1000));
+    if (endDate) endDate = moment(new Date(endDate * 1000));
     this.state = {
                   title: this.props.task.title,
                   repeats: false,
-                  startDate: ``,
-                  endDate: ``,
+                  startDate,
+                  endDate,
                   estimate: '',
                   list_id: this.props.task.list_id,
                   completed: false
                   };
+
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
@@ -27,22 +38,23 @@ class EditTask extends React.Component {
 
   handleSubmit(e){
     e.preventDefault();
-    let startDate = new Date(this.state.startDate).getTime();
-    let endDate = new Date(this.state.endDate).getTime();
-    if(!startDate) startDate= '';
-    if(!endDate) endDate = '';
+    let startDate = '';
+    let endDate = '';
+    debugger
+    if(this.state.startDate) startDate = new Date(this.state.startDate._d).getTime() / 1000;
+    if(this.state.endDate) endDate = new Date(this.state.endDate._d).getTime()/ 1000;
     let title = this.state.title;
-    if (title === '') title = this.props.task.title;
     let task = merge({},this.state, {startDate},
                      {endDate}, {title}, {id: this.props.task.id});
+    debugger;
     this.props.updateTask(task)
               .then(()=> hashHistory.push(this.props.path))
               .then(()=> this.removeThisModal());
 
     this.setState( {
                   title: '',
-                  startDate: ``,
-                  endDate: ``,
+                  startDate: null,
+                  endDate: null,
                   estimate: ''
                 });
   }
@@ -96,21 +108,19 @@ class EditTask extends React.Component {
         <label>
           <p>{"Title  "}</p>
             <section><input type='text'
-                 placeholder={this.props.task.title}
+                 value = {this.state.title}
                  onChange={ this.handleChange('title') } /></section>
         </label>
 
         <label>
-          <p> {'Start Date  '}</p>
-            <section><input type='date'
-                 onChange={this.handleChange('startDate')}/></section>
-        </label>
-
-        <label>
-          <p>{"End Date  "}</p>
-            <section><input type='date'
-                  onChange={this.handleChange('endDate')}/></section>
-        </label>
+           <DateRangePicker
+             startDate={this.state.startDate}
+             endDate={this.state.endDate}
+             onDatesChange={({ startDate, endDate }) => this.setState({ startDate, endDate })}
+             focusedInput={this.state.focusedInput}
+             onFocusChange={focusedInput => this.setState({ focusedInput })}
+           />
+       </label>
 
         <label>
           <p>{'Estimate  '}</p>
