@@ -15,7 +15,6 @@ class EditTask extends React.Component {
     super(props);
     let startDate = this.props.task.startDate;
     let endDate = this.props.task.endDate;
-    debugger;
     if (startDate) startDate = moment(new Date(startDate * 1000));
     if (endDate) endDate = moment(new Date(endDate * 1000));
     this.state = {
@@ -23,9 +22,9 @@ class EditTask extends React.Component {
                   repeats: false,
                   startDate,
                   endDate,
-                  estimate: '',
+                  estimate: this.props.task.estimate,
                   list_id: this.props.task.list_id,
-                  completed: false
+                  completed: this.props.task.completed
                   };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -40,13 +39,11 @@ class EditTask extends React.Component {
     e.preventDefault();
     let startDate = '';
     let endDate = '';
-    debugger
     if(this.state.startDate) startDate = new Date(this.state.startDate._d).getTime() / 1000;
-    if(this.state.endDate) endDate = new Date(this.state.endDate._d).getTime()/ 1000;
+    if(this.state.endDate) endDate = new Date(this.state.endDate._d).getTime() / 1000;
     let title = this.state.title;
     let task = merge({},this.state, {startDate},
                      {endDate}, {title}, {id: this.props.task.id});
-    debugger;
     this.props.updateTask(task)
               .then(()=> hashHistory.push(this.props.path))
               .then(()=> this.removeThisModal());
@@ -106,13 +103,13 @@ class EditTask extends React.Component {
             onSubmit={ this.handleSubmit }>
 
         <label>
-          <p>{"Title  "}</p>
+          <p>{"Title:  "}</p>
             <section><input type='text'
                  value = {this.state.title}
                  onChange={ this.handleChange('title') } /></section>
         </label>
 
-        <label>
+        <label id={'DateRangePicker'}>
            <DateRangePicker
              startDate={this.state.startDate}
              endDate={this.state.endDate}
@@ -123,14 +120,15 @@ class EditTask extends React.Component {
        </label>
 
         <label>
-          <p>{'Estimate  '}</p>
+          <p>{'Estimate:  '}</p>
               <section><input onChange={this.handleChange('estimate')}
                    type='text'
+                   value={this.state.estimate}
                    placeholder='Add Estimate'/></section>
         </label>
 
         <label>
-          <p>{'Select List Type  '}</p>
+          <p>{'Select List Type:  '}</p>
           <section>{ selectList }</section>
         </label>
 
